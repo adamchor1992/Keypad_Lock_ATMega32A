@@ -3,12 +3,15 @@ Archive member included to satisfy reference by file (symbol)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                              main.o (__tablejump2__)
+                              functions.o (__tablejump2__)
 
 Discarded input sections
 
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
+ .text          0x00000000        0x0 functions.o
+ .data          0x00000000        0x0 functions.o
+ .bss           0x00000000        0x0 functions.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -47,9 +50,9 @@ Discarded input sections
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x00000000         0x00020000         xr
-data             0x00800060         0x0000ffa0         rw !x
-eeprom           0x00810000         0x00010000         rw !x
+text             0x00000000         0x00008000         xr
+data             0x00800060         0x00000800         rw !x
+eeprom           0x00810000         0x00000400         rw !x
 fuse             0x00820000         0x00000002         rw !x
 lock             0x00830000         0x00000400         rw !x
 signature        0x00840000         0x00000400         rw !x
@@ -59,6 +62,7 @@ user_signatures  0x00850000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
+LOAD functions.o
 LOAD main.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
@@ -69,9 +73,11 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/b
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libatmega32a.a
 END GROUP
-                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
-                0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
-                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000000]                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x00800060]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                [0x00008000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                [0x00000800]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x00000400]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
                 [0x00000002]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
                 0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
                 0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
@@ -175,7 +181,7 @@ END GROUP
  *(.vectors)
  *(.progmem.gcc*)
  .progmem.gcc_sw_table.set_display
-                0x00000054       0x5e main.o
+                0x00000054       0x5e functions.o
                 0x000000b2                . = ALIGN (0x2)
                 0x000000b2                __trampolines_start = .
  *(.trampolines)
@@ -248,22 +254,22 @@ END GROUP
                 0x000000ca                . = ALIGN (0x2)
  *(.text.*)
  .text.reset_ports
-                0x000000ca       0x12 main.o
+                0x000000ca       0x12 functions.o
                 0x000000ca                reset_ports
  .text.set_value_on_whole_display
-                0x000000dc        0xc main.o
+                0x000000dc        0xc functions.o
                 0x000000dc                set_value_on_whole_display
  .text.clear_display
-                0x000000e8        0x8 main.o
+                0x000000e8        0x8 functions.o
                 0x000000e8                clear_display
  .text.init_ports
-                0x000000f0       0x22 main.o
+                0x000000f0       0x22 functions.o
                 0x000000f0                init_ports
  .text.set_display
-                0x00000112       0xac main.o
+                0x00000112       0xac functions.o
                 0x00000112                set_display
  .text.select_number
-                0x000001be      0x188 main.o
+                0x000001be      0x188 functions.o
                 0x000001be                select_number
  .text.main     0x00000346      0x1b2 main.o
                 0x00000346                main
@@ -363,8 +369,9 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 main.o
+ .comment       0x00000000       0x30 functions.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 main.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c
@@ -386,42 +393,51 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x50
+.debug_aranges  0x00000000       0x68
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x50 main.o
+                0x00000000       0x48 functions.o
+ .debug_aranges
+                0x00000048       0x20 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xe48
+.debug_info     0x00000000      0xf1d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
- .debug_info    0x000004e6      0x962 main.o
+ .debug_info    0x000004e6      0x686 functions.o
+ .debug_info    0x00000b6c      0x3b1 main.o
 
-.debug_abbrev   0x00000000      0x6dd
+.debug_abbrev   0x00000000      0x767
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
- .debug_abbrev  0x000004a3      0x23a main.o
+ .debug_abbrev  0x000004a3      0x184 functions.o
+ .debug_abbrev  0x00000627      0x140 main.o
 
-.debug_line     0x00000000      0x6de
+.debug_line     0x00000000      0x7cc
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
- .debug_line    0x0000001a      0x6c4 main.o
+ .debug_line    0x0000001a      0x4c4 functions.o
+ .debug_line    0x000004de      0x2ee main.o
 
-.debug_frame    0x00000000       0x94
+.debug_frame    0x00000000       0xa8
  *(.debug_frame)
- .debug_frame   0x00000000       0x94 main.o
+ .debug_frame   0x00000000       0x74 functions.o
+ .debug_frame   0x00000074       0x34 main.o
 
-.debug_str      0x00000000      0x3e6
+.debug_str      0x00000000      0x403
  *(.debug_str)
  .debug_str     0x00000000      0x196 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32a.o
- .debug_str     0x00000196      0x250 main.o
-                                0x296 (size before relaxing)
+ .debug_str     0x00000196      0x226 functions.o
+                                0x267 (size before relaxing)
+ .debug_str     0x000003bc       0x47 main.o
+                                0x245 (size before relaxing)
 
 .debug_loc      0x00000000      0xa5b
  *(.debug_loc)
- .debug_loc     0x00000000      0xa5b main.o
+ .debug_loc     0x00000000      0x76e functions.o
+ .debug_loc     0x0000076e      0x2ed main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -441,9 +457,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x40
+.debug_ranges   0x00000000       0x48
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x40 main.o
+ .debug_ranges  0x00000000       0x38 functions.o
+ .debug_ranges  0x00000038       0x10 main.o
 
 .debug_macro
  *(.debug_macro)
