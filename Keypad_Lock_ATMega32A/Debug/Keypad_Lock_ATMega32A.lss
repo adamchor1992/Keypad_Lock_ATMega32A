@@ -3,29 +3,29 @@ Keypad_Lock_ATMega32A.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000508  00000000  00000000  00000054  2**1
+  0 .text         000004f6  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  0000055c  2**0
+  1 .data         00000000  00800060  00800060  0000054a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  0000055c  2**0
+  2 .comment      00000030  00000000  00000000  0000054a  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000058c  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000057c  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000068  00000000  00000000  000005c8  2**0
+  4 .debug_aranges 00000060  00000000  00000000  000005b8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000f1d  00000000  00000000  00000630  2**0
+  5 .debug_info   00000eef  00000000  00000000  00000618  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000767  00000000  00000000  0000154d  2**0
+  6 .debug_abbrev 00000767  00000000  00000000  00001507  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000007cc  00000000  00000000  00001cb4  2**0
+  7 .debug_line   00000794  00000000  00000000  00001c6e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000a8  00000000  00000000  00002480  2**2
+  8 .debug_frame  00000098  00000000  00000000  00002404  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000403  00000000  00000000  00002528  2**0
+  9 .debug_str    000003f7  00000000  00000000  0000249c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000a5b  00000000  00000000  0000292b  2**0
+ 10 .debug_loc    00000a5b  00000000  00000000  00002893  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000048  00000000  00000000  00003386  2**0
+ 11 .debug_ranges 00000040  00000000  00000000  000032ee  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -52,53 +52,53 @@ Disassembly of section .text:
   48:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
   4c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
   50:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
-  54:	a4 00       	.word	0x00a4	; ????
-  56:	a7 00       	.word	0x00a7	; ????
-  58:	aa 00       	.word	0x00aa	; ????
-  5a:	ad 00       	.word	0x00ad	; ????
-  5c:	b0 00       	.word	0x00b0	; ????
-  5e:	b3 00       	.word	0x00b3	; ????
-  60:	b6 00       	.word	0x00b6	; ????
-  62:	b9 00       	.word	0x00b9	; ????
-  64:	bc 00       	.word	0x00bc	; ????
-  66:	bf 00       	.word	0x00bf	; ????
-  68:	d9 00       	.word	0x00d9	; ????
-  6a:	d9 00       	.word	0x00d9	; ????
-  6c:	d9 00       	.word	0x00d9	; ????
-  6e:	c8 00       	.word	0x00c8	; ????
-  70:	cb 00       	.word	0x00cb	; ????
-  72:	ce 00       	.word	0x00ce	; ????
-  74:	d1 00       	.word	0x00d1	; ????
-  76:	d4 00       	.word	0x00d4	; ????
-  78:	d7 00       	.word	0x00d7	; ????
-  7a:	d9 00       	.word	0x00d9	; ????
-  7c:	d9 00       	.word	0x00d9	; ????
-  7e:	d9 00       	.word	0x00d9	; ????
-  80:	d9 00       	.word	0x00d9	; ????
-  82:	d9 00       	.word	0x00d9	; ????
-  84:	d9 00       	.word	0x00d9	; ????
-  86:	d9 00       	.word	0x00d9	; ????
-  88:	d9 00       	.word	0x00d9	; ????
-  8a:	d9 00       	.word	0x00d9	; ????
-  8c:	d9 00       	.word	0x00d9	; ????
-  8e:	d9 00       	.word	0x00d9	; ????
-  90:	d9 00       	.word	0x00d9	; ????
-  92:	d9 00       	.word	0x00d9	; ????
-  94:	d9 00       	.word	0x00d9	; ????
-  96:	d9 00       	.word	0x00d9	; ????
-  98:	d9 00       	.word	0x00d9	; ????
-  9a:	d9 00       	.word	0x00d9	; ????
-  9c:	d9 00       	.word	0x00d9	; ????
-  9e:	d9 00       	.word	0x00d9	; ????
-  a0:	d9 00       	.word	0x00d9	; ????
-  a2:	d9 00       	.word	0x00d9	; ????
-  a4:	d9 00       	.word	0x00d9	; ????
-  a6:	d9 00       	.word	0x00d9	; ????
-  a8:	d9 00       	.word	0x00d9	; ????
-  aa:	d9 00       	.word	0x00d9	; ????
-  ac:	d9 00       	.word	0x00d9	; ????
-  ae:	c2 00       	.word	0x00c2	; ????
-  b0:	c5 00       	.word	0x00c5	; ????
+  54:	9b 00       	.word	0x009b	; ????
+  56:	9e 00       	.word	0x009e	; ????
+  58:	a1 00       	.word	0x00a1	; ????
+  5a:	a4 00       	.word	0x00a4	; ????
+  5c:	a7 00       	.word	0x00a7	; ????
+  5e:	aa 00       	.word	0x00aa	; ????
+  60:	ad 00       	.word	0x00ad	; ????
+  62:	b0 00       	.word	0x00b0	; ????
+  64:	b3 00       	.word	0x00b3	; ????
+  66:	b6 00       	.word	0x00b6	; ????
+  68:	d0 00       	.word	0x00d0	; ????
+  6a:	d0 00       	.word	0x00d0	; ????
+  6c:	d0 00       	.word	0x00d0	; ????
+  6e:	bf 00       	.word	0x00bf	; ????
+  70:	c2 00       	.word	0x00c2	; ????
+  72:	c5 00       	.word	0x00c5	; ????
+  74:	c8 00       	.word	0x00c8	; ????
+  76:	cb 00       	.word	0x00cb	; ????
+  78:	ce 00       	.word	0x00ce	; ????
+  7a:	d0 00       	.word	0x00d0	; ????
+  7c:	d0 00       	.word	0x00d0	; ????
+  7e:	d0 00       	.word	0x00d0	; ????
+  80:	d0 00       	.word	0x00d0	; ????
+  82:	d0 00       	.word	0x00d0	; ????
+  84:	d0 00       	.word	0x00d0	; ????
+  86:	d0 00       	.word	0x00d0	; ????
+  88:	d0 00       	.word	0x00d0	; ????
+  8a:	d0 00       	.word	0x00d0	; ????
+  8c:	d0 00       	.word	0x00d0	; ????
+  8e:	d0 00       	.word	0x00d0	; ????
+  90:	d0 00       	.word	0x00d0	; ????
+  92:	d0 00       	.word	0x00d0	; ????
+  94:	d0 00       	.word	0x00d0	; ????
+  96:	d0 00       	.word	0x00d0	; ????
+  98:	d0 00       	.word	0x00d0	; ????
+  9a:	d0 00       	.word	0x00d0	; ????
+  9c:	d0 00       	.word	0x00d0	; ????
+  9e:	d0 00       	.word	0x00d0	; ????
+  a0:	d0 00       	.word	0x00d0	; ????
+  a2:	d0 00       	.word	0x00d0	; ????
+  a4:	d0 00       	.word	0x00d0	; ????
+  a6:	d0 00       	.word	0x00d0	; ????
+  a8:	d0 00       	.word	0x00d0	; ????
+  aa:	d0 00       	.word	0x00d0	; ????
+  ac:	d0 00       	.word	0x00d0	; ????
+  ae:	b9 00       	.word	0x00b9	; ????
+  b0:	bc 00       	.word	0x00bc	; ????
 
 000000b2 <__ctors_end>:
   b2:	11 24       	eor	r1, r1
@@ -107,1074 +107,1058 @@ Disassembly of section .text:
   b8:	d8 e0       	ldi	r29, 0x08	; 8
   ba:	de bf       	out	0x3e, r29	; 62
   bc:	cd bf       	out	0x3d, r28	; 61
-  be:	0e 94 a3 01 	call	0x346	; 0x346 <main>
-  c2:	0c 94 82 02 	jmp	0x504	; 0x504 <_exit>
+  be:	0e 94 9a 01 	call	0x334	; 0x334 <main>
+  c2:	0c 94 79 02 	jmp	0x4f2	; 0x4f2 <_exit>
 
 000000c6 <__bad_interrupt>:
   c6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000ca <reset_ports>:
-	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);		//pull-up on input PINS of PORTD
-}
+000000ca <init_ports>:
 
-void reset_ports(void)
+void init_ports(void)
 {
-	DDRA = 0;
-  ca:	1a ba       	out	0x1a, r1	; 26
-	DDRB = 0;
-  cc:	17 ba       	out	0x17, r1	; 23
-	DDRC = 0;
-  ce:	14 ba       	out	0x14, r1	; 20
-	DDRD = 0;
-  d0:	11 ba       	out	0x11, r1	; 17
+	/*----------------------PORTA----------------------*/
+	/*All 8 pins of PORTA set as output drive segments of 7 segment display*/
+	DDRA = 255;
+  ca:	8f ef       	ldi	r24, 0xFF	; 255
+  cc:	8a bb       	out	0x1a, r24	; 26
 	PORTA = 0;
-  d2:	1b ba       	out	0x1b, r1	; 27
+  ce:	1b ba       	out	0x1b, r1	; 27
+		
+	/*----------------------PORTB----------------------*/	
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display, 
+	rest of pins of PORTB is unused*/		
+	DDRB = 0;		
+  d0:	17 ba       	out	0x17, r1	; 23
+	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);  
+  d2:	87 b3       	in	r24, 0x17	; 23
+  d4:	8f 60       	ori	r24, 0x0F	; 15
+  d6:	87 bb       	out	0x17, r24	; 23
 	PORTB = 0;
-  d4:	18 ba       	out	0x18, r1	; 24
-	PORTC = 0;
-  d6:	15 ba       	out	0x15, r1	; 21
-	PORTD = 0;
-  d8:	12 ba       	out	0x12, r1	; 18
-  da:	08 95       	ret
+  d8:	18 ba       	out	0x18, r1	; 24
 
-000000dc <set_value_on_whole_display>:
+	/*----------------------PORTD----------------------*/
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTD set as output drive rows of keyboard*/
+	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3); 
+  da:	81 b3       	in	r24, 0x11	; 17
+  dc:	8f 60       	ori	r24, 0x0F	; 15
+  de:	81 bb       	out	0x11, r24	; 17
+	/*Pins PIN4, PIN5, PIN6, PIN7 of PORTD set as input control columns of keyboard*/
+	DDRD |= (0 << PIN4) | (0 << PIN5) | (0 << PIN6) | (0 << PIN7);
+  e0:	81 b3       	in	r24, 0x11	; 17
+  e2:	81 bb       	out	0x11, r24	; 17
+	/*Pull-up on input PINS of PORTD*/
+	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
+  e4:	82 b3       	in	r24, 0x12	; 18
+  e6:	80 6f       	ori	r24, 0xF0	; 240
+  e8:	82 bb       	out	0x12, r24	; 18
+  ea:	08 95       	ret
+
+000000ec <set_value_on_whole_display>:
 	_delay_us(600);
 	clear_display();
 }
 
 void set_value_on_whole_display(uint8_t value, uint8_t displayed_values[])
 {
-  dc:	fb 01       	movw	r30, r22
+  ec:	fb 01       	movw	r30, r22
 	int i=0;
 	for(i=0; i<4;i++)
 	{
 		*(displayed_values + i) = value;
-  de:	80 83       	st	Z, r24
-  e0:	81 83       	std	Z+1, r24	; 0x01
-  e2:	82 83       	std	Z+2, r24	; 0x02
-  e4:	83 83       	std	Z+3, r24	; 0x03
-  e6:	08 95       	ret
+  ee:	80 83       	st	Z, r24
+  f0:	81 83       	std	Z+1, r24	; 0x01
+  f2:	82 83       	std	Z+2, r24	; 0x02
+  f4:	83 83       	std	Z+3, r24	; 0x03
+  f6:	08 95       	ret
 
-000000e8 <clear_display>:
+000000f8 <clear_display>:
 	}
 }
 
 void clear_display(void)
 {
 	PORTA = 255;
-  e8:	8f ef       	ldi	r24, 0xFF	; 255
-  ea:	8b bb       	out	0x1b, r24	; 27
+  f8:	8f ef       	ldi	r24, 0xFF	; 255
+  fa:	8b bb       	out	0x1b, r24	; 27
 	PORTB = 255;
-  ec:	88 bb       	out	0x18, r24	; 24
-  ee:	08 95       	ret
+  fc:	88 bb       	out	0x18, r24	; 24
+  fe:	08 95       	ret
 
-000000f0 <init_ports>:
-#include <avr/io.h> 
-#include "functions.h"
-
-void init_ports(void)
-{
-	reset_ports();
-  f0:	0e 94 65 00 	call	0xca	; 0xca <reset_ports>
-	clear_display();
-  f4:	0e 94 74 00 	call	0xe8	; 0xe8 <clear_display>
-	
-	DDRA = 255;									//output_port_A driving 7 segment display
-  f8:	9f ef       	ldi	r25, 0xFF	; 255
-  fa:	9a bb       	out	0x1a, r25	; 26
-	DDRB |= (1<<0) | (1<<1) | (1<<2) | (1<<3);  //PORT0, PORT1, PORT2, PORT3 driving 7 segment display
-  fc:	87 b3       	in	r24, 0x17	; 23
-  fe:	8f 60       	ori	r24, 0x0F	; 15
- 100:	87 bb       	out	0x17, r24	; 23
-
-	DDRD |= (1<<0)|(1<<1)|(1<<2)|(1<<3);		//PIN0,PIN1,PIN2,PIN3 set as output, rest as input
- 102:	81 b3       	in	r24, 0x11	; 17
- 104:	8f 60       	ori	r24, 0x0F	; 15
- 106:	81 bb       	out	0x11, r24	; 17
-	
-	PORTD=255;									//set whole PORT to 1 (INVERSE LOGIC)
- 108:	92 bb       	out	0x12, r25	; 18
-	
-	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);		//pull-up on input PINS of PORTD
- 10a:	82 b3       	in	r24, 0x12	; 18
- 10c:	80 6f       	ori	r24, 0xF0	; 240
- 10e:	82 bb       	out	0x12, r24	; 18
- 110:	08 95       	ret
-
-00000112 <set_display>:
-	PORTD = 0;
+00000100 <set_display>:
+	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
 }
 
 void set_display(uint8_t number, uint8_t position)
 {
 	switch(position)
- 112:	62 30       	cpi	r22, 0x02	; 2
- 114:	59 f0       	breq	.+22     	; 0x12c <set_display+0x1a>
- 116:	18 f4       	brcc	.+6      	; 0x11e <set_display+0xc>
- 118:	61 30       	cpi	r22, 0x01	; 1
- 11a:	31 f0       	breq	.+12     	; 0x128 <set_display+0x16>
- 11c:	0c c0       	rjmp	.+24     	; 0x136 <set_display+0x24>
- 11e:	63 30       	cpi	r22, 0x03	; 3
- 120:	39 f0       	breq	.+14     	; 0x130 <set_display+0x1e>
- 122:	64 30       	cpi	r22, 0x04	; 4
- 124:	39 f0       	breq	.+14     	; 0x134 <set_display+0x22>
- 126:	07 c0       	rjmp	.+14     	; 0x136 <set_display+0x24>
+ 100:	62 30       	cpi	r22, 0x02	; 2
+ 102:	59 f0       	breq	.+22     	; 0x11a <set_display+0x1a>
+ 104:	18 f4       	brcc	.+6      	; 0x10c <set_display+0xc>
+ 106:	61 30       	cpi	r22, 0x01	; 1
+ 108:	31 f0       	breq	.+12     	; 0x116 <set_display+0x16>
+ 10a:	0c c0       	rjmp	.+24     	; 0x124 <set_display+0x24>
+ 10c:	63 30       	cpi	r22, 0x03	; 3
+ 10e:	39 f0       	breq	.+14     	; 0x11e <set_display+0x1e>
+ 110:	64 30       	cpi	r22, 0x04	; 4
+ 112:	39 f0       	breq	.+14     	; 0x122 <set_display+0x22>
+ 114:	07 c0       	rjmp	.+14     	; 0x124 <set_display+0x24>
 	{
 		case 1:
 		PORTB &= ~(1<<0);
- 128:	c0 98       	cbi	0x18, 0	; 24
+ 116:	c0 98       	cbi	0x18, 0	; 24
 		break;
- 12a:	05 c0       	rjmp	.+10     	; 0x136 <set_display+0x24>
+ 118:	05 c0       	rjmp	.+10     	; 0x124 <set_display+0x24>
 
 		case 2:
 		PORTB &= ~(1<<1);
- 12c:	c1 98       	cbi	0x18, 1	; 24
+ 11a:	c1 98       	cbi	0x18, 1	; 24
 		break;
- 12e:	03 c0       	rjmp	.+6      	; 0x136 <set_display+0x24>
+ 11c:	03 c0       	rjmp	.+6      	; 0x124 <set_display+0x24>
 
 		case 3:
 		PORTB &= ~(1<<2);
- 130:	c2 98       	cbi	0x18, 2	; 24
+ 11e:	c2 98       	cbi	0x18, 2	; 24
 		break;
- 132:	01 c0       	rjmp	.+2      	; 0x136 <set_display+0x24>
+ 120:	01 c0       	rjmp	.+2      	; 0x124 <set_display+0x24>
 
 		case 4:
 		PORTB &= ~(1<<3);
- 134:	c3 98       	cbi	0x18, 3	; 24
+ 122:	c3 98       	cbi	0x18, 3	; 24
 		break;
 	}
 
 	switch(number)
- 136:	90 e0       	ldi	r25, 0x00	; 0
- 138:	8f 32       	cpi	r24, 0x2F	; 47
- 13a:	91 05       	cpc	r25, r1
- 13c:	d0 f5       	brcc	.+116    	; 0x1b2 <set_display+0xa0>
- 13e:	fc 01       	movw	r30, r24
- 140:	e6 5d       	subi	r30, 0xD6	; 214
- 142:	ff 4f       	sbci	r31, 0xFF	; 255
- 144:	0c 94 7c 02 	jmp	0x4f8	; 0x4f8 <__tablejump2__>
+ 124:	90 e0       	ldi	r25, 0x00	; 0
+ 126:	8f 32       	cpi	r24, 0x2F	; 47
+ 128:	91 05       	cpc	r25, r1
+ 12a:	d0 f5       	brcc	.+116    	; 0x1a0 <set_display+0xa0>
+ 12c:	fc 01       	movw	r30, r24
+ 12e:	e6 5d       	subi	r30, 0xD6	; 214
+ 130:	ff 4f       	sbci	r31, 0xFF	; 255
+ 132:	0c 94 73 02 	jmp	0x4e6	; 0x4e6 <__tablejump2__>
 	{
 		/*Hex codes for common anode 7-segment display setup*/
 		case 0:
 		PORTA = 0xC0;
- 148:	80 ec       	ldi	r24, 0xC0	; 192
- 14a:	8b bb       	out	0x1b, r24	; 27
+ 136:	80 ec       	ldi	r24, 0xC0	; 192
+ 138:	8b bb       	out	0x1b, r24	; 27
 		break;
- 14c:	32 c0       	rjmp	.+100    	; 0x1b2 <set_display+0xa0>
+ 13a:	32 c0       	rjmp	.+100    	; 0x1a0 <set_display+0xa0>
 
 		case 1:
 		PORTA = 0xF9;
- 14e:	89 ef       	ldi	r24, 0xF9	; 249
- 150:	8b bb       	out	0x1b, r24	; 27
+ 13c:	89 ef       	ldi	r24, 0xF9	; 249
+ 13e:	8b bb       	out	0x1b, r24	; 27
 		break;
- 152:	2f c0       	rjmp	.+94     	; 0x1b2 <set_display+0xa0>
+ 140:	2f c0       	rjmp	.+94     	; 0x1a0 <set_display+0xa0>
 
 		case 2:
 		PORTA = 0xA4;
- 154:	84 ea       	ldi	r24, 0xA4	; 164
- 156:	8b bb       	out	0x1b, r24	; 27
+ 142:	84 ea       	ldi	r24, 0xA4	; 164
+ 144:	8b bb       	out	0x1b, r24	; 27
 		break;
- 158:	2c c0       	rjmp	.+88     	; 0x1b2 <set_display+0xa0>
+ 146:	2c c0       	rjmp	.+88     	; 0x1a0 <set_display+0xa0>
 
 		case 3:
 		PORTA = 0xB0;
- 15a:	80 eb       	ldi	r24, 0xB0	; 176
- 15c:	8b bb       	out	0x1b, r24	; 27
+ 148:	80 eb       	ldi	r24, 0xB0	; 176
+ 14a:	8b bb       	out	0x1b, r24	; 27
 		break;
- 15e:	29 c0       	rjmp	.+82     	; 0x1b2 <set_display+0xa0>
+ 14c:	29 c0       	rjmp	.+82     	; 0x1a0 <set_display+0xa0>
 
 		case 4:
 		PORTA = 0x99;
- 160:	89 e9       	ldi	r24, 0x99	; 153
- 162:	8b bb       	out	0x1b, r24	; 27
+ 14e:	89 e9       	ldi	r24, 0x99	; 153
+ 150:	8b bb       	out	0x1b, r24	; 27
 		break;
- 164:	26 c0       	rjmp	.+76     	; 0x1b2 <set_display+0xa0>
+ 152:	26 c0       	rjmp	.+76     	; 0x1a0 <set_display+0xa0>
 
 		case 5:
 		PORTA = 0x92;
- 166:	82 e9       	ldi	r24, 0x92	; 146
- 168:	8b bb       	out	0x1b, r24	; 27
+ 154:	82 e9       	ldi	r24, 0x92	; 146
+ 156:	8b bb       	out	0x1b, r24	; 27
 		break;
- 16a:	23 c0       	rjmp	.+70     	; 0x1b2 <set_display+0xa0>
+ 158:	23 c0       	rjmp	.+70     	; 0x1a0 <set_display+0xa0>
 
 		case 6:
 		PORTA = 0x82;
- 16c:	82 e8       	ldi	r24, 0x82	; 130
- 16e:	8b bb       	out	0x1b, r24	; 27
+ 15a:	82 e8       	ldi	r24, 0x82	; 130
+ 15c:	8b bb       	out	0x1b, r24	; 27
 		break;
- 170:	20 c0       	rjmp	.+64     	; 0x1b2 <set_display+0xa0>
+ 15e:	20 c0       	rjmp	.+64     	; 0x1a0 <set_display+0xa0>
 		
 		case 7:
 		PORTA = 0xF8;
- 172:	88 ef       	ldi	r24, 0xF8	; 248
- 174:	8b bb       	out	0x1b, r24	; 27
+ 160:	88 ef       	ldi	r24, 0xF8	; 248
+ 162:	8b bb       	out	0x1b, r24	; 27
 		break;
- 176:	1d c0       	rjmp	.+58     	; 0x1b2 <set_display+0xa0>
+ 164:	1d c0       	rjmp	.+58     	; 0x1a0 <set_display+0xa0>
 
 		case 8:
 		PORTA = 0x80;
- 178:	80 e8       	ldi	r24, 0x80	; 128
- 17a:	8b bb       	out	0x1b, r24	; 27
+ 166:	80 e8       	ldi	r24, 0x80	; 128
+ 168:	8b bb       	out	0x1b, r24	; 27
 		break;
- 17c:	1a c0       	rjmp	.+52     	; 0x1b2 <set_display+0xa0>
+ 16a:	1a c0       	rjmp	.+52     	; 0x1a0 <set_display+0xa0>
 
 		case 9:
 		PORTA = 0x90;
- 17e:	80 e9       	ldi	r24, 0x90	; 144
- 180:	8b bb       	out	0x1b, r24	; 27
+ 16c:	80 e9       	ldi	r24, 0x90	; 144
+ 16e:	8b bb       	out	0x1b, r24	; 27
 		break;
- 182:	17 c0       	rjmp	.+46     	; 0x1b2 <set_display+0xa0>
+ 170:	17 c0       	rjmp	.+46     	; 0x1a0 <set_display+0xa0>
 		
 		case '-':      // display '-'
 		PORTA = 0xBF;
- 184:	8f eb       	ldi	r24, 0xBF	; 191
- 186:	8b bb       	out	0x1b, r24	; 27
+ 172:	8f eb       	ldi	r24, 0xBF	; 191
+ 174:	8b bb       	out	0x1b, r24	; 27
 		break;
- 188:	14 c0       	rjmp	.+40     	; 0x1b2 <set_display+0xa0>
+ 176:	14 c0       	rjmp	.+40     	; 0x1a0 <set_display+0xa0>
 		
 		case '.':	  // display '.'
 		PORTA = 0x7F;
- 18a:	8f e7       	ldi	r24, 0x7F	; 127
- 18c:	8b bb       	out	0x1b, r24	; 27
+ 178:	8f e7       	ldi	r24, 0x7F	; 127
+ 17a:	8b bb       	out	0x1b, r24	; 27
 		break;
- 18e:	11 c0       	rjmp	.+34     	; 0x1b2 <set_display+0xa0>
+ 17c:	11 c0       	rjmp	.+34     	; 0x1a0 <set_display+0xa0>
 		
 		case 13:
 		PORTA = 0x3F; // display '-' and '.' simultaneously
- 190:	8f e3       	ldi	r24, 0x3F	; 63
- 192:	8b bb       	out	0x1b, r24	; 27
+ 17e:	8f e3       	ldi	r24, 0x3F	; 63
+ 180:	8b bb       	out	0x1b, r24	; 27
 		break;
- 194:	0e c0       	rjmp	.+28     	; 0x1b2 <set_display+0xa0>
+ 182:	0e c0       	rjmp	.+28     	; 0x1a0 <set_display+0xa0>
 		
 		case 14:
 		PORTA = 0x8C; // letter P
- 196:	8c e8       	ldi	r24, 0x8C	; 140
- 198:	8b bb       	out	0x1b, r24	; 27
+ 184:	8c e8       	ldi	r24, 0x8C	; 140
+ 186:	8b bb       	out	0x1b, r24	; 27
 		break;
- 19a:	0b c0       	rjmp	.+22     	; 0x1b2 <set_display+0xa0>
+ 188:	0b c0       	rjmp	.+22     	; 0x1a0 <set_display+0xa0>
 		
 		case 15:
 		PORTA = 0x86; // letter E
- 19c:	86 e8       	ldi	r24, 0x86	; 134
- 19e:	8b bb       	out	0x1b, r24	; 27
+ 18a:	86 e8       	ldi	r24, 0x86	; 134
+ 18c:	8b bb       	out	0x1b, r24	; 27
 		break;
- 1a0:	08 c0       	rjmp	.+16     	; 0x1b2 <set_display+0xa0>
+ 18e:	08 c0       	rjmp	.+16     	; 0x1a0 <set_display+0xa0>
 		
 		case 16:
 		PORTA = 0xC8; // letter N
- 1a2:	88 ec       	ldi	r24, 0xC8	; 200
- 1a4:	8b bb       	out	0x1b, r24	; 27
+ 190:	88 ec       	ldi	r24, 0xC8	; 200
+ 192:	8b bb       	out	0x1b, r24	; 27
 		break;
- 1a6:	05 c0       	rjmp	.+10     	; 0x1b2 <set_display+0xa0>
+ 194:	05 c0       	rjmp	.+10     	; 0x1a0 <set_display+0xa0>
 		
 		case 17:
 		PORTA = 0x88;  //  letter A
- 1a8:	88 e8       	ldi	r24, 0x88	; 136
- 1aa:	8b bb       	out	0x1b, r24	; 27
+ 196:	88 e8       	ldi	r24, 0x88	; 136
+ 198:	8b bb       	out	0x1b, r24	; 27
 		break;
- 1ac:	02 c0       	rjmp	.+4      	; 0x1b2 <set_display+0xa0>
+ 19a:	02 c0       	rjmp	.+4      	; 0x1a0 <set_display+0xa0>
 		
 		case 18:
 		PORTA = 0xFF;  //display nothing
- 1ae:	8f ef       	ldi	r24, 0xFF	; 255
- 1b0:	8b bb       	out	0x1b, r24	; 27
+ 19c:	8f ef       	ldi	r24, 0xFF	; 255
+ 19e:	8b bb       	out	0x1b, r24	; 27
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 1b2:	88 ec       	ldi	r24, 0xC8	; 200
- 1b4:	8a 95       	dec	r24
- 1b6:	f1 f7       	brne	.-4      	; 0x1b4 <set_display+0xa2>
+ 1a0:	88 ec       	ldi	r24, 0xC8	; 200
+ 1a2:	8a 95       	dec	r24
+ 1a4:	f1 f7       	brne	.-4      	; 0x1a2 <set_display+0xa2>
 		break;
 	}
 	
 	_delay_us(600);
 	clear_display();
- 1b8:	0e 94 74 00 	call	0xe8	; 0xe8 <clear_display>
- 1bc:	08 95       	ret
+ 1a6:	0e 94 7c 00 	call	0xf8	; 0xf8 <clear_display>
+ 1aa:	08 95       	ret
 
-000001be <select_number>:
- 1be:	82 e4       	ldi	r24, 0x42	; 66
- 1c0:	8a 95       	dec	r24
- 1c2:	f1 f7       	brne	.-4      	; 0x1c0 <select_number+0x2>
- 1c4:	00 c0       	rjmp	.+0      	; 0x1c6 <select_number+0x8>
+000001ac <select_number>:
+ 1ac:	82 e4       	ldi	r24, 0x42	; 66
+ 1ae:	8a 95       	dec	r24
+ 1b0:	f1 f7       	brne	.-4      	; 0x1ae <select_number+0x2>
+ 1b2:	00 c0       	rjmp	.+0      	; 0x1b4 <select_number+0x8>
 	uint8_t column_value;
 	
 	// FIRST ROW
 
 	_delay_us(200);
 	PORTD &= ~(1<<0); // 0 on first row;
- 1c6:	90 98       	cbi	0x12, 0	; 18
- 1c8:	92 e4       	ldi	r25, 0x42	; 66
- 1ca:	9a 95       	dec	r25
- 1cc:	f1 f7       	brne	.-4      	; 0x1ca <select_number+0xc>
- 1ce:	00 c0       	rjmp	.+0      	; 0x1d0 <select_number+0x12>
+ 1b4:	90 98       	cbi	0x12, 0	; 18
+ 1b6:	92 e4       	ldi	r25, 0x42	; 66
+ 1b8:	9a 95       	dec	r25
+ 1ba:	f1 f7       	brne	.-4      	; 0x1b8 <select_number+0xc>
+ 1bc:	00 c0       	rjmp	.+0      	; 0x1be <select_number+0x12>
 	_delay_us(200);
 
 	column_value = PIND;
- 1d0:	80 b3       	in	r24, 0x10	; 16
+ 1be:	80 b3       	in	r24, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 1d2:	84 fd       	sbrc	r24, 4
- 1d4:	0b c0       	rjmp	.+22     	; 0x1ec <select_number+0x2e>
+ 1c0:	84 fd       	sbrc	r24, 4
+ 1c2:	0b c0       	rjmp	.+22     	; 0x1da <select_number+0x2e>
 	{
 		//1
 		while(1)
 		{
 			if(PIND!=column_value)
- 1d6:	90 b3       	in	r25, 0x10	; 16
- 1d8:	89 17       	cp	r24, r25
- 1da:	e9 f3       	breq	.-6      	; 0x1d6 <select_number+0x18>
+ 1c4:	90 b3       	in	r25, 0x10	; 16
+ 1c6:	89 17       	cp	r24, r25
+ 1c8:	e9 f3       	breq	.-6      	; 0x1c4 <select_number+0x18>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 1dc:	e7 ea       	ldi	r30, 0xA7	; 167
- 1de:	f1 e6       	ldi	r31, 0x61	; 97
- 1e0:	31 97       	sbiw	r30, 0x01	; 1
- 1e2:	f1 f7       	brne	.-4      	; 0x1e0 <select_number+0x22>
- 1e4:	00 c0       	rjmp	.+0      	; 0x1e6 <select_number+0x28>
- 1e6:	00 00       	nop
+ 1ca:	e7 ea       	ldi	r30, 0xA7	; 167
+ 1cc:	f1 e6       	ldi	r31, 0x61	; 97
+ 1ce:	31 97       	sbiw	r30, 0x01	; 1
+ 1d0:	f1 f7       	brne	.-4      	; 0x1ce <select_number+0x22>
+ 1d2:	00 c0       	rjmp	.+0      	; 0x1d4 <select_number+0x28>
+ 1d4:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 1;
- 1e8:	81 e0       	ldi	r24, 0x01	; 1
- 1ea:	08 95       	ret
+ 1d6:	81 e0       	ldi	r24, 0x01	; 1
+ 1d8:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 1ec:	85 fd       	sbrc	r24, 5
- 1ee:	0b c0       	rjmp	.+22     	; 0x206 <select_number+0x48>
+ 1da:	85 fd       	sbrc	r24, 5
+ 1dc:	0b c0       	rjmp	.+22     	; 0x1f4 <select_number+0x48>
 	{
 		//2
 		while(1)
 		{
 			if(PIND!=column_value)
- 1f0:	90 b3       	in	r25, 0x10	; 16
- 1f2:	89 17       	cp	r24, r25
- 1f4:	e9 f3       	breq	.-6      	; 0x1f0 <select_number+0x32>
- 1f6:	87 ea       	ldi	r24, 0xA7	; 167
- 1f8:	91 e6       	ldi	r25, 0x61	; 97
- 1fa:	01 97       	sbiw	r24, 0x01	; 1
- 1fc:	f1 f7       	brne	.-4      	; 0x1fa <select_number+0x3c>
- 1fe:	00 c0       	rjmp	.+0      	; 0x200 <select_number+0x42>
- 200:	00 00       	nop
+ 1de:	90 b3       	in	r25, 0x10	; 16
+ 1e0:	89 17       	cp	r24, r25
+ 1e2:	e9 f3       	breq	.-6      	; 0x1de <select_number+0x32>
+ 1e4:	87 ea       	ldi	r24, 0xA7	; 167
+ 1e6:	91 e6       	ldi	r25, 0x61	; 97
+ 1e8:	01 97       	sbiw	r24, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <select_number+0x3c>
+ 1ec:	00 c0       	rjmp	.+0      	; 0x1ee <select_number+0x42>
+ 1ee:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 2;
- 202:	82 e0       	ldi	r24, 0x02	; 2
- 204:	08 95       	ret
+ 1f0:	82 e0       	ldi	r24, 0x02	; 2
+ 1f2:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 206:	86 fd       	sbrc	r24, 6
- 208:	0b c0       	rjmp	.+22     	; 0x220 <select_number+0x62>
+ 1f4:	86 fd       	sbrc	r24, 6
+ 1f6:	0b c0       	rjmp	.+22     	; 0x20e <select_number+0x62>
 	{
 		//3
 		while(1)
 		{
 			if(PIND!=column_value)
- 20a:	90 b3       	in	r25, 0x10	; 16
- 20c:	89 17       	cp	r24, r25
- 20e:	e9 f3       	breq	.-6      	; 0x20a <select_number+0x4c>
- 210:	e7 ea       	ldi	r30, 0xA7	; 167
- 212:	f1 e6       	ldi	r31, 0x61	; 97
- 214:	31 97       	sbiw	r30, 0x01	; 1
- 216:	f1 f7       	brne	.-4      	; 0x214 <select_number+0x56>
- 218:	00 c0       	rjmp	.+0      	; 0x21a <select_number+0x5c>
- 21a:	00 00       	nop
+ 1f8:	90 b3       	in	r25, 0x10	; 16
+ 1fa:	89 17       	cp	r24, r25
+ 1fc:	e9 f3       	breq	.-6      	; 0x1f8 <select_number+0x4c>
+ 1fe:	e7 ea       	ldi	r30, 0xA7	; 167
+ 200:	f1 e6       	ldi	r31, 0x61	; 97
+ 202:	31 97       	sbiw	r30, 0x01	; 1
+ 204:	f1 f7       	brne	.-4      	; 0x202 <select_number+0x56>
+ 206:	00 c0       	rjmp	.+0      	; 0x208 <select_number+0x5c>
+ 208:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 3;
- 21c:	83 e0       	ldi	r24, 0x03	; 3
- 21e:	08 95       	ret
+ 20a:	83 e0       	ldi	r24, 0x03	; 3
+ 20c:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 220:	88 23       	and	r24, r24
- 222:	5c f0       	brlt	.+22     	; 0x23a <select_number+0x7c>
+ 20e:	88 23       	and	r24, r24
+ 210:	5c f0       	brlt	.+22     	; 0x228 <select_number+0x7c>
 	{
 		//4
 		while(1)
 		{
 			if(PIND!=column_value)
- 224:	90 b3       	in	r25, 0x10	; 16
- 226:	89 17       	cp	r24, r25
- 228:	e9 f3       	breq	.-6      	; 0x224 <select_number+0x66>
- 22a:	87 ea       	ldi	r24, 0xA7	; 167
- 22c:	91 e6       	ldi	r25, 0x61	; 97
- 22e:	01 97       	sbiw	r24, 0x01	; 1
- 230:	f1 f7       	brne	.-4      	; 0x22e <select_number+0x70>
- 232:	00 c0       	rjmp	.+0      	; 0x234 <select_number+0x76>
- 234:	00 00       	nop
+ 212:	90 b3       	in	r25, 0x10	; 16
+ 214:	89 17       	cp	r24, r25
+ 216:	e9 f3       	breq	.-6      	; 0x212 <select_number+0x66>
+ 218:	87 ea       	ldi	r24, 0xA7	; 167
+ 21a:	91 e6       	ldi	r25, 0x61	; 97
+ 21c:	01 97       	sbiw	r24, 0x01	; 1
+ 21e:	f1 f7       	brne	.-4      	; 0x21c <select_number+0x70>
+ 220:	00 c0       	rjmp	.+0      	; 0x222 <select_number+0x76>
+ 222:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 4;
- 236:	84 e0       	ldi	r24, 0x04	; 4
- 238:	08 95       	ret
+ 224:	84 e0       	ldi	r24, 0x04	; 4
+ 226:	08 95       	ret
 	}
 
 	PORTD |= (1<<0); // 1 on first row;
- 23a:	90 9a       	sbi	0x12, 0	; 18
+ 228:	90 9a       	sbi	0x12, 0	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 23c:	92 e4       	ldi	r25, 0x42	; 66
- 23e:	9a 95       	dec	r25
- 240:	f1 f7       	brne	.-4      	; 0x23e <select_number+0x80>
- 242:	00 c0       	rjmp	.+0      	; 0x244 <select_number+0x86>
+ 22a:	92 e4       	ldi	r25, 0x42	; 66
+ 22c:	9a 95       	dec	r25
+ 22e:	f1 f7       	brne	.-4      	; 0x22c <select_number+0x80>
+ 230:	00 c0       	rjmp	.+0      	; 0x232 <select_number+0x86>
 	
 	_delay_us(200);
 
 	// SECOND ROW
 
 	PORTD &= ~(1<<1); // 0 on second row;
- 244:	91 98       	cbi	0x12, 1	; 18
- 246:	e2 e4       	ldi	r30, 0x42	; 66
- 248:	ea 95       	dec	r30
- 24a:	f1 f7       	brne	.-4      	; 0x248 <select_number+0x8a>
- 24c:	00 c0       	rjmp	.+0      	; 0x24e <select_number+0x90>
+ 232:	91 98       	cbi	0x12, 1	; 18
+ 234:	e2 e4       	ldi	r30, 0x42	; 66
+ 236:	ea 95       	dec	r30
+ 238:	f1 f7       	brne	.-4      	; 0x236 <select_number+0x8a>
+ 23a:	00 c0       	rjmp	.+0      	; 0x23c <select_number+0x90>
 	_delay_us(200);
 
 	column_value = PIND;
- 24e:	80 b3       	in	r24, 0x10	; 16
+ 23c:	80 b3       	in	r24, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 250:	84 fd       	sbrc	r24, 4
- 252:	0b c0       	rjmp	.+22     	; 0x26a <select_number+0xac>
+ 23e:	84 fd       	sbrc	r24, 4
+ 240:	0b c0       	rjmp	.+22     	; 0x258 <select_number+0xac>
 	{
 		//5
 		while(1)
 		{
 			if(PIND!=column_value)
- 254:	90 b3       	in	r25, 0x10	; 16
- 256:	89 17       	cp	r24, r25
- 258:	e9 f3       	breq	.-6      	; 0x254 <select_number+0x96>
+ 242:	90 b3       	in	r25, 0x10	; 16
+ 244:	89 17       	cp	r24, r25
+ 246:	e9 f3       	breq	.-6      	; 0x242 <select_number+0x96>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 25a:	87 ea       	ldi	r24, 0xA7	; 167
- 25c:	91 e6       	ldi	r25, 0x61	; 97
- 25e:	01 97       	sbiw	r24, 0x01	; 1
- 260:	f1 f7       	brne	.-4      	; 0x25e <select_number+0xa0>
- 262:	00 c0       	rjmp	.+0      	; 0x264 <select_number+0xa6>
- 264:	00 00       	nop
+ 248:	87 ea       	ldi	r24, 0xA7	; 167
+ 24a:	91 e6       	ldi	r25, 0x61	; 97
+ 24c:	01 97       	sbiw	r24, 0x01	; 1
+ 24e:	f1 f7       	brne	.-4      	; 0x24c <select_number+0xa0>
+ 250:	00 c0       	rjmp	.+0      	; 0x252 <select_number+0xa6>
+ 252:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 5;
- 266:	85 e0       	ldi	r24, 0x05	; 5
- 268:	08 95       	ret
+ 254:	85 e0       	ldi	r24, 0x05	; 5
+ 256:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 26a:	85 fd       	sbrc	r24, 5
- 26c:	0b c0       	rjmp	.+22     	; 0x284 <select_number+0xc6>
+ 258:	85 fd       	sbrc	r24, 5
+ 25a:	0b c0       	rjmp	.+22     	; 0x272 <select_number+0xc6>
 	{
 		//6
 		while(1)
 		{
 			if(PIND!=column_value)
- 26e:	90 b3       	in	r25, 0x10	; 16
- 270:	89 17       	cp	r24, r25
- 272:	e9 f3       	breq	.-6      	; 0x26e <select_number+0xb0>
- 274:	e7 ea       	ldi	r30, 0xA7	; 167
- 276:	f1 e6       	ldi	r31, 0x61	; 97
- 278:	31 97       	sbiw	r30, 0x01	; 1
- 27a:	f1 f7       	brne	.-4      	; 0x278 <select_number+0xba>
- 27c:	00 c0       	rjmp	.+0      	; 0x27e <select_number+0xc0>
- 27e:	00 00       	nop
+ 25c:	90 b3       	in	r25, 0x10	; 16
+ 25e:	89 17       	cp	r24, r25
+ 260:	e9 f3       	breq	.-6      	; 0x25c <select_number+0xb0>
+ 262:	e7 ea       	ldi	r30, 0xA7	; 167
+ 264:	f1 e6       	ldi	r31, 0x61	; 97
+ 266:	31 97       	sbiw	r30, 0x01	; 1
+ 268:	f1 f7       	brne	.-4      	; 0x266 <select_number+0xba>
+ 26a:	00 c0       	rjmp	.+0      	; 0x26c <select_number+0xc0>
+ 26c:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 6;
- 280:	86 e0       	ldi	r24, 0x06	; 6
- 282:	08 95       	ret
+ 26e:	86 e0       	ldi	r24, 0x06	; 6
+ 270:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 284:	86 fd       	sbrc	r24, 6
- 286:	0b c0       	rjmp	.+22     	; 0x29e <select_number+0xe0>
+ 272:	86 fd       	sbrc	r24, 6
+ 274:	0b c0       	rjmp	.+22     	; 0x28c <select_number+0xe0>
 	{
 		//7
 		while(1)
 		{
 			if(PIND!=column_value)
- 288:	90 b3       	in	r25, 0x10	; 16
- 28a:	89 17       	cp	r24, r25
- 28c:	e9 f3       	breq	.-6      	; 0x288 <select_number+0xca>
- 28e:	87 ea       	ldi	r24, 0xA7	; 167
- 290:	91 e6       	ldi	r25, 0x61	; 97
- 292:	01 97       	sbiw	r24, 0x01	; 1
- 294:	f1 f7       	brne	.-4      	; 0x292 <select_number+0xd4>
- 296:	00 c0       	rjmp	.+0      	; 0x298 <select_number+0xda>
- 298:	00 00       	nop
+ 276:	90 b3       	in	r25, 0x10	; 16
+ 278:	89 17       	cp	r24, r25
+ 27a:	e9 f3       	breq	.-6      	; 0x276 <select_number+0xca>
+ 27c:	87 ea       	ldi	r24, 0xA7	; 167
+ 27e:	91 e6       	ldi	r25, 0x61	; 97
+ 280:	01 97       	sbiw	r24, 0x01	; 1
+ 282:	f1 f7       	brne	.-4      	; 0x280 <select_number+0xd4>
+ 284:	00 c0       	rjmp	.+0      	; 0x286 <select_number+0xda>
+ 286:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 7;
- 29a:	87 e0       	ldi	r24, 0x07	; 7
- 29c:	08 95       	ret
+ 288:	87 e0       	ldi	r24, 0x07	; 7
+ 28a:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 29e:	88 23       	and	r24, r24
- 2a0:	5c f0       	brlt	.+22     	; 0x2b8 <select_number+0xfa>
+ 28c:	88 23       	and	r24, r24
+ 28e:	5c f0       	brlt	.+22     	; 0x2a6 <select_number+0xfa>
 	{
 		//8
 		while(1)
 		{
 			if(PIND!=column_value)
- 2a2:	90 b3       	in	r25, 0x10	; 16
- 2a4:	89 17       	cp	r24, r25
- 2a6:	e9 f3       	breq	.-6      	; 0x2a2 <select_number+0xe4>
- 2a8:	e7 ea       	ldi	r30, 0xA7	; 167
- 2aa:	f1 e6       	ldi	r31, 0x61	; 97
- 2ac:	31 97       	sbiw	r30, 0x01	; 1
- 2ae:	f1 f7       	brne	.-4      	; 0x2ac <select_number+0xee>
- 2b0:	00 c0       	rjmp	.+0      	; 0x2b2 <select_number+0xf4>
- 2b2:	00 00       	nop
+ 290:	90 b3       	in	r25, 0x10	; 16
+ 292:	89 17       	cp	r24, r25
+ 294:	e9 f3       	breq	.-6      	; 0x290 <select_number+0xe4>
+ 296:	e7 ea       	ldi	r30, 0xA7	; 167
+ 298:	f1 e6       	ldi	r31, 0x61	; 97
+ 29a:	31 97       	sbiw	r30, 0x01	; 1
+ 29c:	f1 f7       	brne	.-4      	; 0x29a <select_number+0xee>
+ 29e:	00 c0       	rjmp	.+0      	; 0x2a0 <select_number+0xf4>
+ 2a0:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 8;
- 2b4:	88 e0       	ldi	r24, 0x08	; 8
- 2b6:	08 95       	ret
+ 2a2:	88 e0       	ldi	r24, 0x08	; 8
+ 2a4:	08 95       	ret
 	}
 
 	PORTD |= (1<<1); // 1 on second row;
- 2b8:	91 9a       	sbi	0x12, 1	; 18
+ 2a6:	91 9a       	sbi	0x12, 1	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 2ba:	f2 e4       	ldi	r31, 0x42	; 66
- 2bc:	fa 95       	dec	r31
- 2be:	f1 f7       	brne	.-4      	; 0x2bc <select_number+0xfe>
- 2c0:	00 c0       	rjmp	.+0      	; 0x2c2 <select_number+0x104>
+ 2a8:	f2 e4       	ldi	r31, 0x42	; 66
+ 2aa:	fa 95       	dec	r31
+ 2ac:	f1 f7       	brne	.-4      	; 0x2aa <select_number+0xfe>
+ 2ae:	00 c0       	rjmp	.+0      	; 0x2b0 <select_number+0x104>
 
 	_delay_us(200);
 
 	// THIRD ROW
 	
 	PORTD &= ~(1<<2); // 0 on third row;
- 2c2:	92 98       	cbi	0x12, 2	; 18
- 2c4:	82 e4       	ldi	r24, 0x42	; 66
- 2c6:	8a 95       	dec	r24
- 2c8:	f1 f7       	brne	.-4      	; 0x2c6 <select_number+0x108>
- 2ca:	00 c0       	rjmp	.+0      	; 0x2cc <select_number+0x10e>
+ 2b0:	92 98       	cbi	0x12, 2	; 18
+ 2b2:	82 e4       	ldi	r24, 0x42	; 66
+ 2b4:	8a 95       	dec	r24
+ 2b6:	f1 f7       	brne	.-4      	; 0x2b4 <select_number+0x108>
+ 2b8:	00 c0       	rjmp	.+0      	; 0x2ba <select_number+0x10e>
 	_delay_us(200);
 
 	column_value = PIND;
- 2cc:	90 b3       	in	r25, 0x10	; 16
+ 2ba:	90 b3       	in	r25, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 2ce:	94 fd       	sbrc	r25, 4
- 2d0:	0b c0       	rjmp	.+22     	; 0x2e8 <select_number+0x12a>
+ 2bc:	94 fd       	sbrc	r25, 4
+ 2be:	0b c0       	rjmp	.+22     	; 0x2d6 <select_number+0x12a>
 	{
 		//9
 		while(1)
 		{
 			if(PIND!=column_value)
- 2d2:	80 b3       	in	r24, 0x10	; 16
- 2d4:	98 17       	cp	r25, r24
- 2d6:	e9 f3       	breq	.-6      	; 0x2d2 <select_number+0x114>
+ 2c0:	80 b3       	in	r24, 0x10	; 16
+ 2c2:	98 17       	cp	r25, r24
+ 2c4:	e9 f3       	breq	.-6      	; 0x2c0 <select_number+0x114>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 2d8:	e7 ea       	ldi	r30, 0xA7	; 167
- 2da:	f1 e6       	ldi	r31, 0x61	; 97
- 2dc:	31 97       	sbiw	r30, 0x01	; 1
- 2de:	f1 f7       	brne	.-4      	; 0x2dc <select_number+0x11e>
- 2e0:	00 c0       	rjmp	.+0      	; 0x2e2 <select_number+0x124>
- 2e2:	00 00       	nop
+ 2c6:	e7 ea       	ldi	r30, 0xA7	; 167
+ 2c8:	f1 e6       	ldi	r31, 0x61	; 97
+ 2ca:	31 97       	sbiw	r30, 0x01	; 1
+ 2cc:	f1 f7       	brne	.-4      	; 0x2ca <select_number+0x11e>
+ 2ce:	00 c0       	rjmp	.+0      	; 0x2d0 <select_number+0x124>
+ 2d0:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 9;
- 2e4:	89 e0       	ldi	r24, 0x09	; 9
- 2e6:	08 95       	ret
+ 2d2:	89 e0       	ldi	r24, 0x09	; 9
+ 2d4:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 2e8:	89 2f       	mov	r24, r25
- 2ea:	80 72       	andi	r24, 0x20	; 32
- 2ec:	95 fd       	sbrc	r25, 5
- 2ee:	0a c0       	rjmp	.+20     	; 0x304 <select_number+0x146>
+ 2d6:	89 2f       	mov	r24, r25
+ 2d8:	80 72       	andi	r24, 0x20	; 32
+ 2da:	95 fd       	sbrc	r25, 5
+ 2dc:	0a c0       	rjmp	.+20     	; 0x2f2 <select_number+0x146>
 	{
 		//0
 		while(1)
 		{
 			if(PIND!=column_value)
- 2f0:	20 b3       	in	r18, 0x10	; 16
- 2f2:	92 17       	cp	r25, r18
- 2f4:	e9 f3       	breq	.-6      	; 0x2f0 <select_number+0x132>
- 2f6:	e7 ea       	ldi	r30, 0xA7	; 167
- 2f8:	f1 e6       	ldi	r31, 0x61	; 97
- 2fa:	31 97       	sbiw	r30, 0x01	; 1
- 2fc:	f1 f7       	brne	.-4      	; 0x2fa <select_number+0x13c>
- 2fe:	00 c0       	rjmp	.+0      	; 0x300 <select_number+0x142>
- 300:	00 00       	nop
+ 2de:	20 b3       	in	r18, 0x10	; 16
+ 2e0:	92 17       	cp	r25, r18
+ 2e2:	e9 f3       	breq	.-6      	; 0x2de <select_number+0x132>
+ 2e4:	e7 ea       	ldi	r30, 0xA7	; 167
+ 2e6:	f1 e6       	ldi	r31, 0x61	; 97
+ 2e8:	31 97       	sbiw	r30, 0x01	; 1
+ 2ea:	f1 f7       	brne	.-4      	; 0x2e8 <select_number+0x13c>
+ 2ec:	00 c0       	rjmp	.+0      	; 0x2ee <select_number+0x142>
+ 2ee:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 0;
- 302:	08 95       	ret
+ 2f0:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 304:	96 fd       	sbrc	r25, 6
- 306:	0b c0       	rjmp	.+22     	; 0x31e <select_number+0x160>
+ 2f2:	96 fd       	sbrc	r25, 6
+ 2f4:	0b c0       	rjmp	.+22     	; 0x30c <select_number+0x160>
 	{
 		//OK
 		while(1)
 		{
 			if(PIND!=column_value)
- 308:	80 b3       	in	r24, 0x10	; 16
- 30a:	98 17       	cp	r25, r24
- 30c:	e9 f3       	breq	.-6      	; 0x308 <select_number+0x14a>
- 30e:	87 ea       	ldi	r24, 0xA7	; 167
- 310:	91 e6       	ldi	r25, 0x61	; 97
- 312:	01 97       	sbiw	r24, 0x01	; 1
- 314:	f1 f7       	brne	.-4      	; 0x312 <select_number+0x154>
- 316:	00 c0       	rjmp	.+0      	; 0x318 <select_number+0x15a>
- 318:	00 00       	nop
+ 2f6:	80 b3       	in	r24, 0x10	; 16
+ 2f8:	98 17       	cp	r25, r24
+ 2fa:	e9 f3       	breq	.-6      	; 0x2f6 <select_number+0x14a>
+ 2fc:	87 ea       	ldi	r24, 0xA7	; 167
+ 2fe:	91 e6       	ldi	r25, 0x61	; 97
+ 300:	01 97       	sbiw	r24, 0x01	; 1
+ 302:	f1 f7       	brne	.-4      	; 0x300 <select_number+0x154>
+ 304:	00 c0       	rjmp	.+0      	; 0x306 <select_number+0x15a>
+ 306:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 11;
- 31a:	8b e0       	ldi	r24, 0x0B	; 11
- 31c:	08 95       	ret
+ 308:	8b e0       	ldi	r24, 0x0B	; 11
+ 30a:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 31e:	99 23       	and	r25, r25
- 320:	5c f0       	brlt	.+22     	; 0x338 <select_number+0x17a>
+ 30c:	99 23       	and	r25, r25
+ 30e:	5c f0       	brlt	.+22     	; 0x326 <select_number+0x17a>
 	{
 		//CANCEL
 		while(1)
 		{
 			if(PIND!=column_value)
- 322:	80 b3       	in	r24, 0x10	; 16
- 324:	98 17       	cp	r25, r24
- 326:	e9 f3       	breq	.-6      	; 0x322 <select_number+0x164>
- 328:	e7 ea       	ldi	r30, 0xA7	; 167
- 32a:	f1 e6       	ldi	r31, 0x61	; 97
- 32c:	31 97       	sbiw	r30, 0x01	; 1
- 32e:	f1 f7       	brne	.-4      	; 0x32c <select_number+0x16e>
- 330:	00 c0       	rjmp	.+0      	; 0x332 <select_number+0x174>
- 332:	00 00       	nop
+ 310:	80 b3       	in	r24, 0x10	; 16
+ 312:	98 17       	cp	r25, r24
+ 314:	e9 f3       	breq	.-6      	; 0x310 <select_number+0x164>
+ 316:	e7 ea       	ldi	r30, 0xA7	; 167
+ 318:	f1 e6       	ldi	r31, 0x61	; 97
+ 31a:	31 97       	sbiw	r30, 0x01	; 1
+ 31c:	f1 f7       	brne	.-4      	; 0x31a <select_number+0x16e>
+ 31e:	00 c0       	rjmp	.+0      	; 0x320 <select_number+0x174>
+ 320:	00 00       	nop
 			break;
 		}
 		_delay_ms(100);
 		return 12;
- 334:	8c e0       	ldi	r24, 0x0C	; 12
- 336:	08 95       	ret
+ 322:	8c e0       	ldi	r24, 0x0C	; 12
+ 324:	08 95       	ret
 	}
 
 	PORTD |= (1<<2); // 0 on third row;
- 338:	92 9a       	sbi	0x12, 2	; 18
+ 326:	92 9a       	sbi	0x12, 2	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 33a:	f2 e4       	ldi	r31, 0x42	; 66
- 33c:	fa 95       	dec	r31
- 33e:	f1 f7       	brne	.-4      	; 0x33c <select_number+0x17e>
- 340:	00 c0       	rjmp	.+0      	; 0x342 <select_number+0x184>
+ 328:	f2 e4       	ldi	r31, 0x42	; 66
+ 32a:	fa 95       	dec	r31
+ 32c:	f1 f7       	brne	.-4      	; 0x32a <select_number+0x17e>
+ 32e:	00 c0       	rjmp	.+0      	; 0x330 <select_number+0x184>
 
 	_delay_us(200);
 
 	return 200;      //reserved value meaning that input did not change
- 342:	88 ec       	ldi	r24, 0xC8	; 200
- 344:	08 95       	ret
+ 330:	88 ec       	ldi	r24, 0xC8	; 200
+ 332:	08 95       	ret
 
-00000346 <main>:
+00000334 <main>:
 #include <stdint.h>
 #include <util/delay.h>	 //header containing delay functions
 #include "functions.h"
 
 int main(void)
 {
- 346:	cf 93       	push	r28
- 348:	df 93       	push	r29
- 34a:	00 d0       	rcall	.+0      	; 0x34c <main+0x6>
- 34c:	00 d0       	rcall	.+0      	; 0x34e <main+0x8>
- 34e:	cd b7       	in	r28, 0x3d	; 61
- 350:	de b7       	in	r29, 0x3e	; 62
+ 334:	cf 93       	push	r28
+ 336:	df 93       	push	r29
+ 338:	00 d0       	rcall	.+0      	; 0x33a <main+0x6>
+ 33a:	00 d0       	rcall	.+0      	; 0x33c <main+0x8>
+ 33c:	cd b7       	in	r28, 0x3d	; 61
+ 33e:	de b7       	in	r29, 0x3e	; 62
 	uint8_t i=1;													//iterator
 	uint8_t number_on_keypad=0;										//value read from keypad
 	uint8_t number_to_show[4]={'-','-','-','-'};                    //table of values currently shown on 7-segment display
- 352:	8d e2       	ldi	r24, 0x2D	; 45
- 354:	89 83       	std	Y+1, r24	; 0x01
- 356:	8a 83       	std	Y+2, r24	; 0x02
- 358:	8b 83       	std	Y+3, r24	; 0x03
- 35a:	8c 83       	std	Y+4, r24	; 0x04
+ 340:	8d e2       	ldi	r24, 0x2D	; 45
+ 342:	89 83       	std	Y+1, r24	; 0x01
+ 344:	8a 83       	std	Y+2, r24	; 0x02
+ 346:	8b 83       	std	Y+3, r24	; 0x03
+ 348:	8c 83       	std	Y+4, r24	; 0x04
 	uint8_t code[4];												//table storing code set by admin
 	uint8_t entered_code[4];										//table storing code entered by user
 
 	init_ports();
- 35c:	0e 94 78 00 	call	0xf0	; 0xf0 <init_ports>
+ 34a:	0e 94 65 00 	call	0xca	; 0xca <init_ports>
 #include <util/delay.h>	 //header containing delay functions
 #include "functions.h"
 
 int main(void)
 {
 	uint8_t i=1;													//iterator
- 360:	11 e0       	ldi	r17, 0x01	; 1
+ 34e:	11 e0       	ldi	r17, 0x01	; 1
 
 	init_ports();
 
     while (1) 
 	{
 		number_on_keypad = select_number();							//poll for value on keypad
- 362:	0e 94 df 00 	call	0x1be	; 0x1be <select_number>
+ 350:	0e 94 d6 00 	call	0x1ac	; 0x1ac <select_number>
 
 		if(number_on_keypad!=200)									//if input changed
- 366:	88 3c       	cpi	r24, 0xC8	; 200
- 368:	51 f1       	breq	.+84     	; 0x3be <main+0x78>
+ 354:	88 3c       	cpi	r24, 0xC8	; 200
+ 356:	51 f1       	breq	.+84     	; 0x3ac <main+0x78>
 		{
 			if(number_on_keypad==12)								//if cancel button was pressed
- 36a:	8c 30       	cpi	r24, 0x0C	; 12
- 36c:	41 f4       	brne	.+16     	; 0x37e <main+0x38>
+ 358:	8c 30       	cpi	r24, 0x0C	; 12
+ 35a:	41 f4       	brne	.+16     	; 0x36c <main+0x38>
 			{
 				set_value_on_whole_display('-', number_to_show);
- 36e:	be 01       	movw	r22, r28
- 370:	6f 5f       	subi	r22, 0xFF	; 255
- 372:	7f 4f       	sbci	r23, 0xFF	; 255
- 374:	8d e2       	ldi	r24, 0x2D	; 45
- 376:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 35c:	be 01       	movw	r22, r28
+ 35e:	6f 5f       	subi	r22, 0xFF	; 255
+ 360:	7f 4f       	sbci	r23, 0xFF	; 255
+ 362:	8d e2       	ldi	r24, 0x2D	; 45
+ 364:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 				i=1;
- 37a:	11 e0       	ldi	r17, 0x01	; 1
+ 368:	11 e0       	ldi	r17, 0x01	; 1
 				continue;
- 37c:	f2 cf       	rjmp	.-28     	; 0x362 <main+0x1c>
+ 36a:	f2 cf       	rjmp	.-28     	; 0x350 <main+0x1c>
 			}
 			
 			if(i==5 && number_on_keypad==11)						//if 4 digits were entered and OK button was pressed
- 37e:	15 30       	cpi	r17, 0x05	; 5
- 380:	c9 f4       	brne	.+50     	; 0x3b4 <main+0x6e>
- 382:	8b 30       	cpi	r24, 0x0B	; 11
- 384:	b9 f4       	brne	.+46     	; 0x3b4 <main+0x6e>
+ 36c:	15 30       	cpi	r17, 0x05	; 5
+ 36e:	c9 f4       	brne	.+50     	; 0x3a2 <main+0x6e>
+ 370:	8b 30       	cpi	r24, 0x0B	; 11
+ 372:	b9 f4       	brne	.+46     	; 0x3a2 <main+0x6e>
 			{
 				code[0]=number_to_show[0];
- 386:	c9 80       	ldd	r12, Y+1	; 0x01
+ 374:	c9 80       	ldd	r12, Y+1	; 0x01
 				code[1]=number_to_show[1];
- 388:	ba 80       	ldd	r11, Y+2	; 0x02
+ 376:	ba 80       	ldd	r11, Y+2	; 0x02
 				code[2]=number_to_show[2];
- 38a:	9b 80       	ldd	r9, Y+3	; 0x03
+ 378:	9b 80       	ldd	r9, Y+3	; 0x03
 				code[3]=number_to_show[3];
- 38c:	ac 80       	ldd	r10, Y+4	; 0x04
+ 37a:	ac 80       	ldd	r10, Y+4	; 0x04
 			set_value_on_whole_display('-', number_to_show);
 			i=1;
 		}
 	}
 	
 	set_value_on_whole_display(13, number_to_show);										//set display to '-.' in locked state
- 38e:	be 01       	movw	r22, r28
- 390:	6f 5f       	subi	r22, 0xFF	; 255
- 392:	7f 4f       	sbci	r23, 0xFF	; 255
- 394:	8d e0       	ldi	r24, 0x0D	; 13
- 396:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 37c:	be 01       	movw	r22, r28
+ 37e:	6f 5f       	subi	r22, 0xFF	; 255
+ 380:	7f 4f       	sbci	r23, 0xFF	; 255
+ 382:	8d e0       	ldi	r24, 0x0D	; 13
+ 384:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 
 	
 	i=1;															//reset iterator
- 39a:	11 e0       	ldi	r17, 0x01	; 1
+ 388:	11 e0       	ldi	r17, 0x01	; 1
 					break;
 				}
 				
 				else
 				{
 					number_to_show[0]=8;   //B
- 39c:	68 94       	set
- 39e:	dd 24       	eor	r13, r13
- 3a0:	d3 f8       	bld	r13, 3
+ 38a:	68 94       	set
+ 38c:	dd 24       	eor	r13, r13
+ 38e:	d3 f8       	bld	r13, 3
 					number_to_show[1]=17;  //A
- 3a2:	0f 2e       	mov	r0, r31
- 3a4:	f1 e1       	ldi	r31, 0x11	; 17
- 3a6:	ef 2e       	mov	r14, r31
- 3a8:	f0 2d       	mov	r31, r0
+ 390:	0f 2e       	mov	r0, r31
+ 392:	f1 e1       	ldi	r31, 0x11	; 17
+ 394:	ef 2e       	mov	r14, r31
+ 396:	f0 2d       	mov	r31, r0
 					number_to_show[2]=0;   //D
 					number_to_show[3]=18;  //nothing
- 3aa:	0f 2e       	mov	r0, r31
- 3ac:	f2 e1       	ldi	r31, 0x12	; 18
- 3ae:	ff 2e       	mov	r15, r31
- 3b0:	f0 2d       	mov	r31, r0
- 3b2:	20 c0       	rjmp	.+64     	; 0x3f4 <main+0xae>
+ 398:	0f 2e       	mov	r0, r31
+ 39a:	f2 e1       	ldi	r31, 0x12	; 18
+ 39c:	ff 2e       	mov	r15, r31
+ 39e:	f0 2d       	mov	r31, r0
+ 3a0:	20 c0       	rjmp	.+64     	; 0x3e2 <main+0xae>
 				code[2]=number_to_show[2];
 				code[3]=number_to_show[3];
 				break;
 			}
 			
 			number_to_show[i-1]=number_on_keypad;
- 3b4:	fe 01       	movw	r30, r28
- 3b6:	e1 0f       	add	r30, r17
- 3b8:	f1 1d       	adc	r31, r1
- 3ba:	80 83       	st	Z, r24
+ 3a2:	fe 01       	movw	r30, r28
+ 3a4:	e1 0f       	add	r30, r17
+ 3a6:	f1 1d       	adc	r31, r1
+ 3a8:	80 83       	st	Z, r24
 			i++;
- 3bc:	1f 5f       	subi	r17, 0xFF	; 255
+ 3aa:	1f 5f       	subi	r17, 0xFF	; 255
 		}
 
 		if(i<6)
- 3be:	16 30       	cpi	r17, 0x06	; 6
- 3c0:	88 f4       	brcc	.+34     	; 0x3e4 <main+0x9e>
+ 3ac:	16 30       	cpi	r17, 0x06	; 6
+ 3ae:	88 f4       	brcc	.+34     	; 0x3d2 <main+0x9e>
 		{
 			set_display(number_to_show[0],1);
- 3c2:	61 e0       	ldi	r22, 0x01	; 1
- 3c4:	89 81       	ldd	r24, Y+1	; 0x01
- 3c6:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 3b0:	61 e0       	ldi	r22, 0x01	; 1
+ 3b2:	89 81       	ldd	r24, Y+1	; 0x01
+ 3b4:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[1],2);
- 3ca:	62 e0       	ldi	r22, 0x02	; 2
- 3cc:	8a 81       	ldd	r24, Y+2	; 0x02
- 3ce:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 3b8:	62 e0       	ldi	r22, 0x02	; 2
+ 3ba:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3bc:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[2],3);
- 3d2:	63 e0       	ldi	r22, 0x03	; 3
- 3d4:	8b 81       	ldd	r24, Y+3	; 0x03
- 3d6:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 3c0:	63 e0       	ldi	r22, 0x03	; 3
+ 3c2:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3c4:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[3],4);
- 3da:	64 e0       	ldi	r22, 0x04	; 4
- 3dc:	8c 81       	ldd	r24, Y+4	; 0x04
- 3de:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
- 3e2:	bf cf       	rjmp	.-130    	; 0x362 <main+0x1c>
+ 3c8:	64 e0       	ldi	r22, 0x04	; 4
+ 3ca:	8c 81       	ldd	r24, Y+4	; 0x04
+ 3cc:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
+ 3d0:	bf cf       	rjmp	.-130    	; 0x350 <main+0x1c>
 		}
 
 		else
 		{
 			set_value_on_whole_display('-', number_to_show);
- 3e4:	be 01       	movw	r22, r28
- 3e6:	6f 5f       	subi	r22, 0xFF	; 255
- 3e8:	7f 4f       	sbci	r23, 0xFF	; 255
- 3ea:	8d e2       	ldi	r24, 0x2D	; 45
- 3ec:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 3d2:	be 01       	movw	r22, r28
+ 3d4:	6f 5f       	subi	r22, 0xFF	; 255
+ 3d6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3d8:	8d e2       	ldi	r24, 0x2D	; 45
+ 3da:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 			i=1;
- 3f0:	11 e0       	ldi	r17, 0x01	; 1
- 3f2:	b7 cf       	rjmp	.-146    	; 0x362 <main+0x1c>
+ 3de:	11 e0       	ldi	r17, 0x01	; 1
+ 3e0:	b7 cf       	rjmp	.-146    	; 0x350 <main+0x1c>
 	long int del=0;
 
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
 		number_on_keypad = select_number();							//poll for value on keypad
- 3f4:	0e 94 df 00 	call	0x1be	; 0x1be <select_number>
+ 3e2:	0e 94 d6 00 	call	0x1ac	; 0x1ac <select_number>
 
 		if(number_on_keypad!=200)									//if input changed
- 3f8:	88 3c       	cpi	r24, 0xC8	; 200
- 3fa:	09 f4       	brne	.+2      	; 0x3fe <main+0xb8>
- 3fc:	51 c0       	rjmp	.+162    	; 0x4a0 <__EEPROM_REGION_LENGTH__+0xa0>
+ 3e6:	88 3c       	cpi	r24, 0xC8	; 200
+ 3e8:	09 f4       	brne	.+2      	; 0x3ec <main+0xb8>
+ 3ea:	51 c0       	rjmp	.+162    	; 0x48e <__EEPROM_REGION_LENGTH__+0x8e>
 		{
 			if(number_on_keypad==12)								//if cancel button was pressed
- 3fe:	8c 30       	cpi	r24, 0x0C	; 12
- 400:	41 f4       	brne	.+16     	; 0x412 <__EEPROM_REGION_LENGTH__+0x12>
+ 3ec:	8c 30       	cpi	r24, 0x0C	; 12
+ 3ee:	41 f4       	brne	.+16     	; 0x400 <__EEPROM_REGION_LENGTH__>
 			{
 				set_value_on_whole_display(13, number_to_show);
- 402:	be 01       	movw	r22, r28
- 404:	6f 5f       	subi	r22, 0xFF	; 255
- 406:	7f 4f       	sbci	r23, 0xFF	; 255
- 408:	8d e0       	ldi	r24, 0x0D	; 13
- 40a:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 3f0:	be 01       	movw	r22, r28
+ 3f2:	6f 5f       	subi	r22, 0xFF	; 255
+ 3f4:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3f6:	8d e0       	ldi	r24, 0x0D	; 13
+ 3f8:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 				i=1;
- 40e:	11 e0       	ldi	r17, 0x01	; 1
+ 3fc:	11 e0       	ldi	r17, 0x01	; 1
 				continue;
- 410:	f1 cf       	rjmp	.-30     	; 0x3f4 <main+0xae>
+ 3fe:	f1 cf       	rjmp	.-30     	; 0x3e2 <main+0xae>
 			}
 			
 			if(i==5 && number_on_keypad==11)						//if 4 digits were entered and OK button was pressed
- 412:	15 30       	cpi	r17, 0x05	; 5
- 414:	09 f0       	breq	.+2      	; 0x418 <__EEPROM_REGION_LENGTH__+0x18>
- 416:	3f c0       	rjmp	.+126    	; 0x496 <__EEPROM_REGION_LENGTH__+0x96>
- 418:	8b 30       	cpi	r24, 0x0B	; 11
- 41a:	e9 f5       	brne	.+122    	; 0x496 <__EEPROM_REGION_LENGTH__+0x96>
+ 400:	15 30       	cpi	r17, 0x05	; 5
+ 402:	09 f0       	breq	.+2      	; 0x406 <__EEPROM_REGION_LENGTH__+0x6>
+ 404:	3f c0       	rjmp	.+126    	; 0x484 <__EEPROM_REGION_LENGTH__+0x84>
+ 406:	8b 30       	cpi	r24, 0x0B	; 11
+ 408:	e9 f5       	brne	.+122    	; 0x484 <__EEPROM_REGION_LENGTH__+0x84>
 				entered_code[0]=number_to_show[0];
 				entered_code[1]=number_to_show[1];
 				entered_code[2]=number_to_show[2];
 				entered_code[3]=number_to_show[3];
 				
 				if(entered_code[0]==code[0] && entered_code[1]==code[1] && entered_code[2]==code[2] && entered_code[3]==code[3]) //check if code is correct
- 41c:	89 81       	ldd	r24, Y+1	; 0x01
- 41e:	c8 12       	cpse	r12, r24
- 420:	11 c0       	rjmp	.+34     	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
- 422:	8a 81       	ldd	r24, Y+2	; 0x02
- 424:	b8 12       	cpse	r11, r24
- 426:	0e c0       	rjmp	.+28     	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
- 428:	8b 81       	ldd	r24, Y+3	; 0x03
- 42a:	98 12       	cpse	r9, r24
- 42c:	0b c0       	rjmp	.+22     	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
- 42e:	8c 81       	ldd	r24, Y+4	; 0x04
- 430:	a8 12       	cpse	r10, r24
- 432:	08 c0       	rjmp	.+16     	; 0x444 <__EEPROM_REGION_LENGTH__+0x44>
+ 40a:	89 81       	ldd	r24, Y+1	; 0x01
+ 40c:	c8 12       	cpse	r12, r24
+ 40e:	11 c0       	rjmp	.+34     	; 0x432 <__EEPROM_REGION_LENGTH__+0x32>
+ 410:	8a 81       	ldd	r24, Y+2	; 0x02
+ 412:	b8 12       	cpse	r11, r24
+ 414:	0e c0       	rjmp	.+28     	; 0x432 <__EEPROM_REGION_LENGTH__+0x32>
+ 416:	8b 81       	ldd	r24, Y+3	; 0x03
+ 418:	98 12       	cpse	r9, r24
+ 41a:	0b c0       	rjmp	.+22     	; 0x432 <__EEPROM_REGION_LENGTH__+0x32>
+ 41c:	8c 81       	ldd	r24, Y+4	; 0x04
+ 41e:	a8 12       	cpse	r10, r24
+ 420:	08 c0       	rjmp	.+16     	; 0x432 <__EEPROM_REGION_LENGTH__+0x32>
 				{
 					number_to_show[0]=0; //O
- 434:	19 82       	std	Y+1, r1	; 0x01
+ 422:	19 82       	std	Y+1, r1	; 0x01
 					number_to_show[1]=14;//P
- 436:	8e e0       	ldi	r24, 0x0E	; 14
- 438:	8a 83       	std	Y+2, r24	; 0x02
+ 424:	8e e0       	ldi	r24, 0x0E	; 14
+ 426:	8a 83       	std	Y+2, r24	; 0x02
 					number_to_show[2]=15;//E
- 43a:	8f e0       	ldi	r24, 0x0F	; 15
- 43c:	8b 83       	std	Y+3, r24	; 0x03
+ 428:	8f e0       	ldi	r24, 0x0F	; 15
+ 42a:	8b 83       	std	Y+3, r24	; 0x03
 					number_to_show[3]=16;//N
- 43e:	80 e1       	ldi	r24, 0x10	; 16
- 440:	8c 83       	std	Y+4, r24	; 0x04
+ 42c:	80 e1       	ldi	r24, 0x10	; 16
+ 42e:	8c 83       	std	Y+4, r24	; 0x04
 					break;
- 442:	49 c0       	rjmp	.+146    	; 0x4d6 <__EEPROM_REGION_LENGTH__+0xd6>
+ 430:	49 c0       	rjmp	.+146    	; 0x4c4 <__EEPROM_REGION_LENGTH__+0xc4>
 				}
 				
 				else
 				{
 					number_to_show[0]=8;   //B
- 444:	d9 82       	std	Y+1, r13	; 0x01
+ 432:	d9 82       	std	Y+1, r13	; 0x01
 					number_to_show[1]=17;  //A
- 446:	ea 82       	std	Y+2, r14	; 0x02
+ 434:	ea 82       	std	Y+2, r14	; 0x02
 					number_to_show[2]=0;   //D
- 448:	1b 82       	std	Y+3, r1	; 0x03
+ 436:	1b 82       	std	Y+3, r1	; 0x03
 					number_to_show[3]=18;  //nothing
- 44a:	fc 82       	std	Y+4, r15	; 0x04
- 44c:	00 e0       	ldi	r16, 0x00	; 0
- 44e:	10 e0       	ldi	r17, 0x00	; 0
+ 438:	fc 82       	std	Y+4, r15	; 0x04
+ 43a:	00 e0       	ldi	r16, 0x00	; 0
+ 43c:	10 e0       	ldi	r17, 0x00	; 0
 					
 					while(1)
 					{
 						set_display(number_to_show[0],1);
- 450:	61 e0       	ldi	r22, 0x01	; 1
- 452:	89 81       	ldd	r24, Y+1	; 0x01
- 454:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 43e:	61 e0       	ldi	r22, 0x01	; 1
+ 440:	89 81       	ldd	r24, Y+1	; 0x01
+ 442:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 						set_display(number_to_show[1],2);
- 458:	62 e0       	ldi	r22, 0x02	; 2
- 45a:	8a 81       	ldd	r24, Y+2	; 0x02
- 45c:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 446:	62 e0       	ldi	r22, 0x02	; 2
+ 448:	8a 81       	ldd	r24, Y+2	; 0x02
+ 44a:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 						set_display(number_to_show[2],3);
- 460:	63 e0       	ldi	r22, 0x03	; 3
- 462:	8b 81       	ldd	r24, Y+3	; 0x03
- 464:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 44e:	63 e0       	ldi	r22, 0x03	; 3
+ 450:	8b 81       	ldd	r24, Y+3	; 0x03
+ 452:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 						set_display(number_to_show[3],4);
- 468:	64 e0       	ldi	r22, 0x04	; 4
- 46a:	8c 81       	ldd	r24, Y+4	; 0x04
- 46c:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 456:	64 e0       	ldi	r22, 0x04	; 4
+ 458:	8c 81       	ldd	r24, Y+4	; 0x04
+ 45a:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 470:	81 ee       	ldi	r24, 0xE1	; 225
- 472:	94 e0       	ldi	r25, 0x04	; 4
- 474:	01 97       	sbiw	r24, 0x01	; 1
- 476:	f1 f7       	brne	.-4      	; 0x474 <__EEPROM_REGION_LENGTH__+0x74>
- 478:	00 c0       	rjmp	.+0      	; 0x47a <__EEPROM_REGION_LENGTH__+0x7a>
- 47a:	00 00       	nop
- 47c:	0f 5f       	subi	r16, 0xFF	; 255
- 47e:	1f 4f       	sbci	r17, 0xFF	; 255
+ 45e:	81 ee       	ldi	r24, 0xE1	; 225
+ 460:	94 e0       	ldi	r25, 0x04	; 4
+ 462:	01 97       	sbiw	r24, 0x01	; 1
+ 464:	f1 f7       	brne	.-4      	; 0x462 <__EEPROM_REGION_LENGTH__+0x62>
+ 466:	00 c0       	rjmp	.+0      	; 0x468 <__EEPROM_REGION_LENGTH__+0x68>
+ 468:	00 00       	nop
+ 46a:	0f 5f       	subi	r16, 0xFF	; 255
+ 46c:	1f 4f       	sbci	r17, 0xFF	; 255
 						
 						_delay_ms(5);
 						del++;
 
 						if(del>=200) //if about 1 second passed
- 480:	08 3c       	cpi	r16, 0xC8	; 200
- 482:	11 05       	cpc	r17, r1
- 484:	29 f7       	brne	.-54     	; 0x450 <__EEPROM_REGION_LENGTH__+0x50>
+ 46e:	08 3c       	cpi	r16, 0xC8	; 200
+ 470:	11 05       	cpc	r17, r1
+ 472:	29 f7       	brne	.-54     	; 0x43e <__EEPROM_REGION_LENGTH__+0x3e>
 						{
 							del=0;	 //reset delay cycles counter
 							set_value_on_whole_display(13, number_to_show);
- 486:	be 01       	movw	r22, r28
- 488:	6f 5f       	subi	r22, 0xFF	; 255
- 48a:	7f 4f       	sbci	r23, 0xFF	; 255
- 48c:	8d e0       	ldi	r24, 0x0D	; 13
- 48e:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 474:	be 01       	movw	r22, r28
+ 476:	6f 5f       	subi	r22, 0xFF	; 255
+ 478:	7f 4f       	sbci	r23, 0xFF	; 255
+ 47a:	8d e0       	ldi	r24, 0x0D	; 13
+ 47c:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 							i=1;	 //reset iterator
- 492:	11 e0       	ldi	r17, 0x01	; 1
+ 480:	11 e0       	ldi	r17, 0x01	; 1
 							break;
 						}
 					}
 					continue;
- 494:	af cf       	rjmp	.-162    	; 0x3f4 <main+0xae>
+ 482:	af cf       	rjmp	.-162    	; 0x3e2 <main+0xae>
 				}
 			}	
 			number_to_show[i-1]=number_on_keypad;
- 496:	fe 01       	movw	r30, r28
- 498:	e1 0f       	add	r30, r17
- 49a:	f1 1d       	adc	r31, r1
- 49c:	80 83       	st	Z, r24
+ 484:	fe 01       	movw	r30, r28
+ 486:	e1 0f       	add	r30, r17
+ 488:	f1 1d       	adc	r31, r1
+ 48a:	80 83       	st	Z, r24
 			i++;
- 49e:	1f 5f       	subi	r17, 0xFF	; 255
+ 48c:	1f 5f       	subi	r17, 0xFF	; 255
 		}
 
 		if(i<6)
- 4a0:	16 30       	cpi	r17, 0x06	; 6
- 4a2:	88 f4       	brcc	.+34     	; 0x4c6 <__EEPROM_REGION_LENGTH__+0xc6>
+ 48e:	16 30       	cpi	r17, 0x06	; 6
+ 490:	88 f4       	brcc	.+34     	; 0x4b4 <__EEPROM_REGION_LENGTH__+0xb4>
 		{
 			set_display(number_to_show[0],1);
- 4a4:	61 e0       	ldi	r22, 0x01	; 1
- 4a6:	89 81       	ldd	r24, Y+1	; 0x01
- 4a8:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 492:	61 e0       	ldi	r22, 0x01	; 1
+ 494:	89 81       	ldd	r24, Y+1	; 0x01
+ 496:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[1],2);
- 4ac:	62 e0       	ldi	r22, 0x02	; 2
- 4ae:	8a 81       	ldd	r24, Y+2	; 0x02
- 4b0:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 49a:	62 e0       	ldi	r22, 0x02	; 2
+ 49c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 49e:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[2],3);
- 4b4:	63 e0       	ldi	r22, 0x03	; 3
- 4b6:	8b 81       	ldd	r24, Y+3	; 0x03
- 4b8:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 4a2:	63 e0       	ldi	r22, 0x03	; 3
+ 4a4:	8b 81       	ldd	r24, Y+3	; 0x03
+ 4a6:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 			set_display(number_to_show[3],4);
- 4bc:	64 e0       	ldi	r22, 0x04	; 4
- 4be:	8c 81       	ldd	r24, Y+4	; 0x04
- 4c0:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
- 4c4:	97 cf       	rjmp	.-210    	; 0x3f4 <main+0xae>
+ 4aa:	64 e0       	ldi	r22, 0x04	; 4
+ 4ac:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4ae:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
+ 4b2:	97 cf       	rjmp	.-210    	; 0x3e2 <main+0xae>
 		}
 
 		else
 		{
 			set_value_on_whole_display('-', number_to_show);
- 4c6:	be 01       	movw	r22, r28
- 4c8:	6f 5f       	subi	r22, 0xFF	; 255
- 4ca:	7f 4f       	sbci	r23, 0xFF	; 255
- 4cc:	8d e2       	ldi	r24, 0x2D	; 45
- 4ce:	0e 94 6e 00 	call	0xdc	; 0xdc <set_value_on_whole_display>
+ 4b4:	be 01       	movw	r22, r28
+ 4b6:	6f 5f       	subi	r22, 0xFF	; 255
+ 4b8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4ba:	8d e2       	ldi	r24, 0x2D	; 45
+ 4bc:	0e 94 76 00 	call	0xec	; 0xec <set_value_on_whole_display>
 			i=1;
- 4d2:	11 e0       	ldi	r17, 0x01	; 1
- 4d4:	8f cf       	rjmp	.-226    	; 0x3f4 <main+0xae>
+ 4c0:	11 e0       	ldi	r17, 0x01	; 1
+ 4c2:	8f cf       	rjmp	.-226    	; 0x3e2 <main+0xae>
 		}
 	}
 	
 	while(1)
 	{
 		set_display(number_to_show[0],1);
- 4d6:	61 e0       	ldi	r22, 0x01	; 1
- 4d8:	89 81       	ldd	r24, Y+1	; 0x01
- 4da:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 4c4:	61 e0       	ldi	r22, 0x01	; 1
+ 4c6:	89 81       	ldd	r24, Y+1	; 0x01
+ 4c8:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 		set_display(number_to_show[1],2);
- 4de:	62 e0       	ldi	r22, 0x02	; 2
- 4e0:	8a 81       	ldd	r24, Y+2	; 0x02
- 4e2:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 4cc:	62 e0       	ldi	r22, 0x02	; 2
+ 4ce:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4d0:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 		set_display(number_to_show[2],3);
- 4e6:	63 e0       	ldi	r22, 0x03	; 3
- 4e8:	8b 81       	ldd	r24, Y+3	; 0x03
- 4ea:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
+ 4d4:	63 e0       	ldi	r22, 0x03	; 3
+ 4d6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 4d8:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
 		set_display(number_to_show[3],4);
- 4ee:	64 e0       	ldi	r22, 0x04	; 4
- 4f0:	8c 81       	ldd	r24, Y+4	; 0x04
- 4f2:	0e 94 89 00 	call	0x112	; 0x112 <set_display>
- 4f6:	ef cf       	rjmp	.-34     	; 0x4d6 <__EEPROM_REGION_LENGTH__+0xd6>
+ 4dc:	64 e0       	ldi	r22, 0x04	; 4
+ 4de:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4e0:	0e 94 80 00 	call	0x100	; 0x100 <set_display>
+ 4e4:	ef cf       	rjmp	.-34     	; 0x4c4 <__EEPROM_REGION_LENGTH__+0xc4>
 
-000004f8 <__tablejump2__>:
- 4f8:	ee 0f       	add	r30, r30
- 4fa:	ff 1f       	adc	r31, r31
- 4fc:	05 90       	lpm	r0, Z+
- 4fe:	f4 91       	lpm	r31, Z
- 500:	e0 2d       	mov	r30, r0
- 502:	09 94       	ijmp
+000004e6 <__tablejump2__>:
+ 4e6:	ee 0f       	add	r30, r30
+ 4e8:	ff 1f       	adc	r31, r31
+ 4ea:	05 90       	lpm	r0, Z+
+ 4ec:	f4 91       	lpm	r31, Z
+ 4ee:	e0 2d       	mov	r30, r0
+ 4f0:	09 94       	ijmp
 
-00000504 <_exit>:
- 504:	f8 94       	cli
+000004f2 <_exit>:
+ 4f2:	f8 94       	cli
 
-00000506 <__stop_program>:
- 506:	ff cf       	rjmp	.-2      	; 0x506 <__stop_program>
+000004f4 <__stop_program>:
+ 4f4:	ff cf       	rjmp	.-2      	; 0x4f4 <__stop_program>

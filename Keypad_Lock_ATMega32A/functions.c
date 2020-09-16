@@ -6,29 +6,25 @@
 
 void init_ports(void)
 {
-	reset_ports();
-	clear_display();
-	
-	DDRA = 255;									//output_port_A driving 7 segment display
-	DDRB |= (1<<0) | (1<<1) | (1<<2) | (1<<3);  //PORT0, PORT1, PORT2, PORT3 driving 7 segment display
-
-	DDRD |= (1<<0)|(1<<1)|(1<<2)|(1<<3);		//PIN0,PIN1,PIN2,PIN3 set as output, rest as input
-	
-	PORTD=255;									//set whole PORT to 1 (INVERSE LOGIC)
-	
-	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);		//pull-up on input PINS of PORTD
-}
-
-void reset_ports(void)
-{
-	DDRA = 0;
-	DDRB = 0;
-	DDRC = 0;
-	DDRD = 0;
+	/*----------------------PORTA----------------------*/
+	/*All 8 pins of PORTA set as output drive segments of 7 segment display*/
+	DDRA = 255;
 	PORTA = 0;
+
+	/*----------------------PORTB----------------------*/	
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display, 
+	rest of pins of PORTB is unused*/		
+	DDRB = 0;		
+	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);  
 	PORTB = 0;
-	PORTC = 0;
-	PORTD = 0;
+
+	/*----------------------PORTD----------------------*/
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTD set as output drive rows of keyboard*/
+	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3); 
+	/*Pins PIN4, PIN5, PIN6, PIN7 of PORTD set as input control columns of keyboard*/
+	DDRD |= (0 << PIN4) | (0 << PIN5) | (0 << PIN6) | (0 << PIN7);
+	/*Pull-up on input PINS of PORTD*/
+	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
 }
 
 void set_display(uint8_t number, uint8_t position)
