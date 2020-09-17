@@ -3,29 +3,29 @@ Keypad_Lock_ATMega32A.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000051e  00000000  00000000  00000054  2**1
+  0 .text         00000534  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000572  2**0
+  1 .data         00000000  00800060  00800060  00000588  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000572  2**0
+  2 .comment      00000030  00000000  00000000  00000588  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000005a4  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000005b8  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000060  00000000  00000000  000005e0  2**0
+  4 .debug_aranges 00000078  00000000  00000000  000005f4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00001035  00000000  00000000  00000640  2**0
+  5 .debug_info   000011a8  00000000  00000000  0000066c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000007e7  00000000  00000000  00001675  2**0
+  6 .debug_abbrev 0000092d  00000000  00000000  00001814  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000008ac  00000000  00000000  00001e5c  2**0
+  7 .debug_line   000009c2  00000000  00000000  00002141  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000098  00000000  00000000  00002708  2**2
+  8 .debug_frame  000000ac  00000000  00000000  00002b04  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000573  00000000  00000000  000027a0  2**0
+  9 .debug_str    0000059d  00000000  00000000  00002bb0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000abb  00000000  00000000  00002d13  2**0
+ 10 .debug_loc    00000ae1  00000000  00000000  0000314d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000040  00000000  00000000  000037ce  2**0
+ 11 .debug_ranges 00000048  00000000  00000000  00003c2e  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -108,7 +108,7 @@ Disassembly of section .text:
   ba:	de bf       	out	0x3e, r29	; 62
   bc:	cd bf       	out	0x3d, r28	; 61
   be:	0e 94 a6 01 	call	0x34c	; 0x34c <main>
-  c2:	0c 94 8d 02 	jmp	0x51a	; 0x51a <_exit>
+  c2:	0c 94 98 02 	jmp	0x530	; 0x530 <_exit>
 
 000000c6 <__bad_interrupt>:
   c6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -235,7 +235,7 @@ void setDigit(uint8_t number, uint8_t position)
  12c:	fc 01       	movw	r30, r24
  12e:	e6 5d       	subi	r30, 0xD6	; 214
  130:	ff 4f       	sbci	r31, 0xFF	; 255
- 132:	0c 94 87 02 	jmp	0x50e	; 0x50e <__tablejump2__>
+ 132:	0c 94 92 02 	jmp	0x524	; 0x524 <__tablejump2__>
 	{
 		/*Hex codes for common anode 7-segment display setup*/
 		case 0:
@@ -378,11 +378,11 @@ void setDigit(uint8_t number, uint8_t position)
  1a6:	0e 94 7c 00 	call	0xf8	; 0xf8 <_Z13clear_displayv>
  1aa:	08 95       	ret
 
-000001ac <_Z13GetPressedKeyv>:
+000001ac <_ZN6Keypad16GetPressedButtonEv>:
  1ac:	82 e4       	ldi	r24, 0x42	; 66
  1ae:	8a 95       	dec	r24
- 1b0:	f1 f7       	brne	.-4      	; 0x1ae <_Z13GetPressedKeyv+0x2>
- 1b2:	00 c0       	rjmp	.+0      	; 0x1b4 <_Z13GetPressedKeyv+0x8>
+ 1b0:	f1 f7       	brne	.-4      	; 0x1ae <_ZN6Keypad16GetPressedButtonEv+0x2>
+ 1b2:	00 c0       	rjmp	.+0      	; 0x1b4 <_ZN6Keypad16GetPressedButtonEv+0x8>
 	uint8_t column_value;
 	
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
@@ -392,8 +392,8 @@ void setDigit(uint8_t number, uint8_t position)
  1b4:	90 98       	cbi	0x12, 0	; 18
  1b6:	92 e4       	ldi	r25, 0x42	; 66
  1b8:	9a 95       	dec	r25
- 1ba:	f1 f7       	brne	.-4      	; 0x1b8 <_Z13GetPressedKeyv+0xc>
- 1bc:	00 c0       	rjmp	.+0      	; 0x1be <_Z13GetPressedKeyv+0x12>
+ 1ba:	f1 f7       	brne	.-4      	; 0x1b8 <_ZN6Keypad16GetPressedButtonEv+0xc>
+ 1bc:	00 c0       	rjmp	.+0      	; 0x1be <_ZN6Keypad16GetPressedButtonEv+0x12>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -401,14 +401,14 @@ void setDigit(uint8_t number, uint8_t position)
 
 	if(!(column_value & 1<<4))
  1c0:	84 fd       	sbrc	r24, 4
- 1c2:	0c c0       	rjmp	.+24     	; 0x1dc <_Z13GetPressedKeyv+0x30>
+ 1c2:	0c c0       	rjmp	.+24     	; 0x1dc <_ZN6Keypad16GetPressedButtonEv+0x30>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  1c4:	90 b3       	in	r25, 0x10	; 16
  1c6:	89 17       	cp	r24, r25
- 1c8:	e9 f3       	breq	.-6      	; 0x1c4 <_Z13GetPressedKeyv+0x18>
+ 1c8:	e9 f3       	breq	.-6      	; 0x1c4 <_ZN6Keypad16GetPressedButtonEv+0x18>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
@@ -418,8 +418,8 @@ void setDigit(uint8_t number, uint8_t position)
  1ca:	87 ea       	ldi	r24, 0xA7	; 167
  1cc:	91 e6       	ldi	r25, 0x61	; 97
  1ce:	01 97       	sbiw	r24, 0x01	; 1
- 1d0:	f1 f7       	brne	.-4      	; 0x1ce <_Z13GetPressedKeyv+0x22>
- 1d2:	00 c0       	rjmp	.+0      	; 0x1d4 <_Z13GetPressedKeyv+0x28>
+ 1d0:	f1 f7       	brne	.-4      	; 0x1ce <_ZN6Keypad16GetPressedButtonEv+0x22>
+ 1d2:	00 c0       	rjmp	.+0      	; 0x1d4 <_ZN6Keypad16GetPressedButtonEv+0x28>
  1d4:	00 00       	nop
 			break;
 		}
@@ -431,19 +431,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<5))
  1dc:	85 fd       	sbrc	r24, 5
- 1de:	0c c0       	rjmp	.+24     	; 0x1f8 <_Z13GetPressedKeyv+0x4c>
+ 1de:	0c c0       	rjmp	.+24     	; 0x1f8 <_ZN6Keypad16GetPressedButtonEv+0x4c>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  1e0:	90 b3       	in	r25, 0x10	; 16
  1e2:	89 17       	cp	r24, r25
- 1e4:	e9 f3       	breq	.-6      	; 0x1e0 <_Z13GetPressedKeyv+0x34>
+ 1e4:	e9 f3       	breq	.-6      	; 0x1e0 <_ZN6Keypad16GetPressedButtonEv+0x34>
  1e6:	87 ea       	ldi	r24, 0xA7	; 167
  1e8:	91 e6       	ldi	r25, 0x61	; 97
  1ea:	01 97       	sbiw	r24, 0x01	; 1
- 1ec:	f1 f7       	brne	.-4      	; 0x1ea <_Z13GetPressedKeyv+0x3e>
- 1ee:	00 c0       	rjmp	.+0      	; 0x1f0 <_Z13GetPressedKeyv+0x44>
+ 1ec:	f1 f7       	brne	.-4      	; 0x1ea <_ZN6Keypad16GetPressedButtonEv+0x3e>
+ 1ee:	00 c0       	rjmp	.+0      	; 0x1f0 <_ZN6Keypad16GetPressedButtonEv+0x44>
  1f0:	00 00       	nop
 			break;
 		}
@@ -455,19 +455,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<6))
  1f8:	86 fd       	sbrc	r24, 6
- 1fa:	0c c0       	rjmp	.+24     	; 0x214 <_Z13GetPressedKeyv+0x68>
+ 1fa:	0c c0       	rjmp	.+24     	; 0x214 <_ZN6Keypad16GetPressedButtonEv+0x68>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  1fc:	90 b3       	in	r25, 0x10	; 16
  1fe:	89 17       	cp	r24, r25
- 200:	e9 f3       	breq	.-6      	; 0x1fc <_Z13GetPressedKeyv+0x50>
+ 200:	e9 f3       	breq	.-6      	; 0x1fc <_ZN6Keypad16GetPressedButtonEv+0x50>
  202:	87 ea       	ldi	r24, 0xA7	; 167
  204:	91 e6       	ldi	r25, 0x61	; 97
  206:	01 97       	sbiw	r24, 0x01	; 1
- 208:	f1 f7       	brne	.-4      	; 0x206 <_Z13GetPressedKeyv+0x5a>
- 20a:	00 c0       	rjmp	.+0      	; 0x20c <_Z13GetPressedKeyv+0x60>
+ 208:	f1 f7       	brne	.-4      	; 0x206 <_ZN6Keypad16GetPressedButtonEv+0x5a>
+ 20a:	00 c0       	rjmp	.+0      	; 0x20c <_ZN6Keypad16GetPressedButtonEv+0x60>
  20c:	00 00       	nop
 			break;
 		}
@@ -479,19 +479,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<7))
  214:	88 23       	and	r24, r24
- 216:	64 f0       	brlt	.+24     	; 0x230 <_Z13GetPressedKeyv+0x84>
+ 216:	64 f0       	brlt	.+24     	; 0x230 <_ZN6Keypad16GetPressedButtonEv+0x84>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  218:	90 b3       	in	r25, 0x10	; 16
  21a:	89 17       	cp	r24, r25
- 21c:	e9 f3       	breq	.-6      	; 0x218 <_Z13GetPressedKeyv+0x6c>
+ 21c:	e9 f3       	breq	.-6      	; 0x218 <_ZN6Keypad16GetPressedButtonEv+0x6c>
  21e:	87 ea       	ldi	r24, 0xA7	; 167
  220:	91 e6       	ldi	r25, 0x61	; 97
  222:	01 97       	sbiw	r24, 0x01	; 1
- 224:	f1 f7       	brne	.-4      	; 0x222 <_Z13GetPressedKeyv+0x76>
- 226:	00 c0       	rjmp	.+0      	; 0x228 <_Z13GetPressedKeyv+0x7c>
+ 224:	f1 f7       	brne	.-4      	; 0x222 <_ZN6Keypad16GetPressedButtonEv+0x76>
+ 226:	00 c0       	rjmp	.+0      	; 0x228 <_ZN6Keypad16GetPressedButtonEv+0x7c>
  228:	00 00       	nop
 			break;
 		}
@@ -512,8 +512,8 @@ void setDigit(uint8_t number, uint8_t position)
 	__builtin_avr_delay_cycles(__ticks_dc);
  232:	92 e4       	ldi	r25, 0x42	; 66
  234:	9a 95       	dec	r25
- 236:	f1 f7       	brne	.-4      	; 0x234 <_Z13GetPressedKeyv+0x88>
- 238:	00 c0       	rjmp	.+0      	; 0x23a <_Z13GetPressedKeyv+0x8e>
+ 236:	f1 f7       	brne	.-4      	; 0x234 <_ZN6Keypad16GetPressedButtonEv+0x88>
+ 238:	00 c0       	rjmp	.+0      	; 0x23a <_ZN6Keypad16GetPressedButtonEv+0x8e>
 	
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 	
@@ -522,8 +522,8 @@ void setDigit(uint8_t number, uint8_t position)
  23a:	91 98       	cbi	0x12, 1	; 18
  23c:	82 e4       	ldi	r24, 0x42	; 66
  23e:	8a 95       	dec	r24
- 240:	f1 f7       	brne	.-4      	; 0x23e <_Z13GetPressedKeyv+0x92>
- 242:	00 c0       	rjmp	.+0      	; 0x244 <_Z13GetPressedKeyv+0x98>
+ 240:	f1 f7       	brne	.-4      	; 0x23e <_ZN6Keypad16GetPressedButtonEv+0x92>
+ 242:	00 c0       	rjmp	.+0      	; 0x244 <_ZN6Keypad16GetPressedButtonEv+0x98>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -531,14 +531,14 @@ void setDigit(uint8_t number, uint8_t position)
 
 	if(!(column_value & 1<<4))
  246:	84 fd       	sbrc	r24, 4
- 248:	0c c0       	rjmp	.+24     	; 0x262 <_Z13GetPressedKeyv+0xb6>
+ 248:	0c c0       	rjmp	.+24     	; 0x262 <_ZN6Keypad16GetPressedButtonEv+0xb6>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  24a:	90 b3       	in	r25, 0x10	; 16
  24c:	89 17       	cp	r24, r25
- 24e:	e9 f3       	breq	.-6      	; 0x24a <_Z13GetPressedKeyv+0x9e>
+ 24e:	e9 f3       	breq	.-6      	; 0x24a <_ZN6Keypad16GetPressedButtonEv+0x9e>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
@@ -548,8 +548,8 @@ void setDigit(uint8_t number, uint8_t position)
  250:	87 ea       	ldi	r24, 0xA7	; 167
  252:	91 e6       	ldi	r25, 0x61	; 97
  254:	01 97       	sbiw	r24, 0x01	; 1
- 256:	f1 f7       	brne	.-4      	; 0x254 <_Z13GetPressedKeyv+0xa8>
- 258:	00 c0       	rjmp	.+0      	; 0x25a <_Z13GetPressedKeyv+0xae>
+ 256:	f1 f7       	brne	.-4      	; 0x254 <_ZN6Keypad16GetPressedButtonEv+0xa8>
+ 258:	00 c0       	rjmp	.+0      	; 0x25a <_ZN6Keypad16GetPressedButtonEv+0xae>
  25a:	00 00       	nop
 			break;
 		}
@@ -561,19 +561,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<5))
  262:	85 fd       	sbrc	r24, 5
- 264:	0c c0       	rjmp	.+24     	; 0x27e <_Z13GetPressedKeyv+0xd2>
+ 264:	0c c0       	rjmp	.+24     	; 0x27e <_ZN6Keypad16GetPressedButtonEv+0xd2>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  266:	90 b3       	in	r25, 0x10	; 16
  268:	89 17       	cp	r24, r25
- 26a:	e9 f3       	breq	.-6      	; 0x266 <_Z13GetPressedKeyv+0xba>
+ 26a:	e9 f3       	breq	.-6      	; 0x266 <_ZN6Keypad16GetPressedButtonEv+0xba>
  26c:	87 ea       	ldi	r24, 0xA7	; 167
  26e:	91 e6       	ldi	r25, 0x61	; 97
  270:	01 97       	sbiw	r24, 0x01	; 1
- 272:	f1 f7       	brne	.-4      	; 0x270 <_Z13GetPressedKeyv+0xc4>
- 274:	00 c0       	rjmp	.+0      	; 0x276 <_Z13GetPressedKeyv+0xca>
+ 272:	f1 f7       	brne	.-4      	; 0x270 <_ZN6Keypad16GetPressedButtonEv+0xc4>
+ 274:	00 c0       	rjmp	.+0      	; 0x276 <_ZN6Keypad16GetPressedButtonEv+0xca>
  276:	00 00       	nop
 			break;
 		}
@@ -585,19 +585,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<6))
  27e:	86 fd       	sbrc	r24, 6
- 280:	0c c0       	rjmp	.+24     	; 0x29a <_Z13GetPressedKeyv+0xee>
+ 280:	0c c0       	rjmp	.+24     	; 0x29a <_ZN6Keypad16GetPressedButtonEv+0xee>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  282:	90 b3       	in	r25, 0x10	; 16
  284:	89 17       	cp	r24, r25
- 286:	e9 f3       	breq	.-6      	; 0x282 <_Z13GetPressedKeyv+0xd6>
+ 286:	e9 f3       	breq	.-6      	; 0x282 <_ZN6Keypad16GetPressedButtonEv+0xd6>
  288:	87 ea       	ldi	r24, 0xA7	; 167
  28a:	91 e6       	ldi	r25, 0x61	; 97
  28c:	01 97       	sbiw	r24, 0x01	; 1
- 28e:	f1 f7       	brne	.-4      	; 0x28c <_Z13GetPressedKeyv+0xe0>
- 290:	00 c0       	rjmp	.+0      	; 0x292 <_Z13GetPressedKeyv+0xe6>
+ 28e:	f1 f7       	brne	.-4      	; 0x28c <_ZN6Keypad16GetPressedButtonEv+0xe0>
+ 290:	00 c0       	rjmp	.+0      	; 0x292 <_ZN6Keypad16GetPressedButtonEv+0xe6>
  292:	00 00       	nop
 			break;
 		}
@@ -609,19 +609,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<7))
  29a:	88 23       	and	r24, r24
- 29c:	64 f0       	brlt	.+24     	; 0x2b6 <_Z13GetPressedKeyv+0x10a>
+ 29c:	64 f0       	brlt	.+24     	; 0x2b6 <_ZN6Keypad16GetPressedButtonEv+0x10a>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  29e:	90 b3       	in	r25, 0x10	; 16
  2a0:	89 17       	cp	r24, r25
- 2a2:	e9 f3       	breq	.-6      	; 0x29e <_Z13GetPressedKeyv+0xf2>
+ 2a2:	e9 f3       	breq	.-6      	; 0x29e <_ZN6Keypad16GetPressedButtonEv+0xf2>
  2a4:	87 ea       	ldi	r24, 0xA7	; 167
  2a6:	91 e6       	ldi	r25, 0x61	; 97
  2a8:	01 97       	sbiw	r24, 0x01	; 1
- 2aa:	f1 f7       	brne	.-4      	; 0x2a8 <_Z13GetPressedKeyv+0xfc>
- 2ac:	00 c0       	rjmp	.+0      	; 0x2ae <_Z13GetPressedKeyv+0x102>
+ 2aa:	f1 f7       	brne	.-4      	; 0x2a8 <_ZN6Keypad16GetPressedButtonEv+0xfc>
+ 2ac:	00 c0       	rjmp	.+0      	; 0x2ae <_ZN6Keypad16GetPressedButtonEv+0x102>
  2ae:	00 00       	nop
 			break;
 		}
@@ -642,8 +642,8 @@ void setDigit(uint8_t number, uint8_t position)
 	__builtin_avr_delay_cycles(__ticks_dc);
  2b8:	92 e4       	ldi	r25, 0x42	; 66
  2ba:	9a 95       	dec	r25
- 2bc:	f1 f7       	brne	.-4      	; 0x2ba <_Z13GetPressedKeyv+0x10e>
- 2be:	00 c0       	rjmp	.+0      	; 0x2c0 <_Z13GetPressedKeyv+0x114>
+ 2bc:	f1 f7       	brne	.-4      	; 0x2ba <_ZN6Keypad16GetPressedButtonEv+0x10e>
+ 2be:	00 c0       	rjmp	.+0      	; 0x2c0 <_ZN6Keypad16GetPressedButtonEv+0x114>
 
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
@@ -652,8 +652,8 @@ void setDigit(uint8_t number, uint8_t position)
  2c0:	92 98       	cbi	0x12, 2	; 18
  2c2:	82 e4       	ldi	r24, 0x42	; 66
  2c4:	8a 95       	dec	r24
- 2c6:	f1 f7       	brne	.-4      	; 0x2c4 <_Z13GetPressedKeyv+0x118>
- 2c8:	00 c0       	rjmp	.+0      	; 0x2ca <_Z13GetPressedKeyv+0x11e>
+ 2c6:	f1 f7       	brne	.-4      	; 0x2c4 <_ZN6Keypad16GetPressedButtonEv+0x118>
+ 2c8:	00 c0       	rjmp	.+0      	; 0x2ca <_ZN6Keypad16GetPressedButtonEv+0x11e>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -661,14 +661,14 @@ void setDigit(uint8_t number, uint8_t position)
 
 	if(!(column_value & 1<<4))
  2cc:	84 fd       	sbrc	r24, 4
- 2ce:	0c c0       	rjmp	.+24     	; 0x2e8 <_Z13GetPressedKeyv+0x13c>
+ 2ce:	0c c0       	rjmp	.+24     	; 0x2e8 <_ZN6Keypad16GetPressedButtonEv+0x13c>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  2d0:	90 b3       	in	r25, 0x10	; 16
  2d2:	89 17       	cp	r24, r25
- 2d4:	e9 f3       	breq	.-6      	; 0x2d0 <_Z13GetPressedKeyv+0x124>
+ 2d4:	e9 f3       	breq	.-6      	; 0x2d0 <_ZN6Keypad16GetPressedButtonEv+0x124>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
@@ -678,8 +678,8 @@ void setDigit(uint8_t number, uint8_t position)
  2d6:	87 ea       	ldi	r24, 0xA7	; 167
  2d8:	91 e6       	ldi	r25, 0x61	; 97
  2da:	01 97       	sbiw	r24, 0x01	; 1
- 2dc:	f1 f7       	brne	.-4      	; 0x2da <_Z13GetPressedKeyv+0x12e>
- 2de:	00 c0       	rjmp	.+0      	; 0x2e0 <_Z13GetPressedKeyv+0x134>
+ 2dc:	f1 f7       	brne	.-4      	; 0x2da <_ZN6Keypad16GetPressedButtonEv+0x12e>
+ 2de:	00 c0       	rjmp	.+0      	; 0x2e0 <_ZN6Keypad16GetPressedButtonEv+0x134>
  2e0:	00 00       	nop
 			break;
 		}
@@ -691,19 +691,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<5))
  2e8:	85 fd       	sbrc	r24, 5
- 2ea:	0c c0       	rjmp	.+24     	; 0x304 <_Z13GetPressedKeyv+0x158>
+ 2ea:	0c c0       	rjmp	.+24     	; 0x304 <_ZN6Keypad16GetPressedButtonEv+0x158>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  2ec:	90 b3       	in	r25, 0x10	; 16
  2ee:	89 17       	cp	r24, r25
- 2f0:	e9 f3       	breq	.-6      	; 0x2ec <_Z13GetPressedKeyv+0x140>
+ 2f0:	e9 f3       	breq	.-6      	; 0x2ec <_ZN6Keypad16GetPressedButtonEv+0x140>
  2f2:	87 ea       	ldi	r24, 0xA7	; 167
  2f4:	91 e6       	ldi	r25, 0x61	; 97
  2f6:	01 97       	sbiw	r24, 0x01	; 1
- 2f8:	f1 f7       	brne	.-4      	; 0x2f6 <_Z13GetPressedKeyv+0x14a>
- 2fa:	00 c0       	rjmp	.+0      	; 0x2fc <_Z13GetPressedKeyv+0x150>
+ 2f8:	f1 f7       	brne	.-4      	; 0x2f6 <_ZN6Keypad16GetPressedButtonEv+0x14a>
+ 2fa:	00 c0       	rjmp	.+0      	; 0x2fc <_ZN6Keypad16GetPressedButtonEv+0x150>
  2fc:	00 00       	nop
 			break;
 		}
@@ -715,19 +715,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<6))
  304:	86 fd       	sbrc	r24, 6
- 306:	0c c0       	rjmp	.+24     	; 0x320 <_Z13GetPressedKeyv+0x174>
+ 306:	0c c0       	rjmp	.+24     	; 0x320 <_ZN6Keypad16GetPressedButtonEv+0x174>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  308:	90 b3       	in	r25, 0x10	; 16
  30a:	89 17       	cp	r24, r25
- 30c:	e9 f3       	breq	.-6      	; 0x308 <_Z13GetPressedKeyv+0x15c>
+ 30c:	e9 f3       	breq	.-6      	; 0x308 <_ZN6Keypad16GetPressedButtonEv+0x15c>
  30e:	87 ea       	ldi	r24, 0xA7	; 167
  310:	91 e6       	ldi	r25, 0x61	; 97
  312:	01 97       	sbiw	r24, 0x01	; 1
- 314:	f1 f7       	brne	.-4      	; 0x312 <_Z13GetPressedKeyv+0x166>
- 316:	00 c0       	rjmp	.+0      	; 0x318 <_Z13GetPressedKeyv+0x16c>
+ 314:	f1 f7       	brne	.-4      	; 0x312 <_ZN6Keypad16GetPressedButtonEv+0x166>
+ 316:	00 c0       	rjmp	.+0      	; 0x318 <_ZN6Keypad16GetPressedButtonEv+0x16c>
  318:	00 00       	nop
 			break;
 		}
@@ -739,19 +739,19 @@ void setDigit(uint8_t number, uint8_t position)
 	}
 	else if(!(column_value & 1<<7))
  320:	88 23       	and	r24, r24
- 322:	64 f0       	brlt	.+24     	; 0x33c <_Z13GetPressedKeyv+0x190>
+ 322:	64 f0       	brlt	.+24     	; 0x33c <_ZN6Keypad16GetPressedButtonEv+0x190>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
  324:	90 b3       	in	r25, 0x10	; 16
  326:	89 17       	cp	r24, r25
- 328:	e9 f3       	breq	.-6      	; 0x324 <_Z13GetPressedKeyv+0x178>
+ 328:	e9 f3       	breq	.-6      	; 0x324 <_ZN6Keypad16GetPressedButtonEv+0x178>
  32a:	87 ea       	ldi	r24, 0xA7	; 167
  32c:	91 e6       	ldi	r25, 0x61	; 97
  32e:	01 97       	sbiw	r24, 0x01	; 1
- 330:	f1 f7       	brne	.-4      	; 0x32e <_Z13GetPressedKeyv+0x182>
- 332:	00 c0       	rjmp	.+0      	; 0x334 <_Z13GetPressedKeyv+0x188>
+ 330:	f1 f7       	brne	.-4      	; 0x32e <_ZN6Keypad16GetPressedButtonEv+0x182>
+ 332:	00 c0       	rjmp	.+0      	; 0x334 <_ZN6Keypad16GetPressedButtonEv+0x188>
  334:	00 00       	nop
 			break;
 		}
@@ -772,8 +772,8 @@ void setDigit(uint8_t number, uint8_t position)
 	__builtin_avr_delay_cycles(__ticks_dc);
  33e:	92 e4       	ldi	r25, 0x42	; 66
  340:	9a 95       	dec	r25
- 342:	f1 f7       	brne	.-4      	; 0x340 <_Z13GetPressedKeyv+0x194>
- 344:	00 c0       	rjmp	.+0      	; 0x346 <_Z13GetPressedKeyv+0x19a>
+ 342:	f1 f7       	brne	.-4      	; 0x340 <_ZN6Keypad16GetPressedButtonEv+0x194>
+ 344:	00 c0       	rjmp	.+0      	; 0x346 <_ZN6Keypad16GetPressedButtonEv+0x19a>
 
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
@@ -783,9 +783,9 @@ void setDigit(uint8_t number, uint8_t position)
  34a:	08 95       	ret
 
 0000034c <main>:
-#include <stdint.h>
 #include <util/delay.h>	 //header containing delay functions
 #include "functions.h"
+#include "keypad.h"
 
 int main(void)
 {
@@ -793,375 +793,388 @@ int main(void)
  34e:	df 93       	push	r29
  350:	00 d0       	rcall	.+0      	; 0x352 <main+0x6>
  352:	00 d0       	rcall	.+0      	; 0x354 <main+0x8>
- 354:	cd b7       	in	r28, 0x3d	; 61
- 356:	de b7       	in	r29, 0x3e	; 62
+ 354:	1f 92       	push	r1
+ 356:	cd b7       	in	r28, 0x3d	; 61
+ 358:	de b7       	in	r29, 0x3e	; 62
+	Keypad keypad;
+	
 	uint8_t digitPointer = 1;
-	Button numberOnKeypad = Button::NO_BUTTON_PRESSED;			//value read from keypad
+	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitsOnDisplay[4] = {'-', '-', '-', '-'};          //table of values currently shown on 7-segment display
- 358:	8d e2       	ldi	r24, 0x2D	; 45
- 35a:	89 83       	std	Y+1, r24	; 0x01
+ 35a:	8d e2       	ldi	r24, 0x2D	; 45
  35c:	8a 83       	std	Y+2, r24	; 0x02
  35e:	8b 83       	std	Y+3, r24	; 0x03
  360:	8c 83       	std	Y+4, r24	; 0x04
+ 362:	8d 83       	std	Y+5, r24	; 0x05
 	uint8_t code[4];											//table storing code set by admin
 	uint8_t enteredCode[4];										//table storing code entered by user
 
 	init_ports();
- 362:	0e 94 65 00 	call	0xca	; 0xca <_Z10init_portsv>
-#include <util/delay.h>	 //header containing delay functions
-#include "functions.h"
+ 364:	0e 94 65 00 	call	0xca	; 0xca <_Z10init_portsv>
 
 int main(void)
 {
+	Keypad keypad;
+	
 	uint8_t digitPointer = 1;
- 366:	11 e0       	ldi	r17, 0x01	; 1
+ 368:	11 e0       	ldi	r17, 0x01	; 1
 
 	//UserSetsCode();
 
 	while (1)
 	{
-		numberOnKeypad = GetPressedKey();							//poll for value on keypad
- 368:	0e 94 d6 00 	call	0x1ac	; 0x1ac <_Z13GetPressedKeyv>
+		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
+ 36a:	ce 01       	movw	r24, r28
+ 36c:	01 96       	adiw	r24, 0x01	; 1
+ 36e:	0e 94 d6 00 	call	0x1ac	; 0x1ac <_ZN6Keypad16GetPressedButtonEv>
 
-		if(numberOnKeypad != Button::NO_BUTTON_PRESSED)				//if input changed
- 36c:	8f 3f       	cpi	r24, 0xFF	; 255
- 36e:	2f ef       	ldi	r18, 0xFF	; 255
- 370:	92 07       	cpc	r25, r18
- 372:	61 f1       	breq	.+88     	; 0x3cc <main+0x80>
+		if(pressedButton != Button::NO_BUTTON_PRESSED)				//if input changed
+ 372:	8f 3f       	cpi	r24, 0xFF	; 255
+ 374:	2f ef       	ldi	r18, 0xFF	; 255
+ 376:	92 07       	cpc	r25, r18
+ 378:	79 f1       	breq	.+94     	; 0x3d8 <main+0x8c>
 		{
-			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
- 374:	8c 30       	cpi	r24, 0x0C	; 12
- 376:	91 05       	cpc	r25, r1
- 378:	41 f4       	brne	.+16     	; 0x38a <main+0x3e>
+			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
+ 37a:	8c 30       	cpi	r24, 0x0C	; 12
+ 37c:	91 05       	cpc	r25, r1
+ 37e:	41 f4       	brne	.+16     	; 0x390 <main+0x44>
 			{
 				setValueOnWholeDisplay('-', digitsOnDisplay);
- 37a:	be 01       	movw	r22, r28
- 37c:	6f 5f       	subi	r22, 0xFF	; 255
- 37e:	7f 4f       	sbci	r23, 0xFF	; 255
- 380:	8d e2       	ldi	r24, 0x2D	; 45
- 382:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 380:	be 01       	movw	r22, r28
+ 382:	6e 5f       	subi	r22, 0xFE	; 254
+ 384:	7f 4f       	sbci	r23, 0xFF	; 255
+ 386:	8d e2       	ldi	r24, 0x2D	; 45
+ 388:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 				digitPointer = 1;
- 386:	11 e0       	ldi	r17, 0x01	; 1
+ 38c:	11 e0       	ldi	r17, 0x01	; 1
 				continue;
- 388:	ef cf       	rjmp	.-34     	; 0x368 <main+0x1c>
+ 38e:	ed cf       	rjmp	.-38     	; 0x36a <main+0x1e>
 			}
 			
-			if(digitPointer == 5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
- 38a:	15 30       	cpi	r17, 0x05	; 5
- 38c:	d1 f4       	brne	.+52     	; 0x3c2 <main+0x76>
- 38e:	8b 30       	cpi	r24, 0x0B	; 11
- 390:	91 05       	cpc	r25, r1
- 392:	b9 f4       	brne	.+46     	; 0x3c2 <main+0x76>
+			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+ 390:	15 30       	cpi	r17, 0x05	; 5
+ 392:	d1 f4       	brne	.+52     	; 0x3c8 <main+0x7c>
+ 394:	8b 30       	cpi	r24, 0x0B	; 11
+ 396:	91 05       	cpc	r25, r1
+ 398:	b9 f4       	brne	.+46     	; 0x3c8 <main+0x7c>
 			{
 				code[0] = digitsOnDisplay[0];
- 394:	c9 80       	ldd	r12, Y+1	; 0x01
+ 39a:	ca 80       	ldd	r12, Y+2	; 0x02
 				code[1] = digitsOnDisplay[1];
- 396:	ba 80       	ldd	r11, Y+2	; 0x02
+ 39c:	bb 80       	ldd	r11, Y+3	; 0x03
 				code[2] = digitsOnDisplay[2];
- 398:	9b 80       	ldd	r9, Y+3	; 0x03
+ 39e:	9c 80       	ldd	r9, Y+4	; 0x04
 				code[3] = digitsOnDisplay[3];
- 39a:	ac 80       	ldd	r10, Y+4	; 0x04
+ 3a0:	ad 80       	ldd	r10, Y+5	; 0x05
 			setValueOnWholeDisplay('-', digitsOnDisplay);
 			digitPointer = 1;
 		}
 	}
 	
 	setValueOnWholeDisplay(13, digitsOnDisplay);										//set display to '-.' in locked state
- 39c:	be 01       	movw	r22, r28
- 39e:	6f 5f       	subi	r22, 0xFF	; 255
- 3a0:	7f 4f       	sbci	r23, 0xFF	; 255
- 3a2:	8d e0       	ldi	r24, 0x0D	; 13
- 3a4:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 3a2:	be 01       	movw	r22, r28
+ 3a4:	6e 5f       	subi	r22, 0xFE	; 254
+ 3a6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3a8:	8d e0       	ldi	r24, 0x0D	; 13
+ 3aa:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 
 	digitPointer = 1;
- 3a8:	11 e0       	ldi	r17, 0x01	; 1
+ 3ae:	11 e0       	ldi	r17, 0x01	; 1
 					break;
 				}
 				
 				else
 				{
 					digitsOnDisplay[0] = 8;   //B
- 3aa:	68 94       	set
- 3ac:	dd 24       	eor	r13, r13
- 3ae:	d3 f8       	bld	r13, 3
+ 3b0:	68 94       	set
+ 3b2:	dd 24       	eor	r13, r13
+ 3b4:	d3 f8       	bld	r13, 3
 					digitsOnDisplay[1] = 17;  //A
- 3b0:	0f 2e       	mov	r0, r31
- 3b2:	f1 e1       	ldi	r31, 0x11	; 17
- 3b4:	ef 2e       	mov	r14, r31
- 3b6:	f0 2d       	mov	r31, r0
+ 3b6:	0f 2e       	mov	r0, r31
+ 3b8:	f1 e1       	ldi	r31, 0x11	; 17
+ 3ba:	ef 2e       	mov	r14, r31
+ 3bc:	f0 2d       	mov	r31, r0
 					digitsOnDisplay[2] = 0;   //D
 					digitsOnDisplay[3] = 18;  //nothing
- 3b8:	0f 2e       	mov	r0, r31
- 3ba:	f2 e1       	ldi	r31, 0x12	; 18
- 3bc:	ff 2e       	mov	r15, r31
- 3be:	f0 2d       	mov	r31, r0
- 3c0:	20 c0       	rjmp	.+64     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 3be:	0f 2e       	mov	r0, r31
+ 3c0:	f2 e1       	ldi	r31, 0x12	; 18
+ 3c2:	ff 2e       	mov	r15, r31
+ 3c4:	f0 2d       	mov	r31, r0
+ 3c6:	23 c0       	rjmp	.+70     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
 				code[2] = digitsOnDisplay[2];
 				code[3] = digitsOnDisplay[3];
 				break;
 			}
 			
-			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
- 3c2:	fe 01       	movw	r30, r28
- 3c4:	e1 0f       	add	r30, r17
- 3c6:	f1 1d       	adc	r31, r1
- 3c8:	80 83       	st	Z, r24
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(pressedButton);
+ 3c8:	e1 e0       	ldi	r30, 0x01	; 1
+ 3ca:	f0 e0       	ldi	r31, 0x00	; 0
+ 3cc:	ec 0f       	add	r30, r28
+ 3ce:	fd 1f       	adc	r31, r29
+ 3d0:	e1 0f       	add	r30, r17
+ 3d2:	f1 1d       	adc	r31, r1
+ 3d4:	80 83       	st	Z, r24
 			digitPointer++;
- 3ca:	1f 5f       	subi	r17, 0xFF	; 255
+ 3d6:	1f 5f       	subi	r17, 0xFF	; 255
 		}
 
 		if(digitPointer < 6)
- 3cc:	16 30       	cpi	r17, 0x06	; 6
- 3ce:	88 f4       	brcc	.+34     	; 0x3f2 <main+0xa6>
+ 3d8:	16 30       	cpi	r17, 0x06	; 6
+ 3da:	88 f4       	brcc	.+34     	; 0x3fe <main+0xb2>
 		{
 			setDigit(digitsOnDisplay[0], 1);
- 3d0:	61 e0       	ldi	r22, 0x01	; 1
- 3d2:	89 81       	ldd	r24, Y+1	; 0x01
- 3d4:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 3dc:	61 e0       	ldi	r22, 0x01	; 1
+ 3de:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3e0:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[1], 2);
- 3d8:	62 e0       	ldi	r22, 0x02	; 2
- 3da:	8a 81       	ldd	r24, Y+2	; 0x02
- 3dc:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 3e4:	62 e0       	ldi	r22, 0x02	; 2
+ 3e6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3e8:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[2], 3);
- 3e0:	63 e0       	ldi	r22, 0x03	; 3
- 3e2:	8b 81       	ldd	r24, Y+3	; 0x03
- 3e4:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 3ec:	63 e0       	ldi	r22, 0x03	; 3
+ 3ee:	8c 81       	ldd	r24, Y+4	; 0x04
+ 3f0:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[3], 4);
- 3e8:	64 e0       	ldi	r22, 0x04	; 4
- 3ea:	8c 81       	ldd	r24, Y+4	; 0x04
- 3ec:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
- 3f0:	bb cf       	rjmp	.-138    	; 0x368 <main+0x1c>
+ 3f4:	64 e0       	ldi	r22, 0x04	; 4
+ 3f6:	8d 81       	ldd	r24, Y+5	; 0x05
+ 3f8:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 3fc:	b6 cf       	rjmp	.-148    	; 0x36a <main+0x1e>
 		}
 		else
 		{
 			setValueOnWholeDisplay('-', digitsOnDisplay);
- 3f2:	be 01       	movw	r22, r28
- 3f4:	6f 5f       	subi	r22, 0xFF	; 255
- 3f6:	7f 4f       	sbci	r23, 0xFF	; 255
- 3f8:	8d e2       	ldi	r24, 0x2D	; 45
- 3fa:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 3fe:	be 01       	movw	r22, r28
+ 400:	6e 5f       	subi	r22, 0xFE	; 254
+ 402:	7f 4f       	sbci	r23, 0xFF	; 255
+ 404:	8d e2       	ldi	r24, 0x2D	; 45
+ 406:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 			digitPointer = 1;
- 3fe:	11 e0       	ldi	r17, 0x01	; 1
- 400:	b3 cf       	rjmp	.-154    	; 0x368 <main+0x1c>
+ 40a:	11 e0       	ldi	r17, 0x01	; 1
+ 40c:	ae cf       	rjmp	.-164    	; 0x36a <main+0x1e>
 	long int del = 0;
 
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
-		numberOnKeypad = GetPressedKey();							//poll for value on keypad
- 402:	0e 94 d6 00 	call	0x1ac	; 0x1ac <_Z13GetPressedKeyv>
+		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
+ 40e:	ce 01       	movw	r24, r28
+ 410:	01 96       	adiw	r24, 0x01	; 1
+ 412:	0e 94 d6 00 	call	0x1ac	; 0x1ac <_ZN6Keypad16GetPressedButtonEv>
 
-		if(numberOnKeypad != Button::NO_BUTTON_PRESSED)									//if input changed
- 406:	8f 3f       	cpi	r24, 0xFF	; 255
- 408:	2f ef       	ldi	r18, 0xFF	; 255
- 40a:	92 07       	cpc	r25, r18
- 40c:	09 f4       	brne	.+2      	; 0x410 <__LOCK_REGION_LENGTH__+0x10>
- 40e:	53 c0       	rjmp	.+166    	; 0x4b6 <__LOCK_REGION_LENGTH__+0xb6>
+		if(pressedButton != Button::NO_BUTTON_PRESSED)									//if input changed
+ 416:	8f 3f       	cpi	r24, 0xFF	; 255
+ 418:	2f ef       	ldi	r18, 0xFF	; 255
+ 41a:	92 07       	cpc	r25, r18
+ 41c:	09 f4       	brne	.+2      	; 0x420 <__LOCK_REGION_LENGTH__+0x20>
+ 41e:	56 c0       	rjmp	.+172    	; 0x4cc <__LOCK_REGION_LENGTH__+0xcc>
 		{
-			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
- 410:	8c 30       	cpi	r24, 0x0C	; 12
- 412:	91 05       	cpc	r25, r1
- 414:	41 f4       	brne	.+16     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
+ 420:	8c 30       	cpi	r24, 0x0C	; 12
+ 422:	91 05       	cpc	r25, r1
+ 424:	41 f4       	brne	.+16     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
 			{
 				setValueOnWholeDisplay(13, digitsOnDisplay);
- 416:	be 01       	movw	r22, r28
- 418:	6f 5f       	subi	r22, 0xFF	; 255
- 41a:	7f 4f       	sbci	r23, 0xFF	; 255
- 41c:	8d e0       	ldi	r24, 0x0D	; 13
- 41e:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 426:	be 01       	movw	r22, r28
+ 428:	6e 5f       	subi	r22, 0xFE	; 254
+ 42a:	7f 4f       	sbci	r23, 0xFF	; 255
+ 42c:	8d e0       	ldi	r24, 0x0D	; 13
+ 42e:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 				digitPointer=1;
- 422:	11 e0       	ldi	r17, 0x01	; 1
+ 432:	11 e0       	ldi	r17, 0x01	; 1
 				continue;
- 424:	ee cf       	rjmp	.-36     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 434:	ec cf       	rjmp	.-40     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
 			}
 			
-			if(digitPointer==5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
- 426:	15 30       	cpi	r17, 0x05	; 5
- 428:	09 f0       	breq	.+2      	; 0x42c <__LOCK_REGION_LENGTH__+0x2c>
- 42a:	40 c0       	rjmp	.+128    	; 0x4ac <__LOCK_REGION_LENGTH__+0xac>
- 42c:	8b 30       	cpi	r24, 0x0B	; 11
- 42e:	91 05       	cpc	r25, r1
- 430:	e9 f5       	brne	.+122    	; 0x4ac <__LOCK_REGION_LENGTH__+0xac>
+			if(digitPointer==5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+ 436:	15 30       	cpi	r17, 0x05	; 5
+ 438:	09 f0       	breq	.+2      	; 0x43c <__LOCK_REGION_LENGTH__+0x3c>
+ 43a:	40 c0       	rjmp	.+128    	; 0x4bc <__LOCK_REGION_LENGTH__+0xbc>
+ 43c:	8b 30       	cpi	r24, 0x0B	; 11
+ 43e:	91 05       	cpc	r25, r1
+ 440:	e9 f5       	brne	.+122    	; 0x4bc <__LOCK_REGION_LENGTH__+0xbc>
 				enteredCode[0] = digitsOnDisplay[0];
 				enteredCode[1] = digitsOnDisplay[1];
 				enteredCode[2] = digitsOnDisplay[2];
 				enteredCode[3] = digitsOnDisplay[3];
 				
 				if(enteredCode[0]==code[0] && enteredCode[1]==code[1] && enteredCode[2]==code[2] && enteredCode[3]==code[3]) //check if code is correct
- 432:	89 81       	ldd	r24, Y+1	; 0x01
- 434:	c8 12       	cpse	r12, r24
- 436:	11 c0       	rjmp	.+34     	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
- 438:	8a 81       	ldd	r24, Y+2	; 0x02
- 43a:	b8 12       	cpse	r11, r24
- 43c:	0e c0       	rjmp	.+28     	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
- 43e:	8b 81       	ldd	r24, Y+3	; 0x03
- 440:	98 12       	cpse	r9, r24
- 442:	0b c0       	rjmp	.+22     	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
- 444:	8c 81       	ldd	r24, Y+4	; 0x04
- 446:	a8 12       	cpse	r10, r24
- 448:	08 c0       	rjmp	.+16     	; 0x45a <__LOCK_REGION_LENGTH__+0x5a>
+ 442:	8a 81       	ldd	r24, Y+2	; 0x02
+ 444:	c8 12       	cpse	r12, r24
+ 446:	11 c0       	rjmp	.+34     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+ 448:	8b 81       	ldd	r24, Y+3	; 0x03
+ 44a:	b8 12       	cpse	r11, r24
+ 44c:	0e c0       	rjmp	.+28     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+ 44e:	8c 81       	ldd	r24, Y+4	; 0x04
+ 450:	98 12       	cpse	r9, r24
+ 452:	0b c0       	rjmp	.+22     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
+ 454:	8d 81       	ldd	r24, Y+5	; 0x05
+ 456:	a8 12       	cpse	r10, r24
+ 458:	08 c0       	rjmp	.+16     	; 0x46a <__LOCK_REGION_LENGTH__+0x6a>
 				{
 					digitsOnDisplay[0] = 0; //O
- 44a:	19 82       	std	Y+1, r1	; 0x01
+ 45a:	1a 82       	std	Y+2, r1	; 0x02
 					digitsOnDisplay[1] = 14;//P
- 44c:	8e e0       	ldi	r24, 0x0E	; 14
- 44e:	8a 83       	std	Y+2, r24	; 0x02
+ 45c:	8e e0       	ldi	r24, 0x0E	; 14
+ 45e:	8b 83       	std	Y+3, r24	; 0x03
 					digitsOnDisplay[2] = 15;//E
- 450:	8f e0       	ldi	r24, 0x0F	; 15
- 452:	8b 83       	std	Y+3, r24	; 0x03
+ 460:	8f e0       	ldi	r24, 0x0F	; 15
+ 462:	8c 83       	std	Y+4, r24	; 0x04
 					digitsOnDisplay[3] = 16;//N
- 454:	80 e1       	ldi	r24, 0x10	; 16
- 456:	8c 83       	std	Y+4, r24	; 0x04
+ 464:	80 e1       	ldi	r24, 0x10	; 16
+ 466:	8d 83       	std	Y+5, r24	; 0x05
 					break;
- 458:	49 c0       	rjmp	.+146    	; 0x4ec <__LOCK_REGION_LENGTH__+0xec>
+ 468:	4c c0       	rjmp	.+152    	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
 				}
 				
 				else
 				{
 					digitsOnDisplay[0] = 8;   //B
- 45a:	d9 82       	std	Y+1, r13	; 0x01
+ 46a:	da 82       	std	Y+2, r13	; 0x02
 					digitsOnDisplay[1] = 17;  //A
- 45c:	ea 82       	std	Y+2, r14	; 0x02
+ 46c:	eb 82       	std	Y+3, r14	; 0x03
 					digitsOnDisplay[2] = 0;   //D
- 45e:	1b 82       	std	Y+3, r1	; 0x03
+ 46e:	1c 82       	std	Y+4, r1	; 0x04
 					digitsOnDisplay[3] = 18;  //nothing
- 460:	fc 82       	std	Y+4, r15	; 0x04
- 462:	00 e0       	ldi	r16, 0x00	; 0
- 464:	10 e0       	ldi	r17, 0x00	; 0
+ 470:	fd 82       	std	Y+5, r15	; 0x05
+ 472:	00 e0       	ldi	r16, 0x00	; 0
+ 474:	10 e0       	ldi	r17, 0x00	; 0
 					
 					while(1)
 					{
 						setDigit(digitsOnDisplay[0], 1);
- 466:	61 e0       	ldi	r22, 0x01	; 1
- 468:	89 81       	ldd	r24, Y+1	; 0x01
- 46a:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
-						setDigit(digitsOnDisplay[1], 2);
- 46e:	62 e0       	ldi	r22, 0x02	; 2
- 470:	8a 81       	ldd	r24, Y+2	; 0x02
- 472:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
-						setDigit(digitsOnDisplay[2], 3);
- 476:	63 e0       	ldi	r22, 0x03	; 3
- 478:	8b 81       	ldd	r24, Y+3	; 0x03
+ 476:	61 e0       	ldi	r22, 0x01	; 1
+ 478:	8a 81       	ldd	r24, Y+2	; 0x02
  47a:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
-						setDigit(digitsOnDisplay[3], 4);
- 47e:	64 e0       	ldi	r22, 0x04	; 4
- 480:	8c 81       	ldd	r24, Y+4	; 0x04
+						setDigit(digitsOnDisplay[1], 2);
+ 47e:	62 e0       	ldi	r22, 0x02	; 2
+ 480:	8b 81       	ldd	r24, Y+3	; 0x03
  482:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+						setDigit(digitsOnDisplay[2], 3);
+ 486:	63 e0       	ldi	r22, 0x03	; 3
+ 488:	8c 81       	ldd	r24, Y+4	; 0x04
+ 48a:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+						setDigit(digitsOnDisplay[3], 4);
+ 48e:	64 e0       	ldi	r22, 0x04	; 4
+ 490:	8d 81       	ldd	r24, Y+5	; 0x05
+ 492:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 486:	81 ee       	ldi	r24, 0xE1	; 225
- 488:	94 e0       	ldi	r25, 0x04	; 4
- 48a:	01 97       	sbiw	r24, 0x01	; 1
- 48c:	f1 f7       	brne	.-4      	; 0x48a <__LOCK_REGION_LENGTH__+0x8a>
- 48e:	00 c0       	rjmp	.+0      	; 0x490 <__LOCK_REGION_LENGTH__+0x90>
- 490:	00 00       	nop
- 492:	0f 5f       	subi	r16, 0xFF	; 255
- 494:	1f 4f       	sbci	r17, 0xFF	; 255
+ 496:	81 ee       	ldi	r24, 0xE1	; 225
+ 498:	94 e0       	ldi	r25, 0x04	; 4
+ 49a:	01 97       	sbiw	r24, 0x01	; 1
+ 49c:	f1 f7       	brne	.-4      	; 0x49a <__LOCK_REGION_LENGTH__+0x9a>
+ 49e:	00 c0       	rjmp	.+0      	; 0x4a0 <__LOCK_REGION_LENGTH__+0xa0>
+ 4a0:	00 00       	nop
+ 4a2:	0f 5f       	subi	r16, 0xFF	; 255
+ 4a4:	1f 4f       	sbci	r17, 0xFF	; 255
 						
 						_delay_ms(5);
 						del++;
 
 						if(del >= 200) //if about 1 second passed
- 496:	08 3c       	cpi	r16, 0xC8	; 200
- 498:	11 05       	cpc	r17, r1
- 49a:	29 f7       	brne	.-54     	; 0x466 <__LOCK_REGION_LENGTH__+0x66>
+ 4a6:	08 3c       	cpi	r16, 0xC8	; 200
+ 4a8:	11 05       	cpc	r17, r1
+ 4aa:	29 f7       	brne	.-54     	; 0x476 <__LOCK_REGION_LENGTH__+0x76>
 						{
 							del = 0;	 //reset delay cycles counter
 							setValueOnWholeDisplay(13, digitsOnDisplay);
- 49c:	be 01       	movw	r22, r28
- 49e:	6f 5f       	subi	r22, 0xFF	; 255
- 4a0:	7f 4f       	sbci	r23, 0xFF	; 255
- 4a2:	8d e0       	ldi	r24, 0x0D	; 13
- 4a4:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 4ac:	be 01       	movw	r22, r28
+ 4ae:	6e 5f       	subi	r22, 0xFE	; 254
+ 4b0:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4b2:	8d e0       	ldi	r24, 0x0D	; 13
+ 4b4:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 							digitPointer = 1;	 //reset iterator
- 4a8:	11 e0       	ldi	r17, 0x01	; 1
+ 4b8:	11 e0       	ldi	r17, 0x01	; 1
 							break;
 						}
 					}
 					continue;
- 4aa:	ab cf       	rjmp	.-170    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 4ba:	a9 cf       	rjmp	.-174    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
 				}
 			}
-			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
- 4ac:	fe 01       	movw	r30, r28
- 4ae:	e1 0f       	add	r30, r17
- 4b0:	f1 1d       	adc	r31, r1
- 4b2:	80 83       	st	Z, r24
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(pressedButton);
+ 4bc:	e1 e0       	ldi	r30, 0x01	; 1
+ 4be:	f0 e0       	ldi	r31, 0x00	; 0
+ 4c0:	ec 0f       	add	r30, r28
+ 4c2:	fd 1f       	adc	r31, r29
+ 4c4:	e1 0f       	add	r30, r17
+ 4c6:	f1 1d       	adc	r31, r1
+ 4c8:	80 83       	st	Z, r24
 			digitPointer++;
- 4b4:	1f 5f       	subi	r17, 0xFF	; 255
+ 4ca:	1f 5f       	subi	r17, 0xFF	; 255
 		}
 
 		if(digitPointer<6)
- 4b6:	16 30       	cpi	r17, 0x06	; 6
- 4b8:	88 f4       	brcc	.+34     	; 0x4dc <__LOCK_REGION_LENGTH__+0xdc>
+ 4cc:	16 30       	cpi	r17, 0x06	; 6
+ 4ce:	88 f4       	brcc	.+34     	; 0x4f2 <__LOCK_REGION_LENGTH__+0xf2>
 		{
 			setDigit(digitsOnDisplay[0],1);
- 4ba:	61 e0       	ldi	r22, 0x01	; 1
- 4bc:	89 81       	ldd	r24, Y+1	; 0x01
- 4be:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 4d0:	61 e0       	ldi	r22, 0x01	; 1
+ 4d2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4d4:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[1],2);
- 4c2:	62 e0       	ldi	r22, 0x02	; 2
- 4c4:	8a 81       	ldd	r24, Y+2	; 0x02
- 4c6:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 4d8:	62 e0       	ldi	r22, 0x02	; 2
+ 4da:	8b 81       	ldd	r24, Y+3	; 0x03
+ 4dc:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[2],3);
- 4ca:	63 e0       	ldi	r22, 0x03	; 3
- 4cc:	8b 81       	ldd	r24, Y+3	; 0x03
- 4ce:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 4e0:	63 e0       	ldi	r22, 0x03	; 3
+ 4e2:	8c 81       	ldd	r24, Y+4	; 0x04
+ 4e4:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 			setDigit(digitsOnDisplay[3],4);
- 4d2:	64 e0       	ldi	r22, 0x04	; 4
- 4d4:	8c 81       	ldd	r24, Y+4	; 0x04
- 4d6:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
- 4da:	93 cf       	rjmp	.-218    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 4e8:	64 e0       	ldi	r22, 0x04	; 4
+ 4ea:	8d 81       	ldd	r24, Y+5	; 0x05
+ 4ec:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 4f0:	8e cf       	rjmp	.-228    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
 		}
 
 		else
 		{
 			setValueOnWholeDisplay('-', digitsOnDisplay);
- 4dc:	be 01       	movw	r22, r28
- 4de:	6f 5f       	subi	r22, 0xFF	; 255
- 4e0:	7f 4f       	sbci	r23, 0xFF	; 255
- 4e2:	8d e2       	ldi	r24, 0x2D	; 45
- 4e4:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
+ 4f2:	be 01       	movw	r22, r28
+ 4f4:	6e 5f       	subi	r22, 0xFE	; 254
+ 4f6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4f8:	8d e2       	ldi	r24, 0x2D	; 45
+ 4fa:	0e 94 76 00 	call	0xec	; 0xec <_Z22setValueOnWholeDisplayhPh>
 			digitPointer = 1;
- 4e8:	11 e0       	ldi	r17, 0x01	; 1
- 4ea:	8b cf       	rjmp	.-234    	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 4fe:	11 e0       	ldi	r17, 0x01	; 1
+ 500:	86 cf       	rjmp	.-244    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
 		}
 	}
 	
 	while(1)
 	{
 		setDigit(digitsOnDisplay[0], 1);
- 4ec:	61 e0       	ldi	r22, 0x01	; 1
- 4ee:	89 81       	ldd	r24, Y+1	; 0x01
- 4f0:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 502:	61 e0       	ldi	r22, 0x01	; 1
+ 504:	8a 81       	ldd	r24, Y+2	; 0x02
+ 506:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 		setDigit(digitsOnDisplay[1], 2);
- 4f4:	62 e0       	ldi	r22, 0x02	; 2
- 4f6:	8a 81       	ldd	r24, Y+2	; 0x02
- 4f8:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 50a:	62 e0       	ldi	r22, 0x02	; 2
+ 50c:	8b 81       	ldd	r24, Y+3	; 0x03
+ 50e:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 		setDigit(digitsOnDisplay[2], 3);
- 4fc:	63 e0       	ldi	r22, 0x03	; 3
- 4fe:	8b 81       	ldd	r24, Y+3	; 0x03
- 500:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 512:	63 e0       	ldi	r22, 0x03	; 3
+ 514:	8c 81       	ldd	r24, Y+4	; 0x04
+ 516:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
 		setDigit(digitsOnDisplay[3], 4);
- 504:	64 e0       	ldi	r22, 0x04	; 4
- 506:	8c 81       	ldd	r24, Y+4	; 0x04
- 508:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
- 50c:	ef cf       	rjmp	.-34     	; 0x4ec <__LOCK_REGION_LENGTH__+0xec>
+ 51a:	64 e0       	ldi	r22, 0x04	; 4
+ 51c:	8d 81       	ldd	r24, Y+5	; 0x05
+ 51e:	0e 94 80 00 	call	0x100	; 0x100 <_Z8setDigithh>
+ 522:	ef cf       	rjmp	.-34     	; 0x502 <__LOCK_REGION_LENGTH__+0x102>
 
-0000050e <__tablejump2__>:
- 50e:	ee 0f       	add	r30, r30
- 510:	ff 1f       	adc	r31, r31
- 512:	05 90       	lpm	r0, Z+
- 514:	f4 91       	lpm	r31, Z
- 516:	e0 2d       	mov	r30, r0
- 518:	09 94       	ijmp
+00000524 <__tablejump2__>:
+ 524:	ee 0f       	add	r30, r30
+ 526:	ff 1f       	adc	r31, r31
+ 528:	05 90       	lpm	r0, Z+
+ 52a:	f4 91       	lpm	r31, Z
+ 52c:	e0 2d       	mov	r30, r0
+ 52e:	09 94       	ijmp
 
-0000051a <_exit>:
- 51a:	f8 94       	cli
+00000530 <_exit>:
+ 530:	f8 94       	cli
 
-0000051c <__stop_program>:
- 51c:	ff cf       	rjmp	.-2      	; 0x51c <__stop_program>
+00000532 <__stop_program>:
+ 532:	ff cf       	rjmp	.-2      	; 0x532 <__stop_program>

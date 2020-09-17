@@ -3,11 +3,14 @@
 #include <stdint.h>
 #include <util/delay.h>	 //header containing delay functions
 #include "functions.h"
+#include "keypad.h"
 
 int main(void)
 {
+	Keypad keypad;
+	
 	uint8_t digitPointer = 1;
-	Button numberOnKeypad = Button::NO_BUTTON_PRESSED;			//value read from keypad
+	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitsOnDisplay[4] = {'-', '-', '-', '-'};          //table of values currently shown on 7-segment display
 	uint8_t code[4];											//table storing code set by admin
 	uint8_t enteredCode[4];										//table storing code entered by user
@@ -18,18 +21,18 @@ int main(void)
 
 	while (1)
 	{
-		numberOnKeypad = GetPressedKey();							//poll for value on keypad
+		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
 
-		if(numberOnKeypad != Button::NO_BUTTON_PRESSED)				//if input changed
+		if(pressedButton != Button::NO_BUTTON_PRESSED)				//if input changed
 		{
-			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
+			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
 				setValueOnWholeDisplay('-', digitsOnDisplay);
 				digitPointer = 1;
 				continue;
 			}
 			
-			if(digitPointer == 5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
 			{
 				code[0] = digitsOnDisplay[0];
 				code[1] = digitsOnDisplay[1];
@@ -38,7 +41,7 @@ int main(void)
 				break;
 			}
 			
-			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(pressedButton);
 			digitPointer++;
 		}
 
@@ -65,18 +68,18 @@ int main(void)
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
-		numberOnKeypad = GetPressedKey();							//poll for value on keypad
+		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
 
-		if(numberOnKeypad != Button::NO_BUTTON_PRESSED)									//if input changed
+		if(pressedButton != Button::NO_BUTTON_PRESSED)									//if input changed
 		{
-			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
+			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
 				setValueOnWholeDisplay(13, digitsOnDisplay);
 				digitPointer=1;
 				continue;
 			}
 			
-			if(digitPointer==5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer==5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
 			{
 				enteredCode[0] = digitsOnDisplay[0];
 				enteredCode[1] = digitsOnDisplay[1];
@@ -120,7 +123,7 @@ int main(void)
 					continue;
 				}
 			}
-			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(pressedButton);
 			digitPointer++;
 		}
 
