@@ -27,7 +27,7 @@ void init_ports(void)
 	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
 }
 
-void set_display(uint8_t number, uint8_t position)
+void setDigit(uint8_t number, uint8_t position)
 {
 	switch(position)
 	{
@@ -128,7 +128,7 @@ void set_display(uint8_t number, uint8_t position)
 	clear_display();
 }
 
-void set_value_on_whole_display(uint8_t value, uint8_t displayed_values[])
+void setValueOnWholeDisplay(uint8_t value, uint8_t displayed_values[])
 {
 	int i=0;
 	for(i=0; i<4;i++)
@@ -143,7 +143,7 @@ void clear_display(void)
 	PORTB = 255;
 }
 
-uint8_t select_number(void)
+Button GetPressedKey(void)
 {
 	uint8_t column_value;
 	
@@ -157,25 +157,24 @@ uint8_t select_number(void)
 
 	if(!(column_value & 1<<4))
 	{
-		//1
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 1;
+		
+		return Button::BUTTON_1;
 	}
 	else if(!(column_value & 1<<5))
 	{
-		//2
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 2;
+		return Button::BUTTON_2;
 	}
 	else if(!(column_value & 1<<6))
 	{
@@ -186,18 +185,17 @@ uint8_t select_number(void)
 			break;
 		}
 		_delay_ms(100);
-		return 3;
+		return Button::BUTTON_3;
 	}
 	else if(!(column_value & 1<<7))
 	{
-		//4
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 4;
+		return Button::BUTTON_4;
 	}
 
 	PORTD |= (1<<0); // 1 on first row;
@@ -213,47 +211,43 @@ uint8_t select_number(void)
 
 	if(!(column_value & 1<<4))
 	{
-		//5
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 5;
+		return Button::BUTTON_5;
 	}
 	else if(!(column_value & 1<<5))
 	{
-		//6
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 6;
+		return Button::BUTTON_6;
 	}
 	else if(!(column_value & 1<<6))
 	{
-		//7
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 7;
+		return Button::BUTTON_7;
 	}
 	else if(!(column_value & 1<<7))
 	{
-		//8
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 8;
+		return Button::BUTTON_8;
 	}
 
 	PORTD |= (1<<1); // 1 on second row;
@@ -269,52 +263,48 @@ uint8_t select_number(void)
 
 	if(!(column_value & 1<<4))
 	{
-		//9
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 9;
+		return Button::BUTTON_9;
 	}
 	else if(!(column_value & 1<<5))
 	{
-		//0
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 0;
+		return Button::BUTTON_0;
 	}
 	else if(!(column_value & 1<<6))
 	{
-		//OK
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 11;
+		return Button::BUTTON_OK;
 	}
 	else if(!(column_value & 1<<7))
 	{
-		//CANCEL
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
 		_delay_ms(100);
-		return 12;
+		return Button::BUTTON_CANCEL;
 	}
 
 	PORTD |= (1<<2); // 0 on third row;
 
 	_delay_us(200);
 
-	return 200;      //reserved value meaning that input did not change
+	return Button::NO_BUTTON_PRESSED;      //reserved value meaning that input did not change
 }

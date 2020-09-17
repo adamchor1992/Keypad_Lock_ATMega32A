@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-functions.c
+functions.cpp
 
-main.c
+main.cpp
 
