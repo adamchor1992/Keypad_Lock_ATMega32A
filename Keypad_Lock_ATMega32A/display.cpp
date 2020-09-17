@@ -114,25 +114,25 @@ void Display::SetAllDigitsToValue(uint8_t value)
 {
 	for(int i=0; i < 4; i++)
 	{
-		digitsOnDisplay[i] = value;
+		m_DigitValues[i] = value;
 	}
+}
+
+void Display::MultiplexDigits()
+{
+	SetDigit(m_DigitValues[0], 1);
+	SetDigit(m_DigitValues[1], 2);
+	SetDigit(m_DigitValues[2], 3);
+	SetDigit(m_DigitValues[3], 4);
+}
+
+void Display::SetDigitValue(uint8_t position, uint8_t value)
+{
+	m_DigitValues[position] = value;
 }
 
 void Display::Clear()
 {
 	PORTA = 255;
 	PORTB = 255;
-}
-
-void Display::MultiplexDigits()
-{
-	SetDigit(digitsOnDisplay[0], 1);
-	SetDigit(digitsOnDisplay[1], 2);
-	SetDigit(digitsOnDisplay[2], 3);
-	SetDigit(digitsOnDisplay[3], 4);
-}
-
-void Display::SetDigitValue(uint8_t position, uint8_t value)
-{
-	digitsOnDisplay[position] = value;
 }

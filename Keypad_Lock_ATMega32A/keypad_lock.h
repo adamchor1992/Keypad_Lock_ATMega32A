@@ -9,13 +9,17 @@ class KeypadLock
 	KeypadLock();
 	
 	private:
-	void InitPorts(void);
-	void UserSetsCode(uint8_t * code);
-	void CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code);
+	void InitPorts();
+	void UserSetsCode();
+	void CompareEnteredCodeWithAdminCode();
 	
-	Display display;
-	Keypad keypad;
+	Display m_Display;
+	Keypad m_Keypad;
+	uint8_t m_Password[4];											//table storing code set by admin
 	
-	uint8_t password[4];											//table storing code set by admin
-	uint8_t enteredPassword[4];										//table storing code entered by user
+	enum class PasswordState
+	{
+		PasswordNotSet = 0,
+		PasswordSet = 1
+	} m_PasswordState;
 };
