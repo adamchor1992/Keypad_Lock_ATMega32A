@@ -6,26 +6,26 @@
 
 Display::Display()
 {
-	//digitsOnDisplay
+	
 }
 
-void Display::SetDigit(uint8_t value, uint8_t position)
+void Display::SetDigit(Position position, uint8_t value)
 {
 	switch(position)
 	{
-		case 1:
+		case Position::POSITION_1:
 		PORTB &= ~(1<<0);
 		break;
 
-		case 2:
+		case Position::POSITION_2:
 		PORTB &= ~(1<<1);
 		break;
 
-		case 3:
+		case Position::POSITION_3:
 		PORTB &= ~(1<<2);
 		break;
 
-		case 4:
+		case Position::POSITION_4:
 		PORTB &= ~(1<<3);
 		break;
 	}
@@ -120,15 +120,34 @@ void Display::SetAllDigitsToValue(uint8_t value)
 
 void Display::MultiplexDigits()
 {
-	SetDigit(m_DigitValues[0], 1);
-	SetDigit(m_DigitValues[1], 2);
-	SetDigit(m_DigitValues[2], 3);
-	SetDigit(m_DigitValues[3], 4);
+	SetDigit(Position::POSITION_1, m_DigitValues[0]);
+	SetDigit(Position::POSITION_2, m_DigitValues[1]);
+	SetDigit(Position::POSITION_3, m_DigitValues[2]);
+	SetDigit(Position::POSITION_4, m_DigitValues[3]);
 }
 
 void Display::SetDigitValue(uint8_t position, uint8_t value)
 {
-	m_DigitValues[position] = value;
+	//switch(position)
+	//{
+	//case Position::POSITION_1:
+	//m_DigitValues[0] = value;
+	//break;
+	//
+	//case Position::POSITION_2:
+	//m_DigitValues[1] = value;
+	//break;
+	//
+	//case Position::POSITION_3:
+	//m_DigitValues[2] = value;
+	//break;
+	//
+	//case Position::POSITION_4:
+	//m_DigitValues[3] = value;
+	//break;
+	//}
+	
+	m_DigitValues[position - 1] = value;
 }
 
 void Display::Clear()

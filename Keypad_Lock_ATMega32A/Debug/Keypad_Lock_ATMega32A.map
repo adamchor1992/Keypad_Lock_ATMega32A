@@ -185,14 +185,14 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x5ae
+.text           0x00000000      0x5ba
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32a/avr5/crtatmega32a.o
                 0x00000000                __vector_default
                 0x00000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
- .progmem.gcc_sw_table._ZN7Display8SetDigitEhh
+ .progmem.gcc_sw_table._ZN7Display8SetDigitENS_8PositionEh
                 0x00000054       0x5e display.o
                 0x000000b2                . = ALIGN (0x2)
                 0x000000b2                __trampolines_start = .
@@ -269,43 +269,43 @@ END GROUP
                 0x000000ca        0xe display.o
                 0x000000ca                _ZN7DisplayC2Ev
                 0x000000ca                _ZN7DisplayC1Ev
- .text._ZN7Display8SetDigitEhh
-                0x000000d8       0xb0 display.o
-                0x000000d8                _ZN7Display8SetDigitEhh
+ .text._ZN7Display8SetDigitENS_8PositionEh
+                0x000000d8       0xb6 display.o
+                0x000000d8                _ZN7Display8SetDigitENS_8PositionEh
  .text._ZN7Display19SetAllDigitsToValueEh
-                0x00000188        0xc display.o
-                0x00000188                _ZN7Display19SetAllDigitsToValueEh
+                0x0000018e        0xc display.o
+                0x0000018e                _ZN7Display19SetAllDigitsToValueEh
  .text._ZN7Display15MultiplexDigitsEv
-                0x00000194       0x32 display.o
-                0x00000194                _ZN7Display15MultiplexDigitsEv
+                0x0000019a       0x3a display.o
+                0x0000019a                _ZN7Display15MultiplexDigitsEv
  .text._ZN7Display13SetDigitValueEhh
-                0x000001c6        0xa display.o
-                0x000001c6                _ZN7Display13SetDigitValueEhh
+                0x000001d4        0xc display.o
+                0x000001d4                _ZN7Display13SetDigitValueEhh
  .text._ZN6Keypad16GetPressedButtonEv
-                0x000001d0      0x1a0 keypad.o
-                0x000001d0                _ZN6Keypad16GetPressedButtonEv
+                0x000001e0      0x1a0 keypad.o
+                0x000001e0                _ZN6Keypad16GetPressedButtonEv
  .text._ZN10KeypadLock9InitPortsEv
-                0x00000370       0x22 keypad_lock.o
-                0x00000370                _ZN10KeypadLock9InitPortsEv
+                0x00000380       0x22 keypad_lock.o
+                0x00000380                _ZN10KeypadLock9InitPortsEv
  .text._ZN10KeypadLock12UserSetsCodeEv
-                0x00000392       0x86 keypad_lock.o
-                0x00000392                _ZN10KeypadLock12UserSetsCodeEv
+                0x000003a2       0x84 keypad_lock.o
+                0x000003a2                _ZN10KeypadLock12UserSetsCodeEv
  .text._ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEv
-                0x00000418      0x128 keypad_lock.o
-                0x00000418                _ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEv
+                0x00000426      0x126 keypad_lock.o
+                0x00000426                _ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEv
  .text._ZN10KeypadLockC2Ev
-                0x00000540       0x2c keypad_lock.o
-                0x00000540                _ZN10KeypadLockC1Ev
-                0x00000540                _ZN10KeypadLockC2Ev
- .text.main     0x0000056c       0x32 main.o
-                0x0000056c                main
- .text.libgcc   0x0000059e        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
-                0x0000059e                __tablejump2__
-                0x000005aa                . = ALIGN (0x2)
+                0x0000054c       0x2c keypad_lock.o
+                0x0000054c                _ZN10KeypadLockC1Ev
+                0x0000054c                _ZN10KeypadLockC2Ev
+ .text.main     0x00000578       0x32 main.o
+                0x00000578                main
+ .text.libgcc   0x000005aa        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                0x000005aa                __tablejump2__
+                0x000005b6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000005aa        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000005aa                _exit
-                0x000005aa                exit
+ .fini9         0x000005b6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000005b6                _exit
+                0x000005b6                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -324,11 +324,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000005aa        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000005b6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000005ae                _etext = .
+                0x000005ba                _etext = .
 
-.data           0x00800060        0x0 load address 0x000005ae
+.data           0x00800060        0x0 load address 0x000005ba
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -346,8 +346,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000005ae                __data_load_start = LOADADDR (.data)
-                0x000005ae                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000005ba                __data_load_start = LOADADDR (.data)
+                0x000005ba                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800060        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -435,21 +435,21 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1aac
+.debug_info     0x00000000     0x1b46
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .debug_info    0x000004e6      0x440 display.o
- .debug_info    0x00000926      0x646 keypad.o
- .debug_info    0x00000f6c      0x7ef keypad_lock.o
- .debug_info    0x0000175b      0x351 main.o
+ .debug_info    0x000004e6      0x484 display.o
+ .debug_info    0x0000096a      0x646 keypad.o
+ .debug_info    0x00000fb0      0x81a keypad_lock.o
+ .debug_info    0x000017ca      0x37c main.o
 
-.debug_abbrev   0x00000000      0xc7e
+.debug_abbrev   0x00000000      0xc9c
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .debug_abbrev  0x000004a3      0x22a display.o
- .debug_abbrev  0x000006cd      0x196 keypad.o
- .debug_abbrev  0x00000863      0x293 keypad_lock.o
- .debug_abbrev  0x00000af6      0x188 main.o
+ .debug_abbrev  0x000004a3      0x248 display.o
+ .debug_abbrev  0x000006eb      0x196 keypad.o
+ .debug_abbrev  0x00000881      0x293 keypad_lock.o
+ .debug_abbrev  0x00000b14      0x188 main.o
 
 .debug_line     0x00000000      0xaf3
  *(.debug_line .debug_line.* .debug_line_end)
@@ -466,24 +466,24 @@ END GROUP
  .debug_frame   0x000000a4       0x98 keypad_lock.o
  .debug_frame   0x0000013c       0x34 main.o
 
-.debug_str      0x00000000      0x750
+.debug_str      0x00000000      0x791
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32a/avr5/crtatmega32a.o
- .debug_str     0x00000196      0x311 display.o
-                                0x353 (size before relaxing)
- .debug_str     0x000004a7      0x11d keypad.o
+ .debug_str     0x00000196      0x352 display.o
+                                0x394 (size before relaxing)
+ .debug_str     0x000004e8      0x11d keypad.o
                                 0x327 (size before relaxing)
- .debug_str     0x000005c4      0x16e keypad_lock.o
-                                0x59e (size before relaxing)
- .debug_str     0x00000732       0x1e main.o
-                                0x50c (size before relaxing)
+ .debug_str     0x00000605      0x16e keypad_lock.o
+                                0x5df (size before relaxing)
+ .debug_str     0x00000773       0x1e main.o
+                                0x54d (size before relaxing)
 
-.debug_loc      0x00000000      0xb10
+.debug_loc      0x00000000      0xd0e
  *(.debug_loc)
- .debug_loc     0x00000000      0x187 display.o
- .debug_loc     0x00000187      0x56e keypad.o
- .debug_loc     0x000006f5      0x3d4 keypad_lock.o
- .debug_loc     0x00000ac9       0x47 main.o
+ .debug_loc     0x00000000      0x385 display.o
+ .debug_loc     0x00000385      0x56e keypad.o
+ .debug_loc     0x000008f3      0x3d4 keypad_lock.o
+ .debug_loc     0x00000cc7       0x47 main.o
 
 .debug_macinfo
  *(.debug_macinfo)

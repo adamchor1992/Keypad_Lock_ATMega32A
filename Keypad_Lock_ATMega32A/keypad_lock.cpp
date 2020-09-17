@@ -73,7 +73,7 @@ void KeypadLock::UserSetsCode()
 				break;
 			}
 			
-			m_Display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));
+			m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
 			digitPointer++;
 		}
 
@@ -110,7 +110,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 			
 			uint8_t enteredPassword[4] = {0};										//table storing code entered by user
 			
-			if(digitPointer==5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
 			{
 				enteredPassword[0] = m_Display.GetDigitValue(0);
 				enteredPassword[1] = m_Display.GetDigitValue(1);
@@ -119,18 +119,18 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				
 				if(enteredPassword[0] == m_Password[0] && enteredPassword[1] == m_Password[1] && enteredPassword[2] == m_Password[2] && enteredPassword[3] == m_Password[3]) //check if code is correct
 				{
-					m_Display.SetDigitValue(0, 0);	//O
-					m_Display.SetDigitValue(1, 14);	//P
-					m_Display.SetDigitValue(2, 15);	//E
-					m_Display.SetDigitValue(3, 16);	//N
+					m_Display.SetDigitValue(1, 0);	//O
+					m_Display.SetDigitValue(2, 14);	//P
+					m_Display.SetDigitValue(3, 15);	//E
+					m_Display.SetDigitValue(4, 16);	//N
 					break;
 				}
 				else
 				{
-					m_Display.SetDigitValue(0, 8);	//B
-					m_Display.SetDigitValue(1, 17);	//A
-					m_Display.SetDigitValue(2, 0);	//D
-					m_Display.SetDigitValue(3, 18);	//nothing
+					m_Display.SetDigitValue(1, 8);	//B
+					m_Display.SetDigitValue(2, 17);	//A
+					m_Display.SetDigitValue(3, 0);	//D
+					m_Display.SetDigitValue(4, 18);	//nothing
 					
 					long int delay = 0;
 					
@@ -152,7 +152,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				}
 			}
 
-			m_Display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));
+			m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
 			digitPointer++;
 		}
 
