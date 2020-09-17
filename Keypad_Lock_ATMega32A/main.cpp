@@ -6,18 +6,38 @@
 #include "keypad.h"
 #include "display.h"
 
+void UserSetsCode(uint8_t * code);
+
+void CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code);
+
+Display display;
+Keypad keypad;
+
 int main(void)
 {
-	Display display;
-	Keypad keypad;
-	
-	uint8_t digitPointer = 1;
-	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t code[4];											//table storing code set by admin
 	uint8_t enteredCode[4];										//table storing code entered by user
 
 	init_ports();
+	
+	UserSetsCode(code);
+	
+	display.SetAllDigitsToValue(13);										//set display to '-.' in locked state
+	
+	CompareEnteredCodeWithAdminCode(enteredCode, code);
+	
+	while(1)
+	{
+		display.MultiplexDigits();
+	}
+}
 
+void UserSetsCode(uint8_t * code)
+{
+	Button pressedButton = Button::NO_BUTTON_PRESSED;
+	uint8_t digitPointer = 1;
+	
+	//SETTING CODE FOR FIRST TIME
 	while (1)
 	{
 		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
@@ -54,13 +74,13 @@ int main(void)
 			digitPointer = 1;
 		}
 	}
-	
-	display.SetAllDigitsToValue(13);										//set display to '-.' in locked state
+}
 
-	digitPointer = 1;
+void CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code)
+{
+	Button pressedButton = Button::NO_BUTTON_PRESSED;
+	uint8_t digitPointer = 1;
 	
-	long int del = 0;
-
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
@@ -90,26 +110,26 @@ int main(void)
 					display.SetDigitValue(3, 16);	//N
 					break;
 				}
-				
 				else
 				{
-					display.SetDigitValue(0, 8); //B
-					display.SetDigitValue(1, 17); //A
-					display.SetDigitValue(2, 0); //D
-					display.SetDigitValue(3, 18); //nothing
+					display.SetDigitValue(0, 8);	//B
+					display.SetDigitValue(1, 17);	//A
+					display.SetDigitValue(2, 0);	//D
+					display.SetDigitValue(3, 18);	//nothing
+					
+					long int delay = 0;
 					
 					while(1)
 					{
 						display.MultiplexDigits();
 						
 						_delay_ms(5);
-						del++;
+						delay++;
 
-						if(del >= 200) //if about 1 second passed
+						if(delay >= 200) //if about 1 second passed
 						{
-							del = 0;	 //reset delay cycles counter
 							display.SetAllDigitsToValue(13);
-							digitPointer = 1;	 //reset iterator
+							digitPointer = 1;
 							break;
 						}
 					}
@@ -117,7 +137,7 @@ int main(void)
 				}
 			}
 
-			display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));			
+			display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));
 			digitPointer++;
 		}
 
@@ -131,10 +151,5 @@ int main(void)
 			display.SetAllDigitsToValue('-');
 			digitPointer = 1;
 		}
-	}
-	
-	while(1)
-	{
-		display.MultiplexDigits();
 	}
 }
