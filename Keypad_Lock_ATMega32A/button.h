@@ -1,5 +1,4 @@
-#ifndef BUTTON_H_
-#define BUTTON_H_
+#pragma once
 
 enum class Button
 {
@@ -17,5 +16,3 @@ enum class Button
 	BUTTON_OK = 11,
 	BUTTON_CANCEL = 12
 };
-
-#endif

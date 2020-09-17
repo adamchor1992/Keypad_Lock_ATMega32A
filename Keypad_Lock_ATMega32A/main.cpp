@@ -4,9 +4,11 @@
 #include <util/delay.h>	 //header containing delay functions
 #include "functions.h"
 #include "keypad.h"
+#include "display.h"
 
 int main(void)
 {
+	Display display;
 	Keypad keypad;
 	
 	uint8_t digitPointer = 1;
@@ -17,8 +19,6 @@ int main(void)
 
 	init_ports();
 
-	//UserSetsCode();
-
 	while (1)
 	{
 		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
@@ -27,7 +27,7 @@ int main(void)
 		{
 			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
-				setValueOnWholeDisplay('-', digitsOnDisplay);
+				display.SetValueOnWholeDisplay('-', digitsOnDisplay);
 				digitPointer = 1;
 				continue;
 			}
@@ -47,19 +47,19 @@ int main(void)
 
 		if(digitPointer < 6)
 		{
-			setDigit(digitsOnDisplay[0], 1);
-			setDigit(digitsOnDisplay[1], 2);
-			setDigit(digitsOnDisplay[2], 3);
-			setDigit(digitsOnDisplay[3], 4);
+			display.SetDigit(digitsOnDisplay[0], 1);
+			display.SetDigit(digitsOnDisplay[1], 2);
+			display.SetDigit(digitsOnDisplay[2], 3);
+			display.SetDigit(digitsOnDisplay[3], 4);
 		}
 		else
 		{
-			setValueOnWholeDisplay('-', digitsOnDisplay);
+			display.SetValueOnWholeDisplay('-', digitsOnDisplay);
 			digitPointer = 1;
 		}
 	}
 	
-	setValueOnWholeDisplay(13, digitsOnDisplay);										//set display to '-.' in locked state
+	display.SetValueOnWholeDisplay(13, digitsOnDisplay);										//set display to '-.' in locked state
 
 	digitPointer = 1;
 	
@@ -74,7 +74,7 @@ int main(void)
 		{
 			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
-				setValueOnWholeDisplay(13, digitsOnDisplay);
+				display.SetValueOnWholeDisplay(13, digitsOnDisplay);
 				digitPointer=1;
 				continue;
 			}
@@ -104,10 +104,10 @@ int main(void)
 					
 					while(1)
 					{
-						setDigit(digitsOnDisplay[0], 1);
-						setDigit(digitsOnDisplay[1], 2);
-						setDigit(digitsOnDisplay[2], 3);
-						setDigit(digitsOnDisplay[3], 4);
+						display.SetDigit(digitsOnDisplay[0], 1);
+						display.SetDigit(digitsOnDisplay[1], 2);
+						display.SetDigit(digitsOnDisplay[2], 3);
+						display.SetDigit(digitsOnDisplay[3], 4);
 						
 						_delay_ms(5);
 						del++;
@@ -115,7 +115,7 @@ int main(void)
 						if(del >= 200) //if about 1 second passed
 						{
 							del = 0;	 //reset delay cycles counter
-							setValueOnWholeDisplay(13, digitsOnDisplay);
+							display.SetValueOnWholeDisplay(13, digitsOnDisplay);
 							digitPointer = 1;	 //reset iterator
 							break;
 						}
@@ -129,24 +129,24 @@ int main(void)
 
 		if(digitPointer<6)
 		{
-			setDigit(digitsOnDisplay[0],1);
-			setDigit(digitsOnDisplay[1],2);
-			setDigit(digitsOnDisplay[2],3);
-			setDigit(digitsOnDisplay[3],4);
+			display.SetDigit(digitsOnDisplay[0],1);
+			display.SetDigit(digitsOnDisplay[1],2);
+			display.SetDigit(digitsOnDisplay[2],3);
+			display.SetDigit(digitsOnDisplay[3],4);
 		}
 
 		else
 		{
-			setValueOnWholeDisplay('-', digitsOnDisplay);
+			display.SetValueOnWholeDisplay('-', digitsOnDisplay);
 			digitPointer = 1;
 		}
 	}
 	
 	while(1)
 	{
-		setDigit(digitsOnDisplay[0], 1);
-		setDigit(digitsOnDisplay[1], 2);
-		setDigit(digitsOnDisplay[2], 3);
-		setDigit(digitsOnDisplay[3], 4);
+		display.SetDigit(digitsOnDisplay[0], 1);
+		display.SetDigit(digitsOnDisplay[1], 2);
+		display.SetDigit(digitsOnDisplay[2], 3);
+		display.SetDigit(digitsOnDisplay[3], 4);
 	}
 }
