@@ -6,8 +6,8 @@
 
 int main(void)
 {
-	uint8_t i = 1;												//iterator
-	Button numberOnKeypad = Button::NO_BUTTON_PRESSED;									//value read from keypad
+	uint8_t digitPointer = 1;
+	Button numberOnKeypad = Button::NO_BUTTON_PRESSED;			//value read from keypad
 	uint8_t digitsOnDisplay[4] = {'-', '-', '-', '-'};          //table of values currently shown on 7-segment display
 	uint8_t code[4];											//table storing code set by admin
 	uint8_t enteredCode[4];										//table storing code entered by user
@@ -25,11 +25,11 @@ int main(void)
 			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
 				setValueOnWholeDisplay('-', digitsOnDisplay);
-				i = 1;
+				digitPointer = 1;
 				continue;
 			}
 			
-			if(i == 5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer == 5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
 			{
 				code[0] = digitsOnDisplay[0];
 				code[1] = digitsOnDisplay[1];
@@ -38,11 +38,11 @@ int main(void)
 				break;
 			}
 			
-			digitsOnDisplay[i-1] = static_cast<uint8_t>(numberOnKeypad);
-			i++;
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
+			digitPointer++;
 		}
 
-		if(i < 6)
+		if(digitPointer < 6)
 		{
 			setDigit(digitsOnDisplay[0], 1);
 			setDigit(digitsOnDisplay[1], 2);
@@ -52,15 +52,15 @@ int main(void)
 		else
 		{
 			setValueOnWholeDisplay('-', digitsOnDisplay);
-			i = 1;
+			digitPointer = 1;
 		}
 	}
 	
 	setValueOnWholeDisplay(13, digitsOnDisplay);										//set display to '-.' in locked state
 
-	i=1;															//reset iterator
+	digitPointer = 1;
 	
-	long int del=0;
+	long int del = 0;
 
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
@@ -72,11 +72,11 @@ int main(void)
 			if(numberOnKeypad == Button::BUTTON_CANCEL)								//if cancel button was pressed
 			{
 				setValueOnWholeDisplay(13, digitsOnDisplay);
-				i=1;
+				digitPointer=1;
 				continue;
 			}
 			
-			if(i==5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer==5 && numberOnKeypad == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
 			{
 				enteredCode[0] = digitsOnDisplay[0];
 				enteredCode[1] = digitsOnDisplay[1];
@@ -113,18 +113,18 @@ int main(void)
 						{
 							del = 0;	 //reset delay cycles counter
 							setValueOnWholeDisplay(13, digitsOnDisplay);
-							i = 1;	 //reset iterator
+							digitPointer = 1;	 //reset iterator
 							break;
 						}
 					}
 					continue;
 				}
 			}
-			digitsOnDisplay[i-1] = static_cast<uint8_t>(numberOnKeypad);
-			i++;
+			digitsOnDisplay[digitPointer-1] = static_cast<uint8_t>(numberOnKeypad);
+			digitPointer++;
 		}
 
-		if(i<6)
+		if(digitPointer<6)
 		{
 			setDigit(digitsOnDisplay[0],1);
 			setDigit(digitsOnDisplay[1],2);
@@ -135,7 +135,7 @@ int main(void)
 		else
 		{
 			setValueOnWholeDisplay('-', digitsOnDisplay);
-			i = 1;
+			digitPointer = 1;
 		}
 	}
 	

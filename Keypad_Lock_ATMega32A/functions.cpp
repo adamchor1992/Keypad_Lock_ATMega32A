@@ -1,8 +1,11 @@
-#define F_CPU 1000000												//1MHz
+#define F_CPU 1000000	//1MHz
 
-#include <util/delay.h>	 //header containing delay functions
-#include <avr/io.h> 
+#include <util/delay.h>	//header containing delay functions
+#include <avr/io.h>
 #include "functions.h"
+
+const int DELAY_BETWEEN_ROWS_POLLING = 200;
+const int DELAY_AFTER_BUTTON_PRESS_DETECTED = 100;
 
 void init_ports(void)
 {
@@ -11,16 +14,16 @@ void init_ports(void)
 	DDRA = 255;
 	PORTA = 0;
 
-	/*----------------------PORTB----------------------*/	
-	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display, 
-	rest of pins of PORTB is unused*/		
-	DDRB = 0;		
-	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);  
+	/*----------------------PORTB----------------------*/
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display,
+	rest of pins of PORTB is unused*/
+	DDRB = 0;
+	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
 	PORTB = 0;
 
 	/*----------------------PORTD----------------------*/
 	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTD set as output drive rows of keyboard*/
-	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3); 
+	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
 	/*Pins PIN4, PIN5, PIN6, PIN7 of PORTD set as input control columns of keyboard*/
 	DDRD |= (0 << PIN4) | (0 << PIN5) | (0 << PIN6) | (0 << PIN7);
 	/*Pull-up on input PINS of PORTD*/
@@ -130,10 +133,9 @@ void setDigit(uint8_t number, uint8_t position)
 
 void setValueOnWholeDisplay(uint8_t value, uint8_t displayed_values[])
 {
-	int i=0;
-	for(i=0; i<4;i++)
+	for(int i=0; i<4; i++)
 	{
-		*(displayed_values + i) = value;
+		displayed_values[i] = value;
 	}
 }
 
@@ -147,11 +149,11 @@ Button GetPressedKey(void)
 {
 	uint8_t column_value;
 	
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
+	
 	// FIRST ROW
-
-	_delay_us(200);
 	PORTD &= ~(1<<0); // 0 on first row;
-	_delay_us(200);
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
 
@@ -162,8 +164,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
-		
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_1;
 	}
 	else if(!(column_value & 1<<5))
@@ -173,18 +174,17 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_2;
 	}
 	else if(!(column_value & 1<<6))
 	{
-		//3
 		while(1)
 		{
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_3;
 	}
 	else if(!(column_value & 1<<7))
@@ -194,18 +194,17 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_4;
 	}
 
 	PORTD |= (1<<0); // 1 on first row;
 	
-	_delay_us(200);
-
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
+	
 	// SECOND ROW
-
 	PORTD &= ~(1<<1); // 0 on second row;
-	_delay_us(200);
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
 
@@ -216,7 +215,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_5;
 	}
 	else if(!(column_value & 1<<5))
@@ -226,7 +225,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_6;
 	}
 	else if(!(column_value & 1<<6))
@@ -236,7 +235,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_7;
 	}
 	else if(!(column_value & 1<<7))
@@ -246,18 +245,17 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_8;
 	}
 
 	PORTD |= (1<<1); // 1 on second row;
 
-	_delay_us(200);
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	// THIRD ROW
-	
 	PORTD &= ~(1<<2); // 0 on third row;
-	_delay_us(200);
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
 
@@ -268,7 +266,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_9;
 	}
 	else if(!(column_value & 1<<5))
@@ -278,7 +276,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_0;
 	}
 	else if(!(column_value & 1<<6))
@@ -288,7 +286,7 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_OK;
 	}
 	else if(!(column_value & 1<<7))
@@ -298,13 +296,13 @@ Button GetPressedKey(void)
 			if(PIND!=column_value)
 			break;
 		}
-		_delay_ms(100);
+		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_CANCEL;
 	}
 
 	PORTD |= (1<<2); // 0 on third row;
 
-	_delay_us(200);
+	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	return Button::NO_BUTTON_PRESSED;      //reserved value meaning that input did not change
 }
