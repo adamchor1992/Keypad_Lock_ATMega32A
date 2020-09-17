@@ -164,12 +164,6 @@
     <Compile Include="display.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="functions.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="functions.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="button.h">
       <SubType>compile</SubType>
     </Compile>
@@ -177,6 +171,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="keypad.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="keypad_lock.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="keypad_lock.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.cpp">

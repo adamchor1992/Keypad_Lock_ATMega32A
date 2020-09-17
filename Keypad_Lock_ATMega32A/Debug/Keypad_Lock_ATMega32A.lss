@@ -3,1195 +3,1186 @@ Keypad_Lock_ATMega32A.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000005ee  00000000  00000000  00000074  2**1
+  0 .text         000005fe  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000662  2**0
+  1 .data         00000000  00800060  00800060  00000652  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000005  00800060  00800060  00000662  2**0
-                  ALLOC
-  3 .comment      00000030  00000000  00000000  00000662  2**0
+  2 .comment      00000030  00000000  00000000  00000652  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000694  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000684  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000c0  00000000  00000000  000006d0  2**0
+  4 .debug_aranges 000000c0  00000000  00000000  000006c0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000018b6  00000000  00000000  00000790  2**0
+  5 .debug_info   00001c01  00000000  00000000  00000780  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00000b54  00000000  00000000  00002046  2**0
+  6 .debug_abbrev 00000c5b  00000000  00000000  00002381  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000ac5  00000000  00000000  00002b9a  2**0
+  7 .debug_line   00000b69  00000000  00000000  00002fdc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  0000015c  00000000  00000000  00003660  2**2
+  8 .debug_frame  0000018c  00000000  00000000  00003b48  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000710  00000000  00000000  000037bc  2**0
+  9 .debug_str    0000073e  00000000  00000000  00003cd4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000add  00000000  00000000  00003ecc  2**0
+ 10 .debug_loc    00000cca  00000000  00000000  00004412  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000080  00000000  00000000  000049a9  2**0
+ 11 .debug_ranges 00000080  00000000  00000000  000050dc  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 5a 00 	jmp	0xb4	; 0xb4 <__ctors_end>
-   4:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-   8:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-   c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  10:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  14:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  18:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  1c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  20:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  24:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  28:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  2c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  30:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  34:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  38:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  3c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  40:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  44:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  48:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  4c:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  50:	0c 94 77 00 	jmp	0xee	; 0xee <__bad_interrupt>
-  54:	9c 00       	.word	0x009c	; ????
-  56:	9f 00       	.word	0x009f	; ????
-  58:	a2 00       	.word	0x00a2	; ????
-  5a:	a5 00       	.word	0x00a5	; ????
-  5c:	a8 00       	.word	0x00a8	; ????
-  5e:	ab 00       	.word	0x00ab	; ????
-  60:	ae 00       	.word	0x00ae	; ????
-  62:	b1 00       	.word	0x00b1	; ????
-  64:	b4 00       	.word	0x00b4	; ????
-  66:	b7 00       	.word	0x00b7	; ????
-  68:	d1 00       	.word	0x00d1	; ????
-  6a:	d1 00       	.word	0x00d1	; ????
-  6c:	d1 00       	.word	0x00d1	; ????
-  6e:	c0 00       	.word	0x00c0	; ????
-  70:	c3 00       	.word	0x00c3	; ????
-  72:	c6 00       	.word	0x00c6	; ????
-  74:	c9 00       	.word	0x00c9	; ????
-  76:	cc 00       	.word	0x00cc	; ????
-  78:	cf 00       	.word	0x00cf	; ????
-  7a:	d1 00       	.word	0x00d1	; ????
-  7c:	d1 00       	.word	0x00d1	; ????
-  7e:	d1 00       	.word	0x00d1	; ????
-  80:	d1 00       	.word	0x00d1	; ????
-  82:	d1 00       	.word	0x00d1	; ????
-  84:	d1 00       	.word	0x00d1	; ????
-  86:	d1 00       	.word	0x00d1	; ????
-  88:	d1 00       	.word	0x00d1	; ????
-  8a:	d1 00       	.word	0x00d1	; ????
-  8c:	d1 00       	.word	0x00d1	; ????
-  8e:	d1 00       	.word	0x00d1	; ????
-  90:	d1 00       	.word	0x00d1	; ????
-  92:	d1 00       	.word	0x00d1	; ????
-  94:	d1 00       	.word	0x00d1	; ????
-  96:	d1 00       	.word	0x00d1	; ????
-  98:	d1 00       	.word	0x00d1	; ????
-  9a:	d1 00       	.word	0x00d1	; ????
-  9c:	d1 00       	.word	0x00d1	; ????
-  9e:	d1 00       	.word	0x00d1	; ????
-  a0:	d1 00       	.word	0x00d1	; ????
-  a2:	d1 00       	.word	0x00d1	; ????
-  a4:	d1 00       	.word	0x00d1	; ????
-  a6:	d1 00       	.word	0x00d1	; ????
-  a8:	d1 00       	.word	0x00d1	; ????
-  aa:	d1 00       	.word	0x00d1	; ????
-  ac:	d1 00       	.word	0x00d1	; ????
-  ae:	ba 00       	.word	0x00ba	; ????
-  b0:	bd 00       	.word	0x00bd	; ????
+   0:	0c 94 59 00 	jmp	0xb2	; 0xb2 <__ctors_end>
+   4:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   8:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+   c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  10:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  14:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  18:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  1c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  20:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  24:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  28:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  2c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  30:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  34:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  38:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  3c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  40:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  44:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  48:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  4c:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  50:	0c 94 63 00 	jmp	0xc6	; 0xc6 <__bad_interrupt>
+  54:	88 00       	.word	0x0088	; ????
+  56:	8b 00       	.word	0x008b	; ????
+  58:	8e 00       	.word	0x008e	; ????
+  5a:	91 00       	.word	0x0091	; ????
+  5c:	94 00       	.word	0x0094	; ????
+  5e:	97 00       	.word	0x0097	; ????
+  60:	9a 00       	.word	0x009a	; ????
+  62:	9d 00       	.word	0x009d	; ????
+  64:	a0 00       	.word	0x00a0	; ????
+  66:	a3 00       	.word	0x00a3	; ????
+  68:	bd 00       	.word	0x00bd	; ????
+  6a:	bd 00       	.word	0x00bd	; ????
+  6c:	bd 00       	.word	0x00bd	; ????
+  6e:	ac 00       	.word	0x00ac	; ????
+  70:	af 00       	.word	0x00af	; ????
+  72:	b2 00       	.word	0x00b2	; ????
+  74:	b5 00       	.word	0x00b5	; ????
+  76:	b8 00       	.word	0x00b8	; ????
+  78:	bb 00       	.word	0x00bb	; ????
+  7a:	bd 00       	.word	0x00bd	; ????
+  7c:	bd 00       	.word	0x00bd	; ????
+  7e:	bd 00       	.word	0x00bd	; ????
+  80:	bd 00       	.word	0x00bd	; ????
+  82:	bd 00       	.word	0x00bd	; ????
+  84:	bd 00       	.word	0x00bd	; ????
+  86:	bd 00       	.word	0x00bd	; ????
+  88:	bd 00       	.word	0x00bd	; ????
+  8a:	bd 00       	.word	0x00bd	; ????
+  8c:	bd 00       	.word	0x00bd	; ????
+  8e:	bd 00       	.word	0x00bd	; ????
+  90:	bd 00       	.word	0x00bd	; ????
+  92:	bd 00       	.word	0x00bd	; ????
+  94:	bd 00       	.word	0x00bd	; ????
+  96:	bd 00       	.word	0x00bd	; ????
+  98:	bd 00       	.word	0x00bd	; ????
+  9a:	bd 00       	.word	0x00bd	; ????
+  9c:	bd 00       	.word	0x00bd	; ????
+  9e:	bd 00       	.word	0x00bd	; ????
+  a0:	bd 00       	.word	0x00bd	; ????
+  a2:	bd 00       	.word	0x00bd	; ????
+  a4:	bd 00       	.word	0x00bd	; ????
+  a6:	bd 00       	.word	0x00bd	; ????
+  a8:	bd 00       	.word	0x00bd	; ????
+  aa:	bd 00       	.word	0x00bd	; ????
+  ac:	bd 00       	.word	0x00bd	; ????
+  ae:	a6 00       	.word	0x00a6	; ????
+  b0:	a9 00       	.word	0x00a9	; ????
 
-000000b2 <__ctors_start>:
-  b2:	ea 02       	muls	r30, r26
+000000b2 <__ctors_end>:
+  b2:	11 24       	eor	r1, r1
+  b4:	1f be       	out	0x3f, r1	; 63
+  b6:	cf e5       	ldi	r28, 0x5F	; 95
+  b8:	d8 e0       	ldi	r29, 0x08	; 8
+  ba:	de bf       	out	0x3e, r29	; 62
+  bc:	cd bf       	out	0x3d, r28	; 61
+  be:	0e 94 de 02 	call	0x5bc	; 0x5bc <main>
+  c2:	0c 94 fd 02 	jmp	0x5fa	; 0x5fa <_exit>
 
-000000b4 <__ctors_end>:
-  b4:	11 24       	eor	r1, r1
-  b6:	1f be       	out	0x3f, r1	; 63
-  b8:	cf e5       	ldi	r28, 0x5F	; 95
-  ba:	d8 e0       	ldi	r29, 0x08	; 8
-  bc:	de bf       	out	0x3e, r29	; 62
-  be:	cd bf       	out	0x3d, r28	; 61
+000000c6 <__bad_interrupt>:
+  c6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-000000c0 <__do_clear_bss>:
-  c0:	20 e0       	ldi	r18, 0x00	; 0
-  c2:	a0 e6       	ldi	r26, 0x60	; 96
-  c4:	b0 e0       	ldi	r27, 0x00	; 0
-  c6:	01 c0       	rjmp	.+2      	; 0xca <.do_clear_bss_start>
-
-000000c8 <.do_clear_bss_loop>:
-  c8:	1d 92       	st	X+, r1
-
-000000ca <.do_clear_bss_start>:
-  ca:	a5 36       	cpi	r26, 0x65	; 101
-  cc:	b2 07       	cpc	r27, r18
-  ce:	e1 f7       	brne	.-8      	; 0xc8 <.do_clear_bss_loop>
-
-000000d0 <__do_global_ctors>:
-  d0:	10 e0       	ldi	r17, 0x00	; 0
-  d2:	ca e5       	ldi	r28, 0x5A	; 90
-  d4:	d0 e0       	ldi	r29, 0x00	; 0
-  d6:	04 c0       	rjmp	.+8      	; 0xe0 <__do_global_ctors+0x10>
-  d8:	21 97       	sbiw	r28, 0x01	; 1
-  da:	fe 01       	movw	r30, r28
-  dc:	0e 94 ef 02 	call	0x5de	; 0x5de <__tablejump2__>
-  e0:	c9 35       	cpi	r28, 0x59	; 89
-  e2:	d1 07       	cpc	r29, r17
-  e4:	c9 f7       	brne	.-14     	; 0xd8 <__do_global_ctors+0x8>
-  e6:	0e 94 c9 02 	call	0x592	; 0x592 <main>
-  ea:	0c 94 f5 02 	jmp	0x5ea	; 0x5ea <_exit>
-
-000000ee <__bad_interrupt>:
-  ee:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
-
-000000f2 <_ZN7DisplayC1Ev>:
+000000ca <_ZN7DisplayC1Ev>:
 }
 
 void Display::Clear()
 {
 	PORTA = 255;
 	PORTB = 255;
-  f2:	fc 01       	movw	r30, r24
-  f4:	8d e2       	ldi	r24, 0x2D	; 45
-  f6:	80 83       	st	Z, r24
-  f8:	81 83       	std	Z+1, r24	; 0x01
-  fa:	82 83       	std	Z+2, r24	; 0x02
-  fc:	83 83       	std	Z+3, r24	; 0x03
-  fe:	08 95       	ret
+  ca:	fc 01       	movw	r30, r24
+  cc:	8d e2       	ldi	r24, 0x2D	; 45
+  ce:	80 83       	st	Z, r24
+  d0:	81 83       	std	Z+1, r24	; 0x01
+  d2:	82 83       	std	Z+2, r24	; 0x02
+  d4:	83 83       	std	Z+3, r24	; 0x03
+  d6:	08 95       	ret
 
-00000100 <_ZN7Display8SetDigitEhh>:
- 100:	42 30       	cpi	r20, 0x02	; 2
- 102:	59 f0       	breq	.+22     	; 0x11a <_ZN7Display8SetDigitEhh+0x1a>
- 104:	18 f4       	brcc	.+6      	; 0x10c <_ZN7Display8SetDigitEhh+0xc>
- 106:	41 30       	cpi	r20, 0x01	; 1
- 108:	31 f0       	breq	.+12     	; 0x116 <_ZN7Display8SetDigitEhh+0x16>
- 10a:	0c c0       	rjmp	.+24     	; 0x124 <_ZN7Display8SetDigitEhh+0x24>
- 10c:	43 30       	cpi	r20, 0x03	; 3
- 10e:	39 f0       	breq	.+14     	; 0x11e <_ZN7Display8SetDigitEhh+0x1e>
- 110:	44 30       	cpi	r20, 0x04	; 4
- 112:	39 f0       	breq	.+14     	; 0x122 <_ZN7Display8SetDigitEhh+0x22>
- 114:	07 c0       	rjmp	.+14     	; 0x124 <_ZN7Display8SetDigitEhh+0x24>
- 116:	c0 98       	cbi	0x18, 0	; 24
- 118:	05 c0       	rjmp	.+10     	; 0x124 <_ZN7Display8SetDigitEhh+0x24>
- 11a:	c1 98       	cbi	0x18, 1	; 24
- 11c:	03 c0       	rjmp	.+6      	; 0x124 <_ZN7Display8SetDigitEhh+0x24>
- 11e:	c2 98       	cbi	0x18, 2	; 24
- 120:	01 c0       	rjmp	.+2      	; 0x124 <_ZN7Display8SetDigitEhh+0x24>
- 122:	c3 98       	cbi	0x18, 3	; 24
- 124:	86 2f       	mov	r24, r22
- 126:	90 e0       	ldi	r25, 0x00	; 0
- 128:	8f 32       	cpi	r24, 0x2F	; 47
- 12a:	91 05       	cpc	r25, r1
- 12c:	d0 f5       	brcc	.+116    	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 12e:	fc 01       	movw	r30, r24
- 130:	e6 5d       	subi	r30, 0xD6	; 214
- 132:	ff 4f       	sbci	r31, 0xFF	; 255
- 134:	0c 94 ef 02 	jmp	0x5de	; 0x5de <__tablejump2__>
- 138:	80 ec       	ldi	r24, 0xC0	; 192
- 13a:	8b bb       	out	0x1b, r24	; 27
- 13c:	32 c0       	rjmp	.+100    	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 13e:	89 ef       	ldi	r24, 0xF9	; 249
- 140:	8b bb       	out	0x1b, r24	; 27
- 142:	2f c0       	rjmp	.+94     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 144:	84 ea       	ldi	r24, 0xA4	; 164
- 146:	8b bb       	out	0x1b, r24	; 27
- 148:	2c c0       	rjmp	.+88     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 14a:	80 eb       	ldi	r24, 0xB0	; 176
- 14c:	8b bb       	out	0x1b, r24	; 27
- 14e:	29 c0       	rjmp	.+82     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 150:	89 e9       	ldi	r24, 0x99	; 153
- 152:	8b bb       	out	0x1b, r24	; 27
- 154:	26 c0       	rjmp	.+76     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 156:	82 e9       	ldi	r24, 0x92	; 146
- 158:	8b bb       	out	0x1b, r24	; 27
- 15a:	23 c0       	rjmp	.+70     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 15c:	82 e8       	ldi	r24, 0x82	; 130
- 15e:	8b bb       	out	0x1b, r24	; 27
- 160:	20 c0       	rjmp	.+64     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 162:	88 ef       	ldi	r24, 0xF8	; 248
- 164:	8b bb       	out	0x1b, r24	; 27
- 166:	1d c0       	rjmp	.+58     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 168:	80 e8       	ldi	r24, 0x80	; 128
- 16a:	8b bb       	out	0x1b, r24	; 27
- 16c:	1a c0       	rjmp	.+52     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 16e:	80 e9       	ldi	r24, 0x90	; 144
- 170:	8b bb       	out	0x1b, r24	; 27
- 172:	17 c0       	rjmp	.+46     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 174:	8f eb       	ldi	r24, 0xBF	; 191
- 176:	8b bb       	out	0x1b, r24	; 27
- 178:	14 c0       	rjmp	.+40     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 17a:	8f e7       	ldi	r24, 0x7F	; 127
- 17c:	8b bb       	out	0x1b, r24	; 27
- 17e:	11 c0       	rjmp	.+34     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 180:	8f e3       	ldi	r24, 0x3F	; 63
+000000d8 <_ZN7Display8SetDigitEhh>:
+  d8:	42 30       	cpi	r20, 0x02	; 2
+  da:	59 f0       	breq	.+22     	; 0xf2 <_ZN7Display8SetDigitEhh+0x1a>
+  dc:	18 f4       	brcc	.+6      	; 0xe4 <_ZN7Display8SetDigitEhh+0xc>
+  de:	41 30       	cpi	r20, 0x01	; 1
+  e0:	31 f0       	breq	.+12     	; 0xee <_ZN7Display8SetDigitEhh+0x16>
+  e2:	0c c0       	rjmp	.+24     	; 0xfc <_ZN7Display8SetDigitEhh+0x24>
+  e4:	43 30       	cpi	r20, 0x03	; 3
+  e6:	39 f0       	breq	.+14     	; 0xf6 <_ZN7Display8SetDigitEhh+0x1e>
+  e8:	44 30       	cpi	r20, 0x04	; 4
+  ea:	39 f0       	breq	.+14     	; 0xfa <_ZN7Display8SetDigitEhh+0x22>
+  ec:	07 c0       	rjmp	.+14     	; 0xfc <_ZN7Display8SetDigitEhh+0x24>
+  ee:	c0 98       	cbi	0x18, 0	; 24
+  f0:	05 c0       	rjmp	.+10     	; 0xfc <_ZN7Display8SetDigitEhh+0x24>
+  f2:	c1 98       	cbi	0x18, 1	; 24
+  f4:	03 c0       	rjmp	.+6      	; 0xfc <_ZN7Display8SetDigitEhh+0x24>
+  f6:	c2 98       	cbi	0x18, 2	; 24
+  f8:	01 c0       	rjmp	.+2      	; 0xfc <_ZN7Display8SetDigitEhh+0x24>
+  fa:	c3 98       	cbi	0x18, 3	; 24
+  fc:	86 2f       	mov	r24, r22
+  fe:	90 e0       	ldi	r25, 0x00	; 0
+ 100:	8f 32       	cpi	r24, 0x2F	; 47
+ 102:	91 05       	cpc	r25, r1
+ 104:	d0 f5       	brcc	.+116    	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 106:	fc 01       	movw	r30, r24
+ 108:	e6 5d       	subi	r30, 0xD6	; 214
+ 10a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 10c:	0c 94 f7 02 	jmp	0x5ee	; 0x5ee <__tablejump2__>
+ 110:	80 ec       	ldi	r24, 0xC0	; 192
+ 112:	8b bb       	out	0x1b, r24	; 27
+ 114:	32 c0       	rjmp	.+100    	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 116:	89 ef       	ldi	r24, 0xF9	; 249
+ 118:	8b bb       	out	0x1b, r24	; 27
+ 11a:	2f c0       	rjmp	.+94     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 11c:	84 ea       	ldi	r24, 0xA4	; 164
+ 11e:	8b bb       	out	0x1b, r24	; 27
+ 120:	2c c0       	rjmp	.+88     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 122:	80 eb       	ldi	r24, 0xB0	; 176
+ 124:	8b bb       	out	0x1b, r24	; 27
+ 126:	29 c0       	rjmp	.+82     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 128:	89 e9       	ldi	r24, 0x99	; 153
+ 12a:	8b bb       	out	0x1b, r24	; 27
+ 12c:	26 c0       	rjmp	.+76     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 12e:	82 e9       	ldi	r24, 0x92	; 146
+ 130:	8b bb       	out	0x1b, r24	; 27
+ 132:	23 c0       	rjmp	.+70     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 134:	82 e8       	ldi	r24, 0x82	; 130
+ 136:	8b bb       	out	0x1b, r24	; 27
+ 138:	20 c0       	rjmp	.+64     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 13a:	88 ef       	ldi	r24, 0xF8	; 248
+ 13c:	8b bb       	out	0x1b, r24	; 27
+ 13e:	1d c0       	rjmp	.+58     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 140:	80 e8       	ldi	r24, 0x80	; 128
+ 142:	8b bb       	out	0x1b, r24	; 27
+ 144:	1a c0       	rjmp	.+52     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 146:	80 e9       	ldi	r24, 0x90	; 144
+ 148:	8b bb       	out	0x1b, r24	; 27
+ 14a:	17 c0       	rjmp	.+46     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 14c:	8f eb       	ldi	r24, 0xBF	; 191
+ 14e:	8b bb       	out	0x1b, r24	; 27
+ 150:	14 c0       	rjmp	.+40     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 152:	8f e7       	ldi	r24, 0x7F	; 127
+ 154:	8b bb       	out	0x1b, r24	; 27
+ 156:	11 c0       	rjmp	.+34     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 158:	8f e3       	ldi	r24, 0x3F	; 63
+ 15a:	8b bb       	out	0x1b, r24	; 27
+ 15c:	0e c0       	rjmp	.+28     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 15e:	8c e8       	ldi	r24, 0x8C	; 140
+ 160:	8b bb       	out	0x1b, r24	; 27
+ 162:	0b c0       	rjmp	.+22     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 164:	86 e8       	ldi	r24, 0x86	; 134
+ 166:	8b bb       	out	0x1b, r24	; 27
+ 168:	08 c0       	rjmp	.+16     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 16a:	88 ec       	ldi	r24, 0xC8	; 200
+ 16c:	8b bb       	out	0x1b, r24	; 27
+ 16e:	05 c0       	rjmp	.+10     	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 170:	88 e8       	ldi	r24, 0x88	; 136
+ 172:	8b bb       	out	0x1b, r24	; 27
+ 174:	02 c0       	rjmp	.+4      	; 0x17a <_ZN7Display8SetDigitEhh+0xa2>
+ 176:	8f ef       	ldi	r24, 0xFF	; 255
+ 178:	8b bb       	out	0x1b, r24	; 27
+ 17a:	88 ec       	ldi	r24, 0xC8	; 200
+ 17c:	8a 95       	dec	r24
+ 17e:	f1 f7       	brne	.-4      	; 0x17c <_ZN7Display8SetDigitEhh+0xa4>
+ 180:	8f ef       	ldi	r24, 0xFF	; 255
  182:	8b bb       	out	0x1b, r24	; 27
- 184:	0e c0       	rjmp	.+28     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 186:	8c e8       	ldi	r24, 0x8C	; 140
- 188:	8b bb       	out	0x1b, r24	; 27
- 18a:	0b c0       	rjmp	.+22     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 18c:	86 e8       	ldi	r24, 0x86	; 134
- 18e:	8b bb       	out	0x1b, r24	; 27
- 190:	08 c0       	rjmp	.+16     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 192:	88 ec       	ldi	r24, 0xC8	; 200
- 194:	8b bb       	out	0x1b, r24	; 27
- 196:	05 c0       	rjmp	.+10     	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 198:	88 e8       	ldi	r24, 0x88	; 136
- 19a:	8b bb       	out	0x1b, r24	; 27
- 19c:	02 c0       	rjmp	.+4      	; 0x1a2 <_ZN7Display8SetDigitEhh+0xa2>
- 19e:	8f ef       	ldi	r24, 0xFF	; 255
- 1a0:	8b bb       	out	0x1b, r24	; 27
- 1a2:	88 ec       	ldi	r24, 0xC8	; 200
- 1a4:	8a 95       	dec	r24
- 1a6:	f1 f7       	brne	.-4      	; 0x1a4 <_ZN7Display8SetDigitEhh+0xa4>
- 1a8:	8f ef       	ldi	r24, 0xFF	; 255
- 1aa:	8b bb       	out	0x1b, r24	; 27
- 1ac:	88 bb       	out	0x18, r24	; 24
- 1ae:	08 95       	ret
+ 184:	88 bb       	out	0x18, r24	; 24
+ 186:	08 95       	ret
 
-000001b0 <_ZN7Display19SetAllDigitsToValueEh>:
- 1b0:	fc 01       	movw	r30, r24
- 1b2:	60 83       	st	Z, r22
- 1b4:	61 83       	std	Z+1, r22	; 0x01
- 1b6:	62 83       	std	Z+2, r22	; 0x02
- 1b8:	63 83       	std	Z+3, r22	; 0x03
- 1ba:	08 95       	ret
+00000188 <_ZN7Display19SetAllDigitsToValueEh>:
+ 188:	fc 01       	movw	r30, r24
+ 18a:	60 83       	st	Z, r22
+ 18c:	61 83       	std	Z+1, r22	; 0x01
+ 18e:	62 83       	std	Z+2, r22	; 0x02
+ 190:	63 83       	std	Z+3, r22	; 0x03
+ 192:	08 95       	ret
 
-000001bc <_ZN7Display15MultiplexDigitsEv>:
+00000194 <_ZN7Display15MultiplexDigitsEv>:
 }
 
 void Display::MultiplexDigits()
 {
- 1bc:	cf 93       	push	r28
- 1be:	df 93       	push	r29
- 1c0:	ec 01       	movw	r28, r24
+ 194:	cf 93       	push	r28
+ 196:	df 93       	push	r29
+ 198:	ec 01       	movw	r28, r24
 	SetDigit(digitsOnDisplay[0], 1);
- 1c2:	41 e0       	ldi	r20, 0x01	; 1
- 1c4:	68 81       	ld	r22, Y
- 1c6:	0e 94 80 00 	call	0x100	; 0x100 <_ZN7Display8SetDigitEhh>
+ 19a:	41 e0       	ldi	r20, 0x01	; 1
+ 19c:	68 81       	ld	r22, Y
+ 19e:	0e 94 6c 00 	call	0xd8	; 0xd8 <_ZN7Display8SetDigitEhh>
 	SetDigit(digitsOnDisplay[1], 2);
- 1ca:	42 e0       	ldi	r20, 0x02	; 2
- 1cc:	69 81       	ldd	r22, Y+1	; 0x01
- 1ce:	ce 01       	movw	r24, r28
- 1d0:	0e 94 80 00 	call	0x100	; 0x100 <_ZN7Display8SetDigitEhh>
+ 1a2:	42 e0       	ldi	r20, 0x02	; 2
+ 1a4:	69 81       	ldd	r22, Y+1	; 0x01
+ 1a6:	ce 01       	movw	r24, r28
+ 1a8:	0e 94 6c 00 	call	0xd8	; 0xd8 <_ZN7Display8SetDigitEhh>
 	SetDigit(digitsOnDisplay[2], 3);
- 1d4:	43 e0       	ldi	r20, 0x03	; 3
- 1d6:	6a 81       	ldd	r22, Y+2	; 0x02
- 1d8:	ce 01       	movw	r24, r28
- 1da:	0e 94 80 00 	call	0x100	; 0x100 <_ZN7Display8SetDigitEhh>
+ 1ac:	43 e0       	ldi	r20, 0x03	; 3
+ 1ae:	6a 81       	ldd	r22, Y+2	; 0x02
+ 1b0:	ce 01       	movw	r24, r28
+ 1b2:	0e 94 6c 00 	call	0xd8	; 0xd8 <_ZN7Display8SetDigitEhh>
 	SetDigit(digitsOnDisplay[3], 4);
- 1de:	44 e0       	ldi	r20, 0x04	; 4
- 1e0:	6b 81       	ldd	r22, Y+3	; 0x03
- 1e2:	ce 01       	movw	r24, r28
- 1e4:	0e 94 80 00 	call	0x100	; 0x100 <_ZN7Display8SetDigitEhh>
+ 1b6:	44 e0       	ldi	r20, 0x04	; 4
+ 1b8:	6b 81       	ldd	r22, Y+3	; 0x03
+ 1ba:	ce 01       	movw	r24, r28
+ 1bc:	0e 94 6c 00 	call	0xd8	; 0xd8 <_ZN7Display8SetDigitEhh>
 }
- 1e8:	df 91       	pop	r29
- 1ea:	cf 91       	pop	r28
- 1ec:	08 95       	ret
+ 1c0:	df 91       	pop	r29
+ 1c2:	cf 91       	pop	r28
+ 1c4:	08 95       	ret
 
-000001ee <_ZN7Display13SetDigitValueEhh>:
+000001c6 <_ZN7Display13SetDigitValueEhh>:
 
 void Display::SetDigitValue(uint8_t position, uint8_t value)
 {
 	digitsOnDisplay[position] = value;
- 1ee:	86 0f       	add	r24, r22
- 1f0:	91 1d       	adc	r25, r1
- 1f2:	fc 01       	movw	r30, r24
- 1f4:	40 83       	st	Z, r20
- 1f6:	08 95       	ret
+ 1c6:	86 0f       	add	r24, r22
+ 1c8:	91 1d       	adc	r25, r1
+ 1ca:	fc 01       	movw	r30, r24
+ 1cc:	40 83       	st	Z, r20
+ 1ce:	08 95       	ret
 
-000001f8 <_Z10init_portsv>:
-
-void init_ports(void)
-{
-	/*----------------------PORTA----------------------*/
-	/*All 8 pins of PORTA set as output drive segments of 7 segment display*/
-	DDRA = 255;
- 1f8:	8f ef       	ldi	r24, 0xFF	; 255
- 1fa:	8a bb       	out	0x1a, r24	; 26
-	PORTA = 0;
- 1fc:	1b ba       	out	0x1b, r1	; 27
-
-	/*----------------------PORTB----------------------*/
-	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display,
-	rest of pins of PORTB is unused*/
-	DDRB = 0;
- 1fe:	17 ba       	out	0x17, r1	; 23
-	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
- 200:	87 b3       	in	r24, 0x17	; 23
- 202:	8f 60       	ori	r24, 0x0F	; 15
- 204:	87 bb       	out	0x17, r24	; 23
-	PORTB = 0;
- 206:	18 ba       	out	0x18, r1	; 24
-
-	/*----------------------PORTD----------------------*/
-	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTD set as output drive rows of keyboard*/
-	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
- 208:	81 b3       	in	r24, 0x11	; 17
- 20a:	8f 60       	ori	r24, 0x0F	; 15
- 20c:	81 bb       	out	0x11, r24	; 17
-	/*Pins PIN4, PIN5, PIN6, PIN7 of PORTD set as input control columns of keyboard*/
-	DDRD |= (0 << PIN4) | (0 << PIN5) | (0 << PIN6) | (0 << PIN7);
- 20e:	81 b3       	in	r24, 0x11	; 17
- 210:	81 bb       	out	0x11, r24	; 17
-	/*Pull-up on input PINS of PORTD*/
-	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
- 212:	82 b3       	in	r24, 0x12	; 18
- 214:	80 6f       	ori	r24, 0xF0	; 240
- 216:	82 bb       	out	0x12, r24	; 18
- 218:	08 95       	ret
-
-0000021a <_ZN6Keypad16GetPressedButtonEv>:
+000001d0 <_ZN6Keypad16GetPressedButtonEv>:
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 21a:	82 e4       	ldi	r24, 0x42	; 66
- 21c:	8a 95       	dec	r24
- 21e:	f1 f7       	brne	.-4      	; 0x21c <_ZN6Keypad16GetPressedButtonEv+0x2>
- 220:	00 c0       	rjmp	.+0      	; 0x222 <_ZN6Keypad16GetPressedButtonEv+0x8>
+ 1d0:	82 e4       	ldi	r24, 0x42	; 66
+ 1d2:	8a 95       	dec	r24
+ 1d4:	f1 f7       	brne	.-4      	; 0x1d2 <_ZN6Keypad16GetPressedButtonEv+0x2>
+ 1d6:	00 c0       	rjmp	.+0      	; 0x1d8 <_ZN6Keypad16GetPressedButtonEv+0x8>
 	uint8_t column_value;
 	
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 	
 	// FIRST ROW
 	PORTD &= ~(1<<0); // 0 on first row;
- 222:	90 98       	cbi	0x12, 0	; 18
- 224:	92 e4       	ldi	r25, 0x42	; 66
- 226:	9a 95       	dec	r25
- 228:	f1 f7       	brne	.-4      	; 0x226 <_ZN6Keypad16GetPressedButtonEv+0xc>
- 22a:	00 c0       	rjmp	.+0      	; 0x22c <_ZN6Keypad16GetPressedButtonEv+0x12>
+ 1d8:	90 98       	cbi	0x12, 0	; 18
+ 1da:	92 e4       	ldi	r25, 0x42	; 66
+ 1dc:	9a 95       	dec	r25
+ 1de:	f1 f7       	brne	.-4      	; 0x1dc <_ZN6Keypad16GetPressedButtonEv+0xc>
+ 1e0:	00 c0       	rjmp	.+0      	; 0x1e2 <_ZN6Keypad16GetPressedButtonEv+0x12>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
- 22c:	80 b3       	in	r24, 0x10	; 16
+ 1e2:	80 b3       	in	r24, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 22e:	84 fd       	sbrc	r24, 4
- 230:	0c c0       	rjmp	.+24     	; 0x24a <_ZN6Keypad16GetPressedButtonEv+0x30>
+ 1e4:	84 fd       	sbrc	r24, 4
+ 1e6:	0c c0       	rjmp	.+24     	; 0x200 <_ZN6Keypad16GetPressedButtonEv+0x30>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 232:	90 b3       	in	r25, 0x10	; 16
- 234:	89 17       	cp	r24, r25
- 236:	e9 f3       	breq	.-6      	; 0x232 <_ZN6Keypad16GetPressedButtonEv+0x18>
+ 1e8:	90 b3       	in	r25, 0x10	; 16
+ 1ea:	89 17       	cp	r24, r25
+ 1ec:	e9 f3       	breq	.-6      	; 0x1e8 <_ZN6Keypad16GetPressedButtonEv+0x18>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 238:	87 ea       	ldi	r24, 0xA7	; 167
- 23a:	91 e6       	ldi	r25, 0x61	; 97
- 23c:	01 97       	sbiw	r24, 0x01	; 1
- 23e:	f1 f7       	brne	.-4      	; 0x23c <_ZN6Keypad16GetPressedButtonEv+0x22>
- 240:	00 c0       	rjmp	.+0      	; 0x242 <_ZN6Keypad16GetPressedButtonEv+0x28>
- 242:	00 00       	nop
+ 1ee:	87 ea       	ldi	r24, 0xA7	; 167
+ 1f0:	91 e6       	ldi	r25, 0x61	; 97
+ 1f2:	01 97       	sbiw	r24, 0x01	; 1
+ 1f4:	f1 f7       	brne	.-4      	; 0x1f2 <_ZN6Keypad16GetPressedButtonEv+0x22>
+ 1f6:	00 c0       	rjmp	.+0      	; 0x1f8 <_ZN6Keypad16GetPressedButtonEv+0x28>
+ 1f8:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_1;
- 244:	81 e0       	ldi	r24, 0x01	; 1
- 246:	90 e0       	ldi	r25, 0x00	; 0
- 248:	08 95       	ret
+ 1fa:	81 e0       	ldi	r24, 0x01	; 1
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 24a:	85 fd       	sbrc	r24, 5
- 24c:	0c c0       	rjmp	.+24     	; 0x266 <_ZN6Keypad16GetPressedButtonEv+0x4c>
+ 200:	85 fd       	sbrc	r24, 5
+ 202:	0c c0       	rjmp	.+24     	; 0x21c <_ZN6Keypad16GetPressedButtonEv+0x4c>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 24e:	90 b3       	in	r25, 0x10	; 16
- 250:	89 17       	cp	r24, r25
- 252:	e9 f3       	breq	.-6      	; 0x24e <_ZN6Keypad16GetPressedButtonEv+0x34>
- 254:	87 ea       	ldi	r24, 0xA7	; 167
- 256:	91 e6       	ldi	r25, 0x61	; 97
- 258:	01 97       	sbiw	r24, 0x01	; 1
- 25a:	f1 f7       	brne	.-4      	; 0x258 <_ZN6Keypad16GetPressedButtonEv+0x3e>
- 25c:	00 c0       	rjmp	.+0      	; 0x25e <_ZN6Keypad16GetPressedButtonEv+0x44>
- 25e:	00 00       	nop
+ 204:	90 b3       	in	r25, 0x10	; 16
+ 206:	89 17       	cp	r24, r25
+ 208:	e9 f3       	breq	.-6      	; 0x204 <_ZN6Keypad16GetPressedButtonEv+0x34>
+ 20a:	87 ea       	ldi	r24, 0xA7	; 167
+ 20c:	91 e6       	ldi	r25, 0x61	; 97
+ 20e:	01 97       	sbiw	r24, 0x01	; 1
+ 210:	f1 f7       	brne	.-4      	; 0x20e <_ZN6Keypad16GetPressedButtonEv+0x3e>
+ 212:	00 c0       	rjmp	.+0      	; 0x214 <_ZN6Keypad16GetPressedButtonEv+0x44>
+ 214:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_2;
- 260:	82 e0       	ldi	r24, 0x02	; 2
- 262:	90 e0       	ldi	r25, 0x00	; 0
- 264:	08 95       	ret
+ 216:	82 e0       	ldi	r24, 0x02	; 2
+ 218:	90 e0       	ldi	r25, 0x00	; 0
+ 21a:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 266:	86 fd       	sbrc	r24, 6
- 268:	0c c0       	rjmp	.+24     	; 0x282 <_ZN6Keypad16GetPressedButtonEv+0x68>
+ 21c:	86 fd       	sbrc	r24, 6
+ 21e:	0c c0       	rjmp	.+24     	; 0x238 <_ZN6Keypad16GetPressedButtonEv+0x68>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 26a:	90 b3       	in	r25, 0x10	; 16
- 26c:	89 17       	cp	r24, r25
- 26e:	e9 f3       	breq	.-6      	; 0x26a <_ZN6Keypad16GetPressedButtonEv+0x50>
- 270:	87 ea       	ldi	r24, 0xA7	; 167
- 272:	91 e6       	ldi	r25, 0x61	; 97
- 274:	01 97       	sbiw	r24, 0x01	; 1
- 276:	f1 f7       	brne	.-4      	; 0x274 <_ZN6Keypad16GetPressedButtonEv+0x5a>
- 278:	00 c0       	rjmp	.+0      	; 0x27a <_ZN6Keypad16GetPressedButtonEv+0x60>
- 27a:	00 00       	nop
+ 220:	90 b3       	in	r25, 0x10	; 16
+ 222:	89 17       	cp	r24, r25
+ 224:	e9 f3       	breq	.-6      	; 0x220 <_ZN6Keypad16GetPressedButtonEv+0x50>
+ 226:	87 ea       	ldi	r24, 0xA7	; 167
+ 228:	91 e6       	ldi	r25, 0x61	; 97
+ 22a:	01 97       	sbiw	r24, 0x01	; 1
+ 22c:	f1 f7       	brne	.-4      	; 0x22a <_ZN6Keypad16GetPressedButtonEv+0x5a>
+ 22e:	00 c0       	rjmp	.+0      	; 0x230 <_ZN6Keypad16GetPressedButtonEv+0x60>
+ 230:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_3;
- 27c:	83 e0       	ldi	r24, 0x03	; 3
- 27e:	90 e0       	ldi	r25, 0x00	; 0
- 280:	08 95       	ret
+ 232:	83 e0       	ldi	r24, 0x03	; 3
+ 234:	90 e0       	ldi	r25, 0x00	; 0
+ 236:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 282:	88 23       	and	r24, r24
- 284:	64 f0       	brlt	.+24     	; 0x29e <_ZN6Keypad16GetPressedButtonEv+0x84>
+ 238:	88 23       	and	r24, r24
+ 23a:	64 f0       	brlt	.+24     	; 0x254 <_ZN6Keypad16GetPressedButtonEv+0x84>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 286:	90 b3       	in	r25, 0x10	; 16
- 288:	89 17       	cp	r24, r25
- 28a:	e9 f3       	breq	.-6      	; 0x286 <_ZN6Keypad16GetPressedButtonEv+0x6c>
- 28c:	87 ea       	ldi	r24, 0xA7	; 167
- 28e:	91 e6       	ldi	r25, 0x61	; 97
- 290:	01 97       	sbiw	r24, 0x01	; 1
- 292:	f1 f7       	brne	.-4      	; 0x290 <_ZN6Keypad16GetPressedButtonEv+0x76>
- 294:	00 c0       	rjmp	.+0      	; 0x296 <_ZN6Keypad16GetPressedButtonEv+0x7c>
- 296:	00 00       	nop
+ 23c:	90 b3       	in	r25, 0x10	; 16
+ 23e:	89 17       	cp	r24, r25
+ 240:	e9 f3       	breq	.-6      	; 0x23c <_ZN6Keypad16GetPressedButtonEv+0x6c>
+ 242:	87 ea       	ldi	r24, 0xA7	; 167
+ 244:	91 e6       	ldi	r25, 0x61	; 97
+ 246:	01 97       	sbiw	r24, 0x01	; 1
+ 248:	f1 f7       	brne	.-4      	; 0x246 <_ZN6Keypad16GetPressedButtonEv+0x76>
+ 24a:	00 c0       	rjmp	.+0      	; 0x24c <_ZN6Keypad16GetPressedButtonEv+0x7c>
+ 24c:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_4;
- 298:	84 e0       	ldi	r24, 0x04	; 4
- 29a:	90 e0       	ldi	r25, 0x00	; 0
- 29c:	08 95       	ret
+ 24e:	84 e0       	ldi	r24, 0x04	; 4
+ 250:	90 e0       	ldi	r25, 0x00	; 0
+ 252:	08 95       	ret
 	}
 
 	PORTD |= (1<<0); // 1 on first row;
- 29e:	90 9a       	sbi	0x12, 0	; 18
+ 254:	90 9a       	sbi	0x12, 0	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 2a0:	92 e4       	ldi	r25, 0x42	; 66
- 2a2:	9a 95       	dec	r25
- 2a4:	f1 f7       	brne	.-4      	; 0x2a2 <_ZN6Keypad16GetPressedButtonEv+0x88>
- 2a6:	00 c0       	rjmp	.+0      	; 0x2a8 <_ZN6Keypad16GetPressedButtonEv+0x8e>
+ 256:	92 e4       	ldi	r25, 0x42	; 66
+ 258:	9a 95       	dec	r25
+ 25a:	f1 f7       	brne	.-4      	; 0x258 <_ZN6Keypad16GetPressedButtonEv+0x88>
+ 25c:	00 c0       	rjmp	.+0      	; 0x25e <_ZN6Keypad16GetPressedButtonEv+0x8e>
 	
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 	
 	// SECOND ROW
 	PORTD &= ~(1<<1); // 0 on second row;
- 2a8:	91 98       	cbi	0x12, 1	; 18
- 2aa:	82 e4       	ldi	r24, 0x42	; 66
- 2ac:	8a 95       	dec	r24
- 2ae:	f1 f7       	brne	.-4      	; 0x2ac <_ZN6Keypad16GetPressedButtonEv+0x92>
- 2b0:	00 c0       	rjmp	.+0      	; 0x2b2 <_ZN6Keypad16GetPressedButtonEv+0x98>
+ 25e:	91 98       	cbi	0x12, 1	; 18
+ 260:	82 e4       	ldi	r24, 0x42	; 66
+ 262:	8a 95       	dec	r24
+ 264:	f1 f7       	brne	.-4      	; 0x262 <_ZN6Keypad16GetPressedButtonEv+0x92>
+ 266:	00 c0       	rjmp	.+0      	; 0x268 <_ZN6Keypad16GetPressedButtonEv+0x98>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
- 2b2:	80 b3       	in	r24, 0x10	; 16
+ 268:	80 b3       	in	r24, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 2b4:	84 fd       	sbrc	r24, 4
- 2b6:	0c c0       	rjmp	.+24     	; 0x2d0 <_ZN6Keypad16GetPressedButtonEv+0xb6>
+ 26a:	84 fd       	sbrc	r24, 4
+ 26c:	0c c0       	rjmp	.+24     	; 0x286 <_ZN6Keypad16GetPressedButtonEv+0xb6>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 2b8:	90 b3       	in	r25, 0x10	; 16
- 2ba:	89 17       	cp	r24, r25
- 2bc:	e9 f3       	breq	.-6      	; 0x2b8 <_ZN6Keypad16GetPressedButtonEv+0x9e>
+ 26e:	90 b3       	in	r25, 0x10	; 16
+ 270:	89 17       	cp	r24, r25
+ 272:	e9 f3       	breq	.-6      	; 0x26e <_ZN6Keypad16GetPressedButtonEv+0x9e>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 2be:	87 ea       	ldi	r24, 0xA7	; 167
- 2c0:	91 e6       	ldi	r25, 0x61	; 97
- 2c2:	01 97       	sbiw	r24, 0x01	; 1
- 2c4:	f1 f7       	brne	.-4      	; 0x2c2 <_ZN6Keypad16GetPressedButtonEv+0xa8>
- 2c6:	00 c0       	rjmp	.+0      	; 0x2c8 <_ZN6Keypad16GetPressedButtonEv+0xae>
- 2c8:	00 00       	nop
+ 274:	87 ea       	ldi	r24, 0xA7	; 167
+ 276:	91 e6       	ldi	r25, 0x61	; 97
+ 278:	01 97       	sbiw	r24, 0x01	; 1
+ 27a:	f1 f7       	brne	.-4      	; 0x278 <_ZN6Keypad16GetPressedButtonEv+0xa8>
+ 27c:	00 c0       	rjmp	.+0      	; 0x27e <_ZN6Keypad16GetPressedButtonEv+0xae>
+ 27e:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_5;
- 2ca:	85 e0       	ldi	r24, 0x05	; 5
- 2cc:	90 e0       	ldi	r25, 0x00	; 0
- 2ce:	08 95       	ret
+ 280:	85 e0       	ldi	r24, 0x05	; 5
+ 282:	90 e0       	ldi	r25, 0x00	; 0
+ 284:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 2d0:	85 fd       	sbrc	r24, 5
- 2d2:	0c c0       	rjmp	.+24     	; 0x2ec <_ZN6Keypad16GetPressedButtonEv+0xd2>
+ 286:	85 fd       	sbrc	r24, 5
+ 288:	0c c0       	rjmp	.+24     	; 0x2a2 <_ZN6Keypad16GetPressedButtonEv+0xd2>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 2d4:	90 b3       	in	r25, 0x10	; 16
- 2d6:	89 17       	cp	r24, r25
- 2d8:	e9 f3       	breq	.-6      	; 0x2d4 <_ZN6Keypad16GetPressedButtonEv+0xba>
- 2da:	87 ea       	ldi	r24, 0xA7	; 167
- 2dc:	91 e6       	ldi	r25, 0x61	; 97
- 2de:	01 97       	sbiw	r24, 0x01	; 1
- 2e0:	f1 f7       	brne	.-4      	; 0x2de <_ZN6Keypad16GetPressedButtonEv+0xc4>
- 2e2:	00 c0       	rjmp	.+0      	; 0x2e4 <_ZN6Keypad16GetPressedButtonEv+0xca>
- 2e4:	00 00       	nop
+ 28a:	90 b3       	in	r25, 0x10	; 16
+ 28c:	89 17       	cp	r24, r25
+ 28e:	e9 f3       	breq	.-6      	; 0x28a <_ZN6Keypad16GetPressedButtonEv+0xba>
+ 290:	87 ea       	ldi	r24, 0xA7	; 167
+ 292:	91 e6       	ldi	r25, 0x61	; 97
+ 294:	01 97       	sbiw	r24, 0x01	; 1
+ 296:	f1 f7       	brne	.-4      	; 0x294 <_ZN6Keypad16GetPressedButtonEv+0xc4>
+ 298:	00 c0       	rjmp	.+0      	; 0x29a <_ZN6Keypad16GetPressedButtonEv+0xca>
+ 29a:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_6;
- 2e6:	86 e0       	ldi	r24, 0x06	; 6
- 2e8:	90 e0       	ldi	r25, 0x00	; 0
- 2ea:	08 95       	ret
+ 29c:	86 e0       	ldi	r24, 0x06	; 6
+ 29e:	90 e0       	ldi	r25, 0x00	; 0
+ 2a0:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 2ec:	86 fd       	sbrc	r24, 6
- 2ee:	0c c0       	rjmp	.+24     	; 0x308 <_ZN6Keypad16GetPressedButtonEv+0xee>
+ 2a2:	86 fd       	sbrc	r24, 6
+ 2a4:	0c c0       	rjmp	.+24     	; 0x2be <_ZN6Keypad16GetPressedButtonEv+0xee>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 2f0:	90 b3       	in	r25, 0x10	; 16
- 2f2:	89 17       	cp	r24, r25
- 2f4:	e9 f3       	breq	.-6      	; 0x2f0 <_ZN6Keypad16GetPressedButtonEv+0xd6>
- 2f6:	87 ea       	ldi	r24, 0xA7	; 167
- 2f8:	91 e6       	ldi	r25, 0x61	; 97
- 2fa:	01 97       	sbiw	r24, 0x01	; 1
- 2fc:	f1 f7       	brne	.-4      	; 0x2fa <_ZN6Keypad16GetPressedButtonEv+0xe0>
- 2fe:	00 c0       	rjmp	.+0      	; 0x300 <_ZN6Keypad16GetPressedButtonEv+0xe6>
- 300:	00 00       	nop
+ 2a6:	90 b3       	in	r25, 0x10	; 16
+ 2a8:	89 17       	cp	r24, r25
+ 2aa:	e9 f3       	breq	.-6      	; 0x2a6 <_ZN6Keypad16GetPressedButtonEv+0xd6>
+ 2ac:	87 ea       	ldi	r24, 0xA7	; 167
+ 2ae:	91 e6       	ldi	r25, 0x61	; 97
+ 2b0:	01 97       	sbiw	r24, 0x01	; 1
+ 2b2:	f1 f7       	brne	.-4      	; 0x2b0 <_ZN6Keypad16GetPressedButtonEv+0xe0>
+ 2b4:	00 c0       	rjmp	.+0      	; 0x2b6 <_ZN6Keypad16GetPressedButtonEv+0xe6>
+ 2b6:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_7;
- 302:	87 e0       	ldi	r24, 0x07	; 7
- 304:	90 e0       	ldi	r25, 0x00	; 0
- 306:	08 95       	ret
+ 2b8:	87 e0       	ldi	r24, 0x07	; 7
+ 2ba:	90 e0       	ldi	r25, 0x00	; 0
+ 2bc:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 308:	88 23       	and	r24, r24
- 30a:	64 f0       	brlt	.+24     	; 0x324 <_ZN6Keypad16GetPressedButtonEv+0x10a>
+ 2be:	88 23       	and	r24, r24
+ 2c0:	64 f0       	brlt	.+24     	; 0x2da <_ZN6Keypad16GetPressedButtonEv+0x10a>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 30c:	90 b3       	in	r25, 0x10	; 16
- 30e:	89 17       	cp	r24, r25
- 310:	e9 f3       	breq	.-6      	; 0x30c <_ZN6Keypad16GetPressedButtonEv+0xf2>
- 312:	87 ea       	ldi	r24, 0xA7	; 167
- 314:	91 e6       	ldi	r25, 0x61	; 97
- 316:	01 97       	sbiw	r24, 0x01	; 1
- 318:	f1 f7       	brne	.-4      	; 0x316 <_ZN6Keypad16GetPressedButtonEv+0xfc>
- 31a:	00 c0       	rjmp	.+0      	; 0x31c <_ZN6Keypad16GetPressedButtonEv+0x102>
- 31c:	00 00       	nop
+ 2c2:	90 b3       	in	r25, 0x10	; 16
+ 2c4:	89 17       	cp	r24, r25
+ 2c6:	e9 f3       	breq	.-6      	; 0x2c2 <_ZN6Keypad16GetPressedButtonEv+0xf2>
+ 2c8:	87 ea       	ldi	r24, 0xA7	; 167
+ 2ca:	91 e6       	ldi	r25, 0x61	; 97
+ 2cc:	01 97       	sbiw	r24, 0x01	; 1
+ 2ce:	f1 f7       	brne	.-4      	; 0x2cc <_ZN6Keypad16GetPressedButtonEv+0xfc>
+ 2d0:	00 c0       	rjmp	.+0      	; 0x2d2 <_ZN6Keypad16GetPressedButtonEv+0x102>
+ 2d2:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_8;
- 31e:	88 e0       	ldi	r24, 0x08	; 8
- 320:	90 e0       	ldi	r25, 0x00	; 0
- 322:	08 95       	ret
+ 2d4:	88 e0       	ldi	r24, 0x08	; 8
+ 2d6:	90 e0       	ldi	r25, 0x00	; 0
+ 2d8:	08 95       	ret
 	}
 
 	PORTD |= (1<<1); // 1 on second row;
- 324:	91 9a       	sbi	0x12, 1	; 18
+ 2da:	91 9a       	sbi	0x12, 1	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 326:	92 e4       	ldi	r25, 0x42	; 66
- 328:	9a 95       	dec	r25
- 32a:	f1 f7       	brne	.-4      	; 0x328 <_ZN6Keypad16GetPressedButtonEv+0x10e>
- 32c:	00 c0       	rjmp	.+0      	; 0x32e <_ZN6Keypad16GetPressedButtonEv+0x114>
+ 2dc:	92 e4       	ldi	r25, 0x42	; 66
+ 2de:	9a 95       	dec	r25
+ 2e0:	f1 f7       	brne	.-4      	; 0x2de <_ZN6Keypad16GetPressedButtonEv+0x10e>
+ 2e2:	00 c0       	rjmp	.+0      	; 0x2e4 <_ZN6Keypad16GetPressedButtonEv+0x114>
 
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	// THIRD ROW
 	PORTD &= ~(1<<2); // 0 on third row;
- 32e:	92 98       	cbi	0x12, 2	; 18
- 330:	82 e4       	ldi	r24, 0x42	; 66
- 332:	8a 95       	dec	r24
- 334:	f1 f7       	brne	.-4      	; 0x332 <_ZN6Keypad16GetPressedButtonEv+0x118>
- 336:	00 c0       	rjmp	.+0      	; 0x338 <_ZN6Keypad16GetPressedButtonEv+0x11e>
+ 2e4:	92 98       	cbi	0x12, 2	; 18
+ 2e6:	82 e4       	ldi	r24, 0x42	; 66
+ 2e8:	8a 95       	dec	r24
+ 2ea:	f1 f7       	brne	.-4      	; 0x2e8 <_ZN6Keypad16GetPressedButtonEv+0x118>
+ 2ec:	00 c0       	rjmp	.+0      	; 0x2ee <_ZN6Keypad16GetPressedButtonEv+0x11e>
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
- 338:	80 b3       	in	r24, 0x10	; 16
+ 2ee:	80 b3       	in	r24, 0x10	; 16
 
 	if(!(column_value & 1<<4))
- 33a:	84 fd       	sbrc	r24, 4
- 33c:	0c c0       	rjmp	.+24     	; 0x356 <_ZN6Keypad16GetPressedButtonEv+0x13c>
+ 2f0:	84 fd       	sbrc	r24, 4
+ 2f2:	0c c0       	rjmp	.+24     	; 0x30c <_ZN6Keypad16GetPressedButtonEv+0x13c>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 33e:	90 b3       	in	r25, 0x10	; 16
- 340:	89 17       	cp	r24, r25
- 342:	e9 f3       	breq	.-6      	; 0x33e <_ZN6Keypad16GetPressedButtonEv+0x124>
+ 2f4:	90 b3       	in	r25, 0x10	; 16
+ 2f6:	89 17       	cp	r24, r25
+ 2f8:	e9 f3       	breq	.-6      	; 0x2f4 <_ZN6Keypad16GetPressedButtonEv+0x124>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 344:	87 ea       	ldi	r24, 0xA7	; 167
- 346:	91 e6       	ldi	r25, 0x61	; 97
- 348:	01 97       	sbiw	r24, 0x01	; 1
- 34a:	f1 f7       	brne	.-4      	; 0x348 <_ZN6Keypad16GetPressedButtonEv+0x12e>
- 34c:	00 c0       	rjmp	.+0      	; 0x34e <_ZN6Keypad16GetPressedButtonEv+0x134>
- 34e:	00 00       	nop
+ 2fa:	87 ea       	ldi	r24, 0xA7	; 167
+ 2fc:	91 e6       	ldi	r25, 0x61	; 97
+ 2fe:	01 97       	sbiw	r24, 0x01	; 1
+ 300:	f1 f7       	brne	.-4      	; 0x2fe <_ZN6Keypad16GetPressedButtonEv+0x12e>
+ 302:	00 c0       	rjmp	.+0      	; 0x304 <_ZN6Keypad16GetPressedButtonEv+0x134>
+ 304:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_9;
- 350:	89 e0       	ldi	r24, 0x09	; 9
- 352:	90 e0       	ldi	r25, 0x00	; 0
- 354:	08 95       	ret
+ 306:	89 e0       	ldi	r24, 0x09	; 9
+ 308:	90 e0       	ldi	r25, 0x00	; 0
+ 30a:	08 95       	ret
 	}
 	else if(!(column_value & 1<<5))
- 356:	85 fd       	sbrc	r24, 5
- 358:	0c c0       	rjmp	.+24     	; 0x372 <_ZN6Keypad16GetPressedButtonEv+0x158>
+ 30c:	85 fd       	sbrc	r24, 5
+ 30e:	0c c0       	rjmp	.+24     	; 0x328 <_ZN6Keypad16GetPressedButtonEv+0x158>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 35a:	90 b3       	in	r25, 0x10	; 16
- 35c:	89 17       	cp	r24, r25
- 35e:	e9 f3       	breq	.-6      	; 0x35a <_ZN6Keypad16GetPressedButtonEv+0x140>
- 360:	87 ea       	ldi	r24, 0xA7	; 167
- 362:	91 e6       	ldi	r25, 0x61	; 97
- 364:	01 97       	sbiw	r24, 0x01	; 1
- 366:	f1 f7       	brne	.-4      	; 0x364 <_ZN6Keypad16GetPressedButtonEv+0x14a>
- 368:	00 c0       	rjmp	.+0      	; 0x36a <_ZN6Keypad16GetPressedButtonEv+0x150>
- 36a:	00 00       	nop
+ 310:	90 b3       	in	r25, 0x10	; 16
+ 312:	89 17       	cp	r24, r25
+ 314:	e9 f3       	breq	.-6      	; 0x310 <_ZN6Keypad16GetPressedButtonEv+0x140>
+ 316:	87 ea       	ldi	r24, 0xA7	; 167
+ 318:	91 e6       	ldi	r25, 0x61	; 97
+ 31a:	01 97       	sbiw	r24, 0x01	; 1
+ 31c:	f1 f7       	brne	.-4      	; 0x31a <_ZN6Keypad16GetPressedButtonEv+0x14a>
+ 31e:	00 c0       	rjmp	.+0      	; 0x320 <_ZN6Keypad16GetPressedButtonEv+0x150>
+ 320:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_0;
- 36c:	80 e0       	ldi	r24, 0x00	; 0
- 36e:	90 e0       	ldi	r25, 0x00	; 0
- 370:	08 95       	ret
+ 322:	80 e0       	ldi	r24, 0x00	; 0
+ 324:	90 e0       	ldi	r25, 0x00	; 0
+ 326:	08 95       	ret
 	}
 	else if(!(column_value & 1<<6))
- 372:	86 fd       	sbrc	r24, 6
- 374:	0c c0       	rjmp	.+24     	; 0x38e <_ZN6Keypad16GetPressedButtonEv+0x174>
+ 328:	86 fd       	sbrc	r24, 6
+ 32a:	0c c0       	rjmp	.+24     	; 0x344 <_ZN6Keypad16GetPressedButtonEv+0x174>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 376:	90 b3       	in	r25, 0x10	; 16
- 378:	89 17       	cp	r24, r25
- 37a:	e9 f3       	breq	.-6      	; 0x376 <_ZN6Keypad16GetPressedButtonEv+0x15c>
- 37c:	87 ea       	ldi	r24, 0xA7	; 167
- 37e:	91 e6       	ldi	r25, 0x61	; 97
- 380:	01 97       	sbiw	r24, 0x01	; 1
- 382:	f1 f7       	brne	.-4      	; 0x380 <_ZN6Keypad16GetPressedButtonEv+0x166>
- 384:	00 c0       	rjmp	.+0      	; 0x386 <_ZN6Keypad16GetPressedButtonEv+0x16c>
- 386:	00 00       	nop
+ 32c:	90 b3       	in	r25, 0x10	; 16
+ 32e:	89 17       	cp	r24, r25
+ 330:	e9 f3       	breq	.-6      	; 0x32c <_ZN6Keypad16GetPressedButtonEv+0x15c>
+ 332:	87 ea       	ldi	r24, 0xA7	; 167
+ 334:	91 e6       	ldi	r25, 0x61	; 97
+ 336:	01 97       	sbiw	r24, 0x01	; 1
+ 338:	f1 f7       	brne	.-4      	; 0x336 <_ZN6Keypad16GetPressedButtonEv+0x166>
+ 33a:	00 c0       	rjmp	.+0      	; 0x33c <_ZN6Keypad16GetPressedButtonEv+0x16c>
+ 33c:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_OK;
- 388:	8b e0       	ldi	r24, 0x0B	; 11
- 38a:	90 e0       	ldi	r25, 0x00	; 0
- 38c:	08 95       	ret
+ 33e:	8b e0       	ldi	r24, 0x0B	; 11
+ 340:	90 e0       	ldi	r25, 0x00	; 0
+ 342:	08 95       	ret
 	}
 	else if(!(column_value & 1<<7))
- 38e:	88 23       	and	r24, r24
- 390:	64 f0       	brlt	.+24     	; 0x3aa <_ZN6Keypad16GetPressedButtonEv+0x190>
+ 344:	88 23       	and	r24, r24
+ 346:	64 f0       	brlt	.+24     	; 0x360 <_ZN6Keypad16GetPressedButtonEv+0x190>
 	{
 		while(1)
 		{
 			if(PIND!=column_value)
- 392:	90 b3       	in	r25, 0x10	; 16
- 394:	89 17       	cp	r24, r25
- 396:	e9 f3       	breq	.-6      	; 0x392 <_ZN6Keypad16GetPressedButtonEv+0x178>
- 398:	87 ea       	ldi	r24, 0xA7	; 167
- 39a:	91 e6       	ldi	r25, 0x61	; 97
- 39c:	01 97       	sbiw	r24, 0x01	; 1
- 39e:	f1 f7       	brne	.-4      	; 0x39c <_ZN6Keypad16GetPressedButtonEv+0x182>
- 3a0:	00 c0       	rjmp	.+0      	; 0x3a2 <_ZN6Keypad16GetPressedButtonEv+0x188>
- 3a2:	00 00       	nop
+ 348:	90 b3       	in	r25, 0x10	; 16
+ 34a:	89 17       	cp	r24, r25
+ 34c:	e9 f3       	breq	.-6      	; 0x348 <_ZN6Keypad16GetPressedButtonEv+0x178>
+ 34e:	87 ea       	ldi	r24, 0xA7	; 167
+ 350:	91 e6       	ldi	r25, 0x61	; 97
+ 352:	01 97       	sbiw	r24, 0x01	; 1
+ 354:	f1 f7       	brne	.-4      	; 0x352 <_ZN6Keypad16GetPressedButtonEv+0x182>
+ 356:	00 c0       	rjmp	.+0      	; 0x358 <_ZN6Keypad16GetPressedButtonEv+0x188>
+ 358:	00 00       	nop
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
 		return Button::BUTTON_CANCEL;
- 3a4:	8c e0       	ldi	r24, 0x0C	; 12
- 3a6:	90 e0       	ldi	r25, 0x00	; 0
- 3a8:	08 95       	ret
+ 35a:	8c e0       	ldi	r24, 0x0C	; 12
+ 35c:	90 e0       	ldi	r25, 0x00	; 0
+ 35e:	08 95       	ret
 	}
 
 	PORTD |= (1<<2); // 0 on third row;
- 3aa:	92 9a       	sbi	0x12, 2	; 18
+ 360:	92 9a       	sbi	0x12, 2	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 3ac:	92 e4       	ldi	r25, 0x42	; 66
- 3ae:	9a 95       	dec	r25
- 3b0:	f1 f7       	brne	.-4      	; 0x3ae <_ZN6Keypad16GetPressedButtonEv+0x194>
- 3b2:	00 c0       	rjmp	.+0      	; 0x3b4 <_ZN6Keypad16GetPressedButtonEv+0x19a>
+ 362:	92 e4       	ldi	r25, 0x42	; 66
+ 364:	9a 95       	dec	r25
+ 366:	f1 f7       	brne	.-4      	; 0x364 <_ZN6Keypad16GetPressedButtonEv+0x194>
+ 368:	00 c0       	rjmp	.+0      	; 0x36a <_ZN6Keypad16GetPressedButtonEv+0x19a>
 
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	return Button::NO_BUTTON_PRESSED;      //reserved value meaning that input did not change
- 3b4:	8f ef       	ldi	r24, 0xFF	; 255
- 3b6:	9f ef       	ldi	r25, 0xFF	; 255
- 3b8:	08 95       	ret
+ 36a:	8f ef       	ldi	r24, 0xFF	; 255
+ 36c:	9f ef       	ldi	r25, 0xFF	; 255
+ 36e:	08 95       	ret
 
-000003ba <_Z12UserSetsCodePh>:
-		display.MultiplexDigits();
-	}
+00000370 <_ZN10KeypadLock9InitPortsEv>:
+
+void KeypadLock::InitPorts(void)
+{
+	/*----------------------PORTA----------------------*/
+	/*All 8 pins of PORTA set as output drive segments of 7 segment display*/
+	DDRA = 255;
+ 370:	8f ef       	ldi	r24, 0xFF	; 255
+ 372:	8a bb       	out	0x1a, r24	; 26
+	PORTA = 0;
+ 374:	1b ba       	out	0x1b, r1	; 27
+
+	/*----------------------PORTB----------------------*/
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTB set as output drive digits of 7 segment display,
+	rest of pins of PORTB is unused*/
+	DDRB = 0;
+ 376:	17 ba       	out	0x17, r1	; 23
+	DDRB |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
+ 378:	87 b3       	in	r24, 0x17	; 23
+ 37a:	8f 60       	ori	r24, 0x0F	; 15
+ 37c:	87 bb       	out	0x17, r24	; 23
+	PORTB = 0;
+ 37e:	18 ba       	out	0x18, r1	; 24
+
+	/*----------------------PORTD----------------------*/
+	/*Pins PIN0, PIN1, PIN2, PIN3 of PORTD set as output drive rows of keyboard*/
+	DDRD |= (1 << PIN0) | (1 << PIN1) | (1 << PIN2) | (1 << PIN3);
+ 380:	81 b3       	in	r24, 0x11	; 17
+ 382:	8f 60       	ori	r24, 0x0F	; 15
+ 384:	81 bb       	out	0x11, r24	; 17
+	/*Pins PIN4, PIN5, PIN6, PIN7 of PORTD set as input control columns of keyboard*/
+	DDRD |= (0 << PIN4) | (0 << PIN5) | (0 << PIN6) | (0 << PIN7);
+ 386:	81 b3       	in	r24, 0x11	; 17
+ 388:	81 bb       	out	0x11, r24	; 17
+	/*Pull-up on input PINS of PORTD*/
+	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
+ 38a:	82 b3       	in	r24, 0x12	; 18
+ 38c:	80 6f       	ori	r24, 0xF0	; 240
+ 38e:	82 bb       	out	0x12, r24	; 18
+ 390:	08 95       	ret
+
+00000392 <_ZN10KeypadLock12UserSetsCodeEPh>:
 }
 
-void UserSetsCode(uint8_t * code)
+void KeypadLock::UserSetsCode(uint8_t * code)
 {
- 3ba:	0f 93       	push	r16
- 3bc:	1f 93       	push	r17
- 3be:	cf 93       	push	r28
- 3c0:	8c 01       	movw	r16, r24
+ 392:	cf 92       	push	r12
+ 394:	df 92       	push	r13
+ 396:	ef 92       	push	r14
+ 398:	ff 92       	push	r15
+ 39a:	0f 93       	push	r16
+ 39c:	1f 93       	push	r17
+ 39e:	cf 93       	push	r28
+ 3a0:	8c 01       	movw	r16, r24
+ 3a2:	6b 01       	movw	r12, r22
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;
- 3c2:	c1 e0       	ldi	r28, 0x01	; 1
+ 3a4:	c1 e0       	ldi	r28, 0x01	; 1
 	
 	//SETTING CODE FOR FIRST TIME
 	while (1)
 	{
 		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
- 3c4:	80 e6       	ldi	r24, 0x60	; 96
- 3c6:	90 e0       	ldi	r25, 0x00	; 0
- 3c8:	0e 94 0d 01 	call	0x21a	; 0x21a <_ZN6Keypad16GetPressedButtonEv>
+ 3a6:	7c 01       	movw	r14, r24
+ 3a8:	24 e0       	ldi	r18, 0x04	; 4
+ 3aa:	e2 0e       	add	r14, r18
+ 3ac:	f1 1c       	adc	r15, r1
+ 3ae:	c7 01       	movw	r24, r14
+ 3b0:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <_ZN6Keypad16GetPressedButtonEv>
 
 		if(pressedButton != Button::NO_BUTTON_PRESSED)				//if input changed
- 3cc:	8f 3f       	cpi	r24, 0xFF	; 255
- 3ce:	2f ef       	ldi	r18, 0xFF	; 255
- 3d0:	92 07       	cpc	r25, r18
- 3d2:	41 f1       	breq	.+80     	; 0x424 <__LOCK_REGION_LENGTH__+0x24>
+ 3b4:	8f 3f       	cpi	r24, 0xFF	; 255
+ 3b6:	ef ef       	ldi	r30, 0xFF	; 255
+ 3b8:	9e 07       	cpc	r25, r30
+ 3ba:	31 f1       	breq	.+76     	; 0x408 <__LOCK_REGION_LENGTH__+0x8>
 		{
 			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
- 3d4:	8c 30       	cpi	r24, 0x0C	; 12
- 3d6:	91 05       	cpc	r25, r1
- 3d8:	39 f4       	brne	.+14     	; 0x3e8 <_Z12UserSetsCodePh+0x2e>
+ 3bc:	8c 30       	cpi	r24, 0x0C	; 12
+ 3be:	91 05       	cpc	r25, r1
+ 3c0:	31 f4       	brne	.+12     	; 0x3ce <_ZN10KeypadLock12UserSetsCodeEPh+0x3c>
 			{
 				display.SetAllDigitsToValue('-');
- 3da:	6d e2       	ldi	r22, 0x2D	; 45
- 3dc:	81 e6       	ldi	r24, 0x61	; 97
- 3de:	90 e0       	ldi	r25, 0x00	; 0
- 3e0:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 3c2:	6d e2       	ldi	r22, 0x2D	; 45
+ 3c4:	c8 01       	movw	r24, r16
+ 3c6:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 				digitPointer = 1;
- 3e4:	c1 e0       	ldi	r28, 0x01	; 1
+ 3ca:	c1 e0       	ldi	r28, 0x01	; 1
 				continue;
- 3e6:	ee cf       	rjmp	.-36     	; 0x3c4 <_Z12UserSetsCodePh+0xa>
+ 3cc:	f0 cf       	rjmp	.-32     	; 0x3ae <_ZN10KeypadLock12UserSetsCodeEPh+0x1c>
 			}
 			
 			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
- 3e8:	c5 30       	cpi	r28, 0x05	; 5
- 3ea:	a1 f4       	brne	.+40     	; 0x414 <__LOCK_REGION_LENGTH__+0x14>
- 3ec:	8b 30       	cpi	r24, 0x0B	; 11
- 3ee:	91 05       	cpc	r25, r1
- 3f0:	89 f4       	brne	.+34     	; 0x414 <__LOCK_REGION_LENGTH__+0x14>
+ 3ce:	c5 30       	cpi	r28, 0x05	; 5
+ 3d0:	a1 f4       	brne	.+40     	; 0x3fa <_ZN10KeypadLock12UserSetsCodeEPh+0x68>
+ 3d2:	8b 30       	cpi	r24, 0x0B	; 11
+ 3d4:	91 05       	cpc	r25, r1
+ 3d6:	89 f4       	brne	.+34     	; 0x3fa <_ZN10KeypadLock12UserSetsCodeEPh+0x68>
 	public:
 	Display();
 	
 	void SetAllDigitsToValue(uint8_t value);
 	void Clear();
 	uint8_t GetDigitValue(uint8_t digit) {return digitsOnDisplay[digit];}
- 3f2:	e1 e6       	ldi	r30, 0x61	; 97
- 3f4:	f0 e0       	ldi	r31, 0x00	; 0
- 3f6:	80 81       	ld	r24, Z
+ 3d8:	f8 01       	movw	r30, r16
+ 3da:	80 81       	ld	r24, Z
 			{
 				code[0] = display.GetDigitValue(0);
- 3f8:	d8 01       	movw	r26, r16
- 3fa:	8c 93       	st	X, r24
- 3fc:	81 81       	ldd	r24, Z+1	; 0x01
+ 3dc:	f6 01       	movw	r30, r12
+ 3de:	80 83       	st	Z, r24
+ 3e0:	f8 01       	movw	r30, r16
+ 3e2:	81 81       	ldd	r24, Z+1	; 0x01
 				code[1] = display.GetDigitValue(1);
- 3fe:	11 96       	adiw	r26, 0x01	; 1
- 400:	8c 93       	st	X, r24
- 402:	11 97       	sbiw	r26, 0x01	; 1
- 404:	82 81       	ldd	r24, Z+2	; 0x02
+ 3e4:	f6 01       	movw	r30, r12
+ 3e6:	81 83       	std	Z+1, r24	; 0x01
+ 3e8:	f8 01       	movw	r30, r16
+ 3ea:	82 81       	ldd	r24, Z+2	; 0x02
 				code[2] = display.GetDigitValue(2);
- 406:	12 96       	adiw	r26, 0x02	; 2
- 408:	8c 93       	st	X, r24
- 40a:	12 97       	sbiw	r26, 0x02	; 2
- 40c:	83 81       	ldd	r24, Z+3	; 0x03
+ 3ec:	f6 01       	movw	r30, r12
+ 3ee:	82 83       	std	Z+2, r24	; 0x02
+ 3f0:	f8 01       	movw	r30, r16
+ 3f2:	83 81       	ldd	r24, Z+3	; 0x03
 				code[3] = display.GetDigitValue(3);
- 40e:	13 96       	adiw	r26, 0x03	; 3
- 410:	8c 93       	st	X, r24
+ 3f4:	f6 01       	movw	r30, r12
+ 3f6:	83 83       	std	Z+3, r24	; 0x03
 		{
 			display.SetAllDigitsToValue('-');
 			digitPointer = 1;
 		}
 	}
 }
- 412:	16 c0       	rjmp	.+44     	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+ 3f8:	13 c0       	rjmp	.+38     	; 0x420 <__LOCK_REGION_LENGTH__+0x20>
 				code[2] = display.GetDigitValue(2);
 				code[3] = display.GetDigitValue(3);
 				break;
 			}
 			
 			display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));
- 414:	6f ef       	ldi	r22, 0xFF	; 255
- 416:	6c 0f       	add	r22, r28
- 418:	48 2f       	mov	r20, r24
- 41a:	81 e6       	ldi	r24, 0x61	; 97
- 41c:	90 e0       	ldi	r25, 0x00	; 0
- 41e:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 3fa:	6f ef       	ldi	r22, 0xFF	; 255
+ 3fc:	6c 0f       	add	r22, r28
+ 3fe:	48 2f       	mov	r20, r24
+ 400:	c8 01       	movw	r24, r16
+ 402:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 			digitPointer++;
- 422:	cf 5f       	subi	r28, 0xFF	; 255
+ 406:	cf 5f       	subi	r28, 0xFF	; 255
 		}
 
 		if(digitPointer < 6)
- 424:	c6 30       	cpi	r28, 0x06	; 6
- 426:	28 f4       	brcc	.+10     	; 0x432 <__LOCK_REGION_LENGTH__+0x32>
+ 408:	c6 30       	cpi	r28, 0x06	; 6
+ 40a:	20 f4       	brcc	.+8      	; 0x414 <__LOCK_REGION_LENGTH__+0x14>
 		{
 			display.MultiplexDigits();
- 428:	81 e6       	ldi	r24, 0x61	; 97
- 42a:	90 e0       	ldi	r25, 0x00	; 0
- 42c:	0e 94 de 00 	call	0x1bc	; 0x1bc <_ZN7Display15MultiplexDigitsEv>
- 430:	c9 cf       	rjmp	.-110    	; 0x3c4 <_Z12UserSetsCodePh+0xa>
+ 40c:	c8 01       	movw	r24, r16
+ 40e:	0e 94 ca 00 	call	0x194	; 0x194 <_ZN7Display15MultiplexDigitsEv>
+ 412:	cd cf       	rjmp	.-102    	; 0x3ae <_ZN10KeypadLock12UserSetsCodeEPh+0x1c>
 		}
 		else
 		{
 			display.SetAllDigitsToValue('-');
- 432:	6d e2       	ldi	r22, 0x2D	; 45
- 434:	81 e6       	ldi	r24, 0x61	; 97
- 436:	90 e0       	ldi	r25, 0x00	; 0
- 438:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 414:	6d e2       	ldi	r22, 0x2D	; 45
+ 416:	c8 01       	movw	r24, r16
+ 418:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 			digitPointer = 1;
- 43c:	c1 e0       	ldi	r28, 0x01	; 1
- 43e:	c2 cf       	rjmp	.-124    	; 0x3c4 <_Z12UserSetsCodePh+0xa>
+ 41c:	c1 e0       	ldi	r28, 0x01	; 1
+ 41e:	c7 cf       	rjmp	.-114    	; 0x3ae <_ZN10KeypadLock12UserSetsCodeEPh+0x1c>
 		}
 	}
 }
- 440:	cf 91       	pop	r28
- 442:	1f 91       	pop	r17
- 444:	0f 91       	pop	r16
- 446:	08 95       	ret
+ 420:	cf 91       	pop	r28
+ 422:	1f 91       	pop	r17
+ 424:	0f 91       	pop	r16
+ 426:	ff 90       	pop	r15
+ 428:	ef 90       	pop	r14
+ 42a:	df 90       	pop	r13
+ 42c:	cf 90       	pop	r12
+ 42e:	08 95       	ret
 
-00000448 <_Z31CompareEnteredCodeWithAdminCodePhS_>:
+00000430 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_>:
 
-void CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code)
+void KeypadLock::CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code)
 {
- 448:	ef 92       	push	r14
- 44a:	ff 92       	push	r15
- 44c:	0f 93       	push	r16
- 44e:	1f 93       	push	r17
- 450:	cf 93       	push	r28
- 452:	df 93       	push	r29
- 454:	8c 01       	movw	r16, r24
- 456:	7b 01       	movw	r14, r22
+ 430:	8f 92       	push	r8
+ 432:	9f 92       	push	r9
+ 434:	af 92       	push	r10
+ 436:	bf 92       	push	r11
+ 438:	cf 92       	push	r12
+ 43a:	df 92       	push	r13
+ 43c:	ef 92       	push	r14
+ 43e:	ff 92       	push	r15
+ 440:	0f 93       	push	r16
+ 442:	1f 93       	push	r17
+ 444:	cf 93       	push	r28
+ 446:	df 93       	push	r29
+ 448:	7c 01       	movw	r14, r24
+ 44a:	5b 01       	movw	r10, r22
+ 44c:	4a 01       	movw	r8, r20
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;
- 458:	c1 e0       	ldi	r28, 0x01	; 1
+ 44e:	c1 e0       	ldi	r28, 0x01	; 1
 	
 	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
 		pressedButton = keypad.GetPressedButton();							//poll for value on keypad
- 45a:	80 e6       	ldi	r24, 0x60	; 96
- 45c:	90 e0       	ldi	r25, 0x00	; 0
- 45e:	0e 94 0d 01 	call	0x21a	; 0x21a <_ZN6Keypad16GetPressedButtonEv>
+ 450:	6c 01       	movw	r12, r24
+ 452:	24 e0       	ldi	r18, 0x04	; 4
+ 454:	c2 0e       	add	r12, r18
+ 456:	d1 1c       	adc	r13, r1
+ 458:	c6 01       	movw	r24, r12
+ 45a:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <_ZN6Keypad16GetPressedButtonEv>
 
 		if(pressedButton != Button::NO_BUTTON_PRESSED)									//if input changed
- 462:	8f 3f       	cpi	r24, 0xFF	; 255
- 464:	2f ef       	ldi	r18, 0xFF	; 255
- 466:	92 07       	cpc	r25, r18
- 468:	09 f4       	brne	.+2      	; 0x46c <_Z31CompareEnteredCodeWithAdminCodePhS_+0x24>
- 46a:	7e c0       	rjmp	.+252    	; 0x568 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x120>
+ 45e:	8f 3f       	cpi	r24, 0xFF	; 255
+ 460:	ef ef       	ldi	r30, 0xFF	; 255
+ 462:	9e 07       	cpc	r25, r30
+ 464:	09 f4       	brne	.+2      	; 0x468 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x38>
+ 466:	75 c0       	rjmp	.+234    	; 0x552 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x122>
 		{
 			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
- 46c:	8c 30       	cpi	r24, 0x0C	; 12
- 46e:	91 05       	cpc	r25, r1
- 470:	39 f4       	brne	.+14     	; 0x480 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x38>
+ 468:	8c 30       	cpi	r24, 0x0C	; 12
+ 46a:	91 05       	cpc	r25, r1
+ 46c:	31 f4       	brne	.+12     	; 0x47a <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x4a>
 			{
 				display.SetAllDigitsToValue(13);
- 472:	6d e0       	ldi	r22, 0x0D	; 13
- 474:	81 e6       	ldi	r24, 0x61	; 97
- 476:	90 e0       	ldi	r25, 0x00	; 0
- 478:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 46e:	6d e0       	ldi	r22, 0x0D	; 13
+ 470:	c7 01       	movw	r24, r14
+ 472:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 				digitPointer=1;
- 47c:	c1 e0       	ldi	r28, 0x01	; 1
+ 476:	c1 e0       	ldi	r28, 0x01	; 1
 				continue;
- 47e:	ed cf       	rjmp	.-38     	; 0x45a <_Z31CompareEnteredCodeWithAdminCodePhS_+0x12>
+ 478:	ef cf       	rjmp	.-34     	; 0x458 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x28>
 			}
 			
 			if(digitPointer==5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
- 480:	c5 30       	cpi	r28, 0x05	; 5
- 482:	09 f0       	breq	.+2      	; 0x486 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x3e>
- 484:	69 c0       	rjmp	.+210    	; 0x558 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x110>
- 486:	8b 30       	cpi	r24, 0x0B	; 11
- 488:	91 05       	cpc	r25, r1
- 48a:	09 f0       	breq	.+2      	; 0x48e <_Z31CompareEnteredCodeWithAdminCodePhS_+0x46>
- 48c:	65 c0       	rjmp	.+202    	; 0x558 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x110>
- 48e:	e1 e6       	ldi	r30, 0x61	; 97
- 490:	f0 e0       	ldi	r31, 0x00	; 0
- 492:	80 81       	ld	r24, Z
+ 47a:	c5 30       	cpi	r28, 0x05	; 5
+ 47c:	09 f0       	breq	.+2      	; 0x480 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x50>
+ 47e:	62 c0       	rjmp	.+196    	; 0x544 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x114>
+ 480:	8b 30       	cpi	r24, 0x0B	; 11
+ 482:	91 05       	cpc	r25, r1
+ 484:	09 f0       	breq	.+2      	; 0x488 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x58>
+ 486:	5e c0       	rjmp	.+188    	; 0x544 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x114>
+ 488:	f7 01       	movw	r30, r14
+ 48a:	80 81       	ld	r24, Z
 			{
 				enteredCode[0] = display.GetDigitValue(0);
- 494:	d8 01       	movw	r26, r16
- 496:	8c 93       	st	X, r24
- 498:	91 81       	ldd	r25, Z+1	; 0x01
+ 48c:	f5 01       	movw	r30, r10
+ 48e:	80 83       	st	Z, r24
+ 490:	f7 01       	movw	r30, r14
+ 492:	91 81       	ldd	r25, Z+1	; 0x01
 				enteredCode[1] = display.GetDigitValue(1);
- 49a:	11 96       	adiw	r26, 0x01	; 1
- 49c:	9c 93       	st	X, r25
- 49e:	11 97       	sbiw	r26, 0x01	; 1
- 4a0:	32 81       	ldd	r19, Z+2	; 0x02
+ 494:	f5 01       	movw	r30, r10
+ 496:	91 83       	std	Z+1, r25	; 0x01
+ 498:	f7 01       	movw	r30, r14
+ 49a:	32 81       	ldd	r19, Z+2	; 0x02
 				enteredCode[2] = display.GetDigitValue(2);
- 4a2:	12 96       	adiw	r26, 0x02	; 2
- 4a4:	3c 93       	st	X, r19
- 4a6:	12 97       	sbiw	r26, 0x02	; 2
- 4a8:	23 81       	ldd	r18, Z+3	; 0x03
+ 49c:	f5 01       	movw	r30, r10
+ 49e:	32 83       	std	Z+2, r19	; 0x02
+ 4a0:	f7 01       	movw	r30, r14
+ 4a2:	23 81       	ldd	r18, Z+3	; 0x03
 				enteredCode[3] = display.GetDigitValue(3);
- 4aa:	13 96       	adiw	r26, 0x03	; 3
- 4ac:	2c 93       	st	X, r18
+ 4a4:	f5 01       	movw	r30, r10
+ 4a6:	23 83       	std	Z+3, r18	; 0x03
 				
 				if(enteredCode[0]==code[0] && enteredCode[1]==code[1] && enteredCode[2]==code[2] && enteredCode[3]==code[3]) //check if code is correct
- 4ae:	f7 01       	movw	r30, r14
- 4b0:	40 81       	ld	r20, Z
- 4b2:	48 13       	cpse	r20, r24
- 4b4:	22 c0       	rjmp	.+68     	; 0x4fa <_Z31CompareEnteredCodeWithAdminCodePhS_+0xb2>
- 4b6:	81 81       	ldd	r24, Z+1	; 0x01
- 4b8:	89 13       	cpse	r24, r25
- 4ba:	1f c0       	rjmp	.+62     	; 0x4fa <_Z31CompareEnteredCodeWithAdminCodePhS_+0xb2>
- 4bc:	82 81       	ldd	r24, Z+2	; 0x02
- 4be:	83 13       	cpse	r24, r19
- 4c0:	1c c0       	rjmp	.+56     	; 0x4fa <_Z31CompareEnteredCodeWithAdminCodePhS_+0xb2>
- 4c2:	83 81       	ldd	r24, Z+3	; 0x03
- 4c4:	82 13       	cpse	r24, r18
- 4c6:	19 c0       	rjmp	.+50     	; 0x4fa <_Z31CompareEnteredCodeWithAdminCodePhS_+0xb2>
+ 4a8:	f4 01       	movw	r30, r8
+ 4aa:	40 81       	ld	r20, Z
+ 4ac:	48 13       	cpse	r20, r24
+ 4ae:	1e c0       	rjmp	.+60     	; 0x4ec <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xbc>
+ 4b0:	81 81       	ldd	r24, Z+1	; 0x01
+ 4b2:	89 13       	cpse	r24, r25
+ 4b4:	1b c0       	rjmp	.+54     	; 0x4ec <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xbc>
+ 4b6:	82 81       	ldd	r24, Z+2	; 0x02
+ 4b8:	83 13       	cpse	r24, r19
+ 4ba:	18 c0       	rjmp	.+48     	; 0x4ec <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xbc>
+ 4bc:	83 81       	ldd	r24, Z+3	; 0x03
+ 4be:	82 13       	cpse	r24, r18
+ 4c0:	15 c0       	rjmp	.+42     	; 0x4ec <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xbc>
 				{
 					display.SetDigitValue(0, 0);	//O
- 4c8:	40 e0       	ldi	r20, 0x00	; 0
- 4ca:	60 e0       	ldi	r22, 0x00	; 0
- 4cc:	81 e6       	ldi	r24, 0x61	; 97
- 4ce:	90 e0       	ldi	r25, 0x00	; 0
- 4d0:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4c2:	40 e0       	ldi	r20, 0x00	; 0
+ 4c4:	60 e0       	ldi	r22, 0x00	; 0
+ 4c6:	c7 01       	movw	r24, r14
+ 4c8:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(1, 14);	//P
- 4d4:	4e e0       	ldi	r20, 0x0E	; 14
- 4d6:	61 e0       	ldi	r22, 0x01	; 1
- 4d8:	81 e6       	ldi	r24, 0x61	; 97
- 4da:	90 e0       	ldi	r25, 0x00	; 0
- 4dc:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4cc:	4e e0       	ldi	r20, 0x0E	; 14
+ 4ce:	61 e0       	ldi	r22, 0x01	; 1
+ 4d0:	c7 01       	movw	r24, r14
+ 4d2:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(2, 15);	//E
- 4e0:	4f e0       	ldi	r20, 0x0F	; 15
- 4e2:	62 e0       	ldi	r22, 0x02	; 2
- 4e4:	81 e6       	ldi	r24, 0x61	; 97
- 4e6:	90 e0       	ldi	r25, 0x00	; 0
- 4e8:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4d6:	4f e0       	ldi	r20, 0x0F	; 15
+ 4d8:	62 e0       	ldi	r22, 0x02	; 2
+ 4da:	c7 01       	movw	r24, r14
+ 4dc:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(3, 16);	//N
- 4ec:	40 e1       	ldi	r20, 0x10	; 16
- 4ee:	63 e0       	ldi	r22, 0x03	; 3
- 4f0:	81 e6       	ldi	r24, 0x61	; 97
- 4f2:	90 e0       	ldi	r25, 0x00	; 0
- 4f4:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4e0:	40 e1       	ldi	r20, 0x10	; 16
+ 4e2:	63 e0       	ldi	r22, 0x03	; 3
+ 4e4:	c7 01       	movw	r24, r14
+ 4e6:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 		{
 			display.SetAllDigitsToValue('-');
 			digitPointer = 1;
 		}
 	}
- 4f8:	45 c0       	rjmp	.+138    	; 0x584 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x13c>
+ 4ea:	3f c0       	rjmp	.+126    	; 0x56a <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x13a>
 					display.SetDigitValue(3, 16);	//N
 					break;
 				}
 				else
 				{
 					display.SetDigitValue(0, 8);	//B
- 4fa:	48 e0       	ldi	r20, 0x08	; 8
- 4fc:	60 e0       	ldi	r22, 0x00	; 0
- 4fe:	81 e6       	ldi	r24, 0x61	; 97
- 500:	90 e0       	ldi	r25, 0x00	; 0
- 502:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4ec:	0e 2d       	mov	r16, r14
+ 4ee:	1f 2d       	mov	r17, r15
+ 4f0:	48 e0       	ldi	r20, 0x08	; 8
+ 4f2:	60 e0       	ldi	r22, 0x00	; 0
+ 4f4:	c7 01       	movw	r24, r14
+ 4f6:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(1, 17);	//A
- 506:	41 e1       	ldi	r20, 0x11	; 17
- 508:	61 e0       	ldi	r22, 0x01	; 1
- 50a:	81 e6       	ldi	r24, 0x61	; 97
- 50c:	90 e0       	ldi	r25, 0x00	; 0
- 50e:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 4fa:	41 e1       	ldi	r20, 0x11	; 17
+ 4fc:	61 e0       	ldi	r22, 0x01	; 1
+ 4fe:	c7 01       	movw	r24, r14
+ 500:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(2, 0);	//D
- 512:	40 e0       	ldi	r20, 0x00	; 0
- 514:	62 e0       	ldi	r22, 0x02	; 2
- 516:	81 e6       	ldi	r24, 0x61	; 97
- 518:	90 e0       	ldi	r25, 0x00	; 0
- 51a:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 504:	40 e0       	ldi	r20, 0x00	; 0
+ 506:	62 e0       	ldi	r22, 0x02	; 2
+ 508:	c7 01       	movw	r24, r14
+ 50a:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 					display.SetDigitValue(3, 18);	//nothing
- 51e:	42 e1       	ldi	r20, 0x12	; 18
- 520:	63 e0       	ldi	r22, 0x03	; 3
- 522:	81 e6       	ldi	r24, 0x61	; 97
- 524:	90 e0       	ldi	r25, 0x00	; 0
- 526:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
- 52a:	c0 e0       	ldi	r28, 0x00	; 0
- 52c:	d0 e0       	ldi	r29, 0x00	; 0
+ 50e:	42 e1       	ldi	r20, 0x12	; 18
+ 510:	63 e0       	ldi	r22, 0x03	; 3
+ 512:	c7 01       	movw	r24, r14
+ 514:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
+ 518:	c0 e0       	ldi	r28, 0x00	; 0
+ 51a:	d0 e0       	ldi	r29, 0x00	; 0
 					
 					long int delay = 0;
 					
 					while(1)
 					{
 						display.MultiplexDigits();
- 52e:	81 e6       	ldi	r24, 0x61	; 97
- 530:	90 e0       	ldi	r25, 0x00	; 0
- 532:	0e 94 de 00 	call	0x1bc	; 0x1bc <_ZN7Display15MultiplexDigitsEv>
+ 51c:	80 2f       	mov	r24, r16
+ 51e:	91 2f       	mov	r25, r17
+ 520:	0e 94 ca 00 	call	0x194	; 0x194 <_ZN7Display15MultiplexDigitsEv>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 536:	81 ee       	ldi	r24, 0xE1	; 225
- 538:	94 e0       	ldi	r25, 0x04	; 4
- 53a:	01 97       	sbiw	r24, 0x01	; 1
- 53c:	f1 f7       	brne	.-4      	; 0x53a <_Z31CompareEnteredCodeWithAdminCodePhS_+0xf2>
- 53e:	00 c0       	rjmp	.+0      	; 0x540 <_Z31CompareEnteredCodeWithAdminCodePhS_+0xf8>
- 540:	00 00       	nop
- 542:	21 96       	adiw	r28, 0x01	; 1
+ 524:	81 ee       	ldi	r24, 0xE1	; 225
+ 526:	94 e0       	ldi	r25, 0x04	; 4
+ 528:	01 97       	sbiw	r24, 0x01	; 1
+ 52a:	f1 f7       	brne	.-4      	; 0x528 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xf8>
+ 52c:	00 c0       	rjmp	.+0      	; 0x52e <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xfe>
+ 52e:	00 00       	nop
+ 530:	21 96       	adiw	r28, 0x01	; 1
 						
 						_delay_ms(5);
 						delay++;
 
 						if(delay >= 200) //if about 1 second passed
- 544:	c8 3c       	cpi	r28, 0xC8	; 200
- 546:	d1 05       	cpc	r29, r1
- 548:	91 f7       	brne	.-28     	; 0x52e <_Z31CompareEnteredCodeWithAdminCodePhS_+0xe6>
+ 532:	c8 3c       	cpi	r28, 0xC8	; 200
+ 534:	d1 05       	cpc	r29, r1
+ 536:	91 f7       	brne	.-28     	; 0x51c <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0xec>
 						{
 							display.SetAllDigitsToValue(13);
- 54a:	6d e0       	ldi	r22, 0x0D	; 13
- 54c:	81 e6       	ldi	r24, 0x61	; 97
- 54e:	90 e0       	ldi	r25, 0x00	; 0
- 550:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 538:	6d e0       	ldi	r22, 0x0D	; 13
+ 53a:	c7 01       	movw	r24, r14
+ 53c:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 							digitPointer = 1;
- 554:	c1 e0       	ldi	r28, 0x01	; 1
+ 540:	c1 e0       	ldi	r28, 0x01	; 1
 							break;
 						}
 					}
 					continue;
- 556:	81 cf       	rjmp	.-254    	; 0x45a <_Z31CompareEnteredCodeWithAdminCodePhS_+0x12>
+ 542:	8a cf       	rjmp	.-236    	; 0x458 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x28>
 				}
 			}
 
 			display.SetDigitValue(digitPointer-1, static_cast<uint8_t>(pressedButton));
- 558:	6f ef       	ldi	r22, 0xFF	; 255
- 55a:	6c 0f       	add	r22, r28
- 55c:	48 2f       	mov	r20, r24
- 55e:	81 e6       	ldi	r24, 0x61	; 97
- 560:	90 e0       	ldi	r25, 0x00	; 0
- 562:	0e 94 f7 00 	call	0x1ee	; 0x1ee <_ZN7Display13SetDigitValueEhh>
+ 544:	6f ef       	ldi	r22, 0xFF	; 255
+ 546:	6c 0f       	add	r22, r28
+ 548:	48 2f       	mov	r20, r24
+ 54a:	c7 01       	movw	r24, r14
+ 54c:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN7Display13SetDigitValueEhh>
 			digitPointer++;
- 566:	cf 5f       	subi	r28, 0xFF	; 255
+ 550:	cf 5f       	subi	r28, 0xFF	; 255
 		}
 
 		if(digitPointer<6)
- 568:	c6 30       	cpi	r28, 0x06	; 6
- 56a:	28 f4       	brcc	.+10     	; 0x576 <_Z31CompareEnteredCodeWithAdminCodePhS_+0x12e>
+ 552:	c6 30       	cpi	r28, 0x06	; 6
+ 554:	20 f4       	brcc	.+8      	; 0x55e <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x12e>
 		{
 			display.MultiplexDigits();
- 56c:	81 e6       	ldi	r24, 0x61	; 97
- 56e:	90 e0       	ldi	r25, 0x00	; 0
- 570:	0e 94 de 00 	call	0x1bc	; 0x1bc <_ZN7Display15MultiplexDigitsEv>
- 574:	72 cf       	rjmp	.-284    	; 0x45a <_Z31CompareEnteredCodeWithAdminCodePhS_+0x12>
+ 556:	c7 01       	movw	r24, r14
+ 558:	0e 94 ca 00 	call	0x194	; 0x194 <_ZN7Display15MultiplexDigitsEv>
+ 55c:	7d cf       	rjmp	.-262    	; 0x458 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x28>
 		}
 
 		else
 		{
 			display.SetAllDigitsToValue('-');
- 576:	6d e2       	ldi	r22, 0x2D	; 45
- 578:	81 e6       	ldi	r24, 0x61	; 97
- 57a:	90 e0       	ldi	r25, 0x00	; 0
- 57c:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 55e:	6d e2       	ldi	r22, 0x2D	; 45
+ 560:	c7 01       	movw	r24, r14
+ 562:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 			digitPointer = 1;
- 580:	c1 e0       	ldi	r28, 0x01	; 1
- 582:	6b cf       	rjmp	.-298    	; 0x45a <_Z31CompareEnteredCodeWithAdminCodePhS_+0x12>
+ 566:	c1 e0       	ldi	r28, 0x01	; 1
+ 568:	77 cf       	rjmp	.-274    	; 0x458 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_+0x28>
 		}
 	}
- 584:	df 91       	pop	r29
- 586:	cf 91       	pop	r28
- 588:	1f 91       	pop	r17
- 58a:	0f 91       	pop	r16
- 58c:	ff 90       	pop	r15
- 58e:	ef 90       	pop	r14
- 590:	08 95       	ret
+ 56a:	df 91       	pop	r29
+ 56c:	cf 91       	pop	r28
+ 56e:	1f 91       	pop	r17
+ 570:	0f 91       	pop	r16
+ 572:	ff 90       	pop	r15
+ 574:	ef 90       	pop	r14
+ 576:	df 90       	pop	r13
+ 578:	cf 90       	pop	r12
+ 57a:	bf 90       	pop	r11
+ 57c:	af 90       	pop	r10
+ 57e:	9f 90       	pop	r9
+ 580:	8f 90       	pop	r8
+ 582:	08 95       	ret
 
-00000592 <main>:
+00000584 <_ZN10KeypadLockC1Ev>:
 
-Display display;
-Keypad keypad;
+#include "keypad_lock.h"
+#include <avr/io.h>
+#include <util/delay.h>	 //header containing delay functions
 
-int main(void)
+KeypadLock::KeypadLock()
+ 584:	ec 01       	movw	r28, r24
+ 586:	0e 94 65 00 	call	0xca	; 0xca <_ZN7DisplayC1Ev>
 {
- 592:	cf 93       	push	r28
- 594:	df 93       	push	r29
- 596:	cd b7       	in	r28, 0x3d	; 61
- 598:	de b7       	in	r29, 0x3e	; 62
- 59a:	28 97       	sbiw	r28, 0x08	; 8
- 59c:	0f b6       	in	r0, 0x3f	; 63
- 59e:	f8 94       	cli
- 5a0:	de bf       	out	0x3e, r29	; 62
- 5a2:	0f be       	out	0x3f, r0	; 63
- 5a4:	cd bf       	out	0x3d, r28	; 61
-	uint8_t code[4];											//table storing code set by admin
-	uint8_t enteredCode[4];										//table storing code entered by user
-
-	init_ports();
- 5a6:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <_Z10init_portsv>
+	InitPorts();
+ 58a:	ce 01       	movw	r24, r28
+ 58c:	0e 94 b8 01 	call	0x370	; 0x370 <_ZN10KeypadLock9InitPortsEv>
 	
-	UserSetsCode(code);
- 5aa:	ce 01       	movw	r24, r28
- 5ac:	01 96       	adiw	r24, 0x01	; 1
- 5ae:	0e 94 dd 01 	call	0x3ba	; 0x3ba <_Z12UserSetsCodePh>
+	UserSetsCode(password);
+ 590:	8e 01       	movw	r16, r28
+ 592:	0b 5f       	subi	r16, 0xFB	; 251
+ 594:	1f 4f       	sbci	r17, 0xFF	; 255
+ 596:	b8 01       	movw	r22, r16
+ 598:	ce 01       	movw	r24, r28
+ 59a:	0e 94 c9 01 	call	0x392	; 0x392 <_ZN10KeypadLock12UserSetsCodeEPh>
 	
 	display.SetAllDigitsToValue(13);										//set display to '-.' in locked state
- 5b2:	6d e0       	ldi	r22, 0x0D	; 13
- 5b4:	81 e6       	ldi	r24, 0x61	; 97
- 5b6:	90 e0       	ldi	r25, 0x00	; 0
- 5b8:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN7Display19SetAllDigitsToValueEh>
+ 59e:	6d e0       	ldi	r22, 0x0D	; 13
+ 5a0:	ce 01       	movw	r24, r28
+ 5a2:	0e 94 c4 00 	call	0x188	; 0x188 <_ZN7Display19SetAllDigitsToValueEh>
 	
-	CompareEnteredCodeWithAdminCode(enteredCode, code);
- 5bc:	be 01       	movw	r22, r28
- 5be:	6f 5f       	subi	r22, 0xFF	; 255
- 5c0:	7f 4f       	sbci	r23, 0xFF	; 255
- 5c2:	ce 01       	movw	r24, r28
- 5c4:	05 96       	adiw	r24, 0x05	; 5
- 5c6:	0e 94 24 02 	call	0x448	; 0x448 <_Z31CompareEnteredCodeWithAdminCodePhS_>
+	CompareEnteredCodeWithAdminCode(enteredPassword, password);
+ 5a6:	be 01       	movw	r22, r28
+ 5a8:	67 5f       	subi	r22, 0xF7	; 247
+ 5aa:	7f 4f       	sbci	r23, 0xFF	; 255
+ 5ac:	a8 01       	movw	r20, r16
+ 5ae:	ce 01       	movw	r24, r28
+ 5b0:	0e 94 18 02 	call	0x430	; 0x430 <_ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEPhS0_>
 	
 	while(1)
 	{
 		display.MultiplexDigits();
- 5ca:	81 e6       	ldi	r24, 0x61	; 97
- 5cc:	90 e0       	ldi	r25, 0x00	; 0
- 5ce:	0e 94 de 00 	call	0x1bc	; 0x1bc <_ZN7Display15MultiplexDigitsEv>
- 5d2:	fb cf       	rjmp	.-10     	; 0x5ca <main+0x38>
+ 5b4:	ce 01       	movw	r24, r28
+ 5b6:	0e 94 ca 00 	call	0x194	; 0x194 <_ZN7Display15MultiplexDigitsEv>
+ 5ba:	fc cf       	rjmp	.-8      	; 0x5b4 <_ZN10KeypadLockC1Ev+0x30>
 
-000005d4 <_GLOBAL__sub_I_display>:
+000005bc <main>:
+#include "keypad_lock.h"
 
-void UserSetsCode(uint8_t * code);
+int main(void)
+{
+ 5bc:	cf 93       	push	r28
+ 5be:	df 93       	push	r29
+ 5c0:	cd b7       	in	r28, 0x3d	; 61
+ 5c2:	de b7       	in	r29, 0x3e	; 62
+ 5c4:	2d 97       	sbiw	r28, 0x0d	; 13
+ 5c6:	0f b6       	in	r0, 0x3f	; 63
+ 5c8:	f8 94       	cli
+ 5ca:	de bf       	out	0x3e, r29	; 62
+ 5cc:	0f be       	out	0x3f, r0	; 63
+ 5ce:	cd bf       	out	0x3d, r28	; 61
+	KeypadLock keypadLock;
+ 5d0:	ce 01       	movw	r24, r28
+ 5d2:	01 96       	adiw	r24, 0x01	; 1
+ 5d4:	0e 94 c2 02 	call	0x584	; 0x584 <_ZN10KeypadLockC1Ev>
+ 5d8:	80 e0       	ldi	r24, 0x00	; 0
+ 5da:	90 e0       	ldi	r25, 0x00	; 0
+ 5dc:	2d 96       	adiw	r28, 0x0d	; 13
+ 5de:	0f b6       	in	r0, 0x3f	; 63
+ 5e0:	f8 94       	cli
+ 5e2:	de bf       	out	0x3e, r29	; 62
+ 5e4:	0f be       	out	0x3f, r0	; 63
+ 5e6:	cd bf       	out	0x3d, r28	; 61
+ 5e8:	df 91       	pop	r29
+ 5ea:	cf 91       	pop	r28
+ 5ec:	08 95       	ret
 
-void CompareEnteredCodeWithAdminCode(uint8_t * enteredCode, uint8_t * code);
+000005ee <__tablejump2__>:
+ 5ee:	ee 0f       	add	r30, r30
+ 5f0:	ff 1f       	adc	r31, r31
+ 5f2:	05 90       	lpm	r0, Z+
+ 5f4:	f4 91       	lpm	r31, Z
+ 5f6:	e0 2d       	mov	r30, r0
+ 5f8:	09 94       	ijmp
 
-Display display;
- 5d4:	81 e6       	ldi	r24, 0x61	; 97
- 5d6:	90 e0       	ldi	r25, 0x00	; 0
- 5d8:	0e 94 79 00 	call	0xf2	; 0xf2 <_ZN7DisplayC1Ev>
- 5dc:	08 95       	ret
+000005fa <_exit>:
+ 5fa:	f8 94       	cli
 
-000005de <__tablejump2__>:
- 5de:	ee 0f       	add	r30, r30
- 5e0:	ff 1f       	adc	r31, r31
- 5e2:	05 90       	lpm	r0, Z+
- 5e4:	f4 91       	lpm	r31, Z
- 5e6:	e0 2d       	mov	r30, r0
- 5e8:	09 94       	ijmp
-
-000005ea <_exit>:
- 5ea:	f8 94       	cli
-
-000005ec <__stop_program>:
- 5ec:	ff cf       	rjmp	.-2      	; 0x5ec <__stop_program>
+000005fc <__stop_program>:
+ 5fc:	ff cf       	rjmp	.-2      	; 0x5fc <__stop_program>
