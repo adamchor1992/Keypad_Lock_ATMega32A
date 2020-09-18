@@ -14,7 +14,7 @@ enum class DigitValue
 	DIGIT_9 = 9,
 	DOT = '.',
 	HYPHEN = '-',
-	HYPHEN_WITH_DOT = 13,
+	LETTER_X = 13,
 	LETTER_P = 14,
 	LETTER_E = 15,
 	LETTER_n = 16,

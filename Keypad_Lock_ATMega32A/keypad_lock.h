@@ -13,10 +13,11 @@ class KeypadLock
 	void InitPorts();
 	void UserSetsCode();
 	void CompareEnteredCodeWithAdminCode();
+	void ShortDelay();
 	
 	Display m_Display;
 	Keypad m_Keypad;
-	uint8_t m_Password[4];											//table storing code set by admin
+	uint8_t m_PasswordSet[4];
 	
 	enum class PasswordState
 	{

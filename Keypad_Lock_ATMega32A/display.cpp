@@ -84,8 +84,8 @@ void Display::SetDigit(Position position, DigitValue digitValue)
 		PORTA = 0x7F;
 		break;
 		
-		case DigitValue::HYPHEN_WITH_DOT:
-		PORTA = 0x3F;
+		case DigitValue::LETTER_X:
+		PORTA = 0x89;
 		break;
 		
 		case DigitValue::LETTER_P:

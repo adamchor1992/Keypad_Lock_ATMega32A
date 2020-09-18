@@ -18,7 +18,7 @@ void KeypadLock::Execute()
 	{
 		UserSetsCode();
 		m_PasswordState = PasswordState::PasswordSet;
-		m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
+		m_Display.SetAllDigitsToValue(DigitValue::LETTER_X);
 	}
 	else if(m_PasswordState == PasswordState::PasswordSet)
 	{
@@ -75,15 +75,15 @@ void KeypadLock::UserSetsCode()
 			
 			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)
 			{
-				m_Password[0] = m_Display.GetDigitValue(0);
-				m_Password[1] = m_Display.GetDigitValue(1);
-				m_Password[2] = m_Display.GetDigitValue(2);
-				m_Password[3] = m_Display.GetDigitValue(3);
+				m_PasswordSet[0] = m_Display.GetDigitValue(0);
+				m_PasswordSet[1] = m_Display.GetDigitValue(1);
+				m_PasswordSet[2] = m_Display.GetDigitValue(2);
+				m_PasswordSet[3] = m_Display.GetDigitValue(3);
 				
 				return;
 			}
 			
-			if(pressedButton != Button::BUTTON_OK)
+			if(digitPointer < 5 && pressedButton != Button::BUTTON_OK)
 			{
 				m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
 				digitPointer++;
@@ -93,11 +93,6 @@ void KeypadLock::UserSetsCode()
 		if(digitPointer < 6)
 		{
 			m_Display.MultiplexDigits();
-		}
-		else
-		{
-			m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
-			digitPointer = 1;
 		}
 	}
 }
@@ -118,7 +113,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				if(digitPointer > 1)
 				{
 					digitPointer--;
-					m_Display.SetDigitValue(digitPointer, DigitValue::HYPHEN_WITH_DOT);
+					m_Display.SetDigitValue(digitPointer, DigitValue::LETTER_X);
 				}
 				
 				continue;
@@ -133,61 +128,37 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				enteredPassword[2] = m_Display.GetDigitValue(2);
 				enteredPassword[3] = m_Display.GetDigitValue(3);
 				
-				if(enteredPassword[0] == m_Password[0] && enteredPassword[1] == m_Password[1] && enteredPassword[2] == m_Password[2] && enteredPassword[3] == m_Password[3])
+				if(enteredPassword[0] == m_PasswordSet[0] && enteredPassword[1] == m_PasswordSet[1] && enteredPassword[2] == m_PasswordSet[2] && enteredPassword[3] == m_PasswordSet[3])
 				{
+					/*Password correct*/
 					m_Display.SetDigitValue(1, DigitValue::DIGIT_0);
 					m_Display.SetDigitValue(2, DigitValue::LETTER_P);
 					m_Display.SetDigitValue(3, DigitValue::LETTER_E);
 					m_Display.SetDigitValue(4, DigitValue::LETTER_n);
 					
-					long int delay = 0;
-					
-					while(1)
-					{
-						m_Display.MultiplexDigits();
-						
-						_delay_ms(5);
-						delay++;
-
-						if(delay >= 200) //if about 1 second passed
-						{
-							m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
-							digitPointer = 1;
-							break;
-						}
-					}
+					ShortDelay();
 					
 					return;
 				}
 				else
 				{
+					/*Wrong password*/
 					m_Display.SetDigitValue(1, DigitValue::LETTER_b);
 					m_Display.SetDigitValue(2, DigitValue::LETTER_A);
 					m_Display.SetDigitValue(3, DigitValue::LETTER_d);
 					m_Display.SetDigitValue(4, DigitValue::EMPTY);
 					
-					long int delay = 0;
+					ShortDelay();
 					
-					while(1)
-					{
-						m_Display.MultiplexDigits();
-						
-						_delay_ms(5);
-						delay++;
-
-						if(delay >= 200) //if about 1 second passed
-						{
-							m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
-							digitPointer = 1;
-							break;
-						}
-					}
+					m_Display.SetAllDigitsToValue(DigitValue::LETTER_X);
+					
+					digitPointer = 1;
 					
 					continue;
 				}
 			}
 			
-			if(pressedButton != Button::BUTTON_OK)
+			if(digitPointer < 5 && pressedButton != Button::BUTTON_OK)
 			{
 				m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
 				digitPointer++;
@@ -198,10 +169,23 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 		{
 			m_Display.MultiplexDigits();
 		}
-		else
+	}
+}
+
+void KeypadLock::ShortDelay()
+{
+	int delay = 0;
+	
+	while(1)
+	{
+		m_Display.MultiplexDigits();
+		
+		_delay_ms(5);
+		delay++;
+
+		if(delay >= 200) //if about 1 second passed
 		{
-			m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
-			digitPointer = 1;
+			break;
 		}
 	}
 }
