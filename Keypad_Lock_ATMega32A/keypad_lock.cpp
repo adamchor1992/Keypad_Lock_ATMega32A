@@ -13,7 +13,7 @@ KeypadLock::KeypadLock()
 	
 	UserSetsCode();
 	
-	m_Display.SetAllDigitsToValue(13);										//set display to '-.' in locked state
+	m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
 	
 	CompareEnteredCodeWithAdminCode();
 	
@@ -91,7 +91,7 @@ void KeypadLock::UserSetsCode()
 		}
 		else
 		{
-			m_Display.SetAllDigitsToValue('-');
+			m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
 			digitPointer = 1;
 		}
 	}
@@ -115,8 +115,9 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				{
 					digitPointer--;
 					m_Display.SetDigitValue(digitPointer, DigitValue::HYPHEN_WITH_DOT);
-					continue;
 				}
+				
+				continue;
 			}
 			
 			uint8_t enteredPassword[4] = {0};										//table storing code entered by user
@@ -154,7 +155,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 
 						if(delay >= 200) //if about 1 second passed
 						{
-							m_Display.SetAllDigitsToValue(13);
+							m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
 							digitPointer = 1;
 							break;
 						}
@@ -167,13 +168,13 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 			digitPointer++;
 		}
 
-		if(digitPointer<6)
+		if(digitPointer < 6)
 		{
 			m_Display.MultiplexDigits();
 		}
 		else
 		{
-			m_Display.SetAllDigitsToValue('-');
+			m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
 			digitPointer = 1;
 		}
 	}

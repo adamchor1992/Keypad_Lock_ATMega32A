@@ -6,13 +6,13 @@
 
 Display::Display()
 {
-	m_DigitValues[0] = '-';
-	m_DigitValues[1] = '-';
-	m_DigitValues[2] = '-';
-	m_DigitValues[3] = '-';
+	m_DigitValues[0] = DigitValue::HYPHEN;
+	m_DigitValues[1] = DigitValue::HYPHEN;
+	m_DigitValues[2] = DigitValue::HYPHEN;
+	m_DigitValues[3] = DigitValue::HYPHEN;
 }
 
-void Display::SetDigit(Position position, uint8_t value)
+void Display::SetDigit(Position position, DigitValue digitValue)
 {
 	switch(position)
 	{
@@ -33,87 +33,87 @@ void Display::SetDigit(Position position, uint8_t value)
 		break;
 	}
 
-	switch(value)
+	switch(digitValue)
 	{
 		/*Hex codes for common anode 7-segment display setup*/
-		case 0:
+		case DigitValue::DIGIT_0:
 		PORTA = 0xC0;
 		break;
 
-		case 1:
+		case DigitValue::DIGIT_1:
 		PORTA = 0xF9;
 		break;
 
-		case 2:
+		case DigitValue::DIGIT_2:
 		PORTA = 0xA4;
 		break;
 
-		case 3:
+		case DigitValue::DIGIT_3:
 		PORTA = 0xB0;
 		break;
 
-		case 4:
+		case DigitValue::DIGIT_4:
 		PORTA = 0x99;
 		break;
 
-		case 5:
+		case DigitValue::DIGIT_5:
 		PORTA = 0x92;
 		break;
 
-		case 6:
+		case DigitValue::DIGIT_6:
 		PORTA = 0x82;
 		break;
 		
-		case 7:
+		case DigitValue::DIGIT_7:
 		PORTA = 0xF8;
 		break;
 
-		case 8:
+		case DigitValue::DIGIT_8:
 		PORTA = 0x80;
 		break;
 
-		case 9:
+		case DigitValue::DIGIT_9:
 		PORTA = 0x90;
 		break;
 		
-		case '-':		// display '-'
+		case DigitValue::HYPHEN:
 		PORTA = 0xBF;
 		break;
 		
-		case '.':		// display '.'
+		case DigitValue::DOT:
 		PORTA = 0x7F;
 		break;
 		
-		case 13:
-		PORTA = 0x3F;	// display '-' and '.' simultaneously
+		case DigitValue::HYPHEN_WITH_DOT:
+		PORTA = 0x3F;
 		break;
 		
-		case 14:
-		PORTA = 0x8C;	// letter P
+		case DigitValue::LETTER_P:
+		PORTA = 0x8C;
 		break;
 		
-		case 15:
-		PORTA = 0x86;	// letter E
+		case DigitValue::LETTER_E:
+		PORTA = 0x86;
 		break;
 		
-		case 16:
-		PORTA = 0xAB;	// letter n
+		case DigitValue::LETTER_n:
+		PORTA = 0xAB;
 		break;
 		
-		case 17:
-		PORTA = 0x83;	// letter b
+		case DigitValue::LETTER_b:
+		PORTA = 0x83;
 		break;
 				
-		case 18:
-		PORTA = 0x88;	// letter A
+		case DigitValue::LETTER_A:
+		PORTA = 0x88;
 		break;
 		
-		case 19:
-		PORTA = 0xA1;	// letter d
+		case DigitValue::LETTER_d:
+		PORTA = 0xA1;
 		break;
 		
-		case 20:
-		PORTA = 0xFF;	//display nothing
+		case DigitValue::EMPTY:
+		PORTA = 0xFF;
 		break;
 	}
 	
@@ -121,11 +121,11 @@ void Display::SetDigit(Position position, uint8_t value)
 	Clear();
 }
 
-void Display::SetAllDigitsToValue(uint8_t value)
+void Display::SetAllDigitsToValue(DigitValue digitValue)
 {
 	for(int i=0; i < 4; i++)
 	{
-		m_DigitValues[i] = value;
+		m_DigitValues[i] = digitValue;
 	}
 }
 
@@ -139,26 +139,12 @@ void Display::MultiplexDigits()
 
 void Display::SetDigitValue(uint8_t position, DigitValue digitValue)
 {
-	//switch(position)
-	//{
-	//case Position::POSITION_1:
-	//m_DigitValues[0] = value;
-	//break;
-	//
-	//case Position::POSITION_2:
-	//m_DigitValues[1] = value;
-	//break;
-	//
-	//case Position::POSITION_3:
-	//m_DigitValues[2] = value;
-	//break;
-	//
-	//case Position::POSITION_4:
-	//m_DigitValues[3] = value;
-	//break;
-	//}
-	
-	m_DigitValues[position - 1] = static_cast<uint8_t>(digitValue);
+	m_DigitValues[position - 1] = digitValue;
+}
+
+uint8_t Display::GetDigitValue(uint8_t digit) 
+{
+	return static_cast<uint8_t>(m_DigitValues[digit]);
 }
 
 void Display::Clear()

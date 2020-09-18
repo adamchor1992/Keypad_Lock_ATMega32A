@@ -10,9 +10,9 @@ class Display
 	
 	public:
 	Display();
-	void SetAllDigitsToValue(uint8_t value);
+	void SetAllDigitsToValue(DigitValue digitValue);
 	void Clear();
-	uint8_t GetDigitValue(uint8_t digit) {return m_DigitValues[digit];}
+	uint8_t GetDigitValue(uint8_t digit);
 	void MultiplexDigits();
 	void SetDigitValue(uint8_t position, DigitValue digitValue);
 	
@@ -25,8 +25,8 @@ class Display
 		POSITION_4 = 4
 	};
 	
-	void SetDigit(Position position, uint8_t value);
+	void SetDigit(Position position, DigitValue digitValue);
 	
 	/*Table of values currently shown on 7-segment display*/
-	uint8_t m_DigitValues[4];    
+	DigitValue m_DigitValues[4];    
 };
