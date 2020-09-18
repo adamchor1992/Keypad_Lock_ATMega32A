@@ -7,6 +7,7 @@ class KeypadLock
 {
 	public:
 	KeypadLock();
+	void Execute();
 	
 	private:
 	void InitPorts();

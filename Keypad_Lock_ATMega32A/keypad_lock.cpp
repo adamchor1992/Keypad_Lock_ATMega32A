@@ -10,16 +10,21 @@ KeypadLock::KeypadLock()
 	InitPorts();
 	
 	m_PasswordState = PasswordState::PasswordNotSet;
-	
-	UserSetsCode();
-	
-	m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
-	
-	CompareEnteredCodeWithAdminCode();
-	
-	while(1)
+}
+
+void KeypadLock::Execute()
+{
+	if(m_PasswordState == PasswordState::PasswordNotSet)
 	{
-		m_Display.MultiplexDigits();
+		UserSetsCode();
+		m_PasswordState = PasswordState::PasswordSet;
+		m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
+	}
+	else if(m_PasswordState == PasswordState::PasswordSet)
+	{
+		CompareEnteredCodeWithAdminCode();
+		m_PasswordState = PasswordState::PasswordNotSet;
+		m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
 	}
 }
 
@@ -51,7 +56,6 @@ void KeypadLock::UserSetsCode()
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;
 	
-	//SETTING CODE FOR FIRST TIME
 	while (1)
 	{
 		pressedButton = m_Keypad.GetPressedButton();
@@ -75,7 +79,8 @@ void KeypadLock::UserSetsCode()
 				m_Password[1] = m_Display.GetDigitValue(1);
 				m_Password[2] = m_Display.GetDigitValue(2);
 				m_Password[3] = m_Display.GetDigitValue(3);
-				break;
+				
+				return;
 			}
 			
 			if(pressedButton != Button::BUTTON_OK)
@@ -102,12 +107,11 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;
 	
-	//COMPARING ENTERED CODE WITH CODE SET BEFORE
 	while (1)
 	{
-		pressedButton = m_Keypad.GetPressedButton();							//poll for value on keypad
+		pressedButton = m_Keypad.GetPressedButton();
 
-		if(pressedButton != Button::NO_BUTTON_PRESSED)									//if input changed
+		if(pressedButton != Button::NO_BUTTON_PRESSED)
 		{
 			if(pressedButton == Button::BUTTON_ERASE_DIGIT)
 			{
@@ -120,22 +124,40 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				continue;
 			}
 			
-			uint8_t enteredPassword[4] = {0};										//table storing code entered by user
+			uint8_t enteredPassword[4] = {0};
 			
-			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)
 			{
 				enteredPassword[0] = m_Display.GetDigitValue(0);
 				enteredPassword[1] = m_Display.GetDigitValue(1);
 				enteredPassword[2] = m_Display.GetDigitValue(2);
 				enteredPassword[3] = m_Display.GetDigitValue(3);
 				
-				if(enteredPassword[0] == m_Password[0] && enteredPassword[1] == m_Password[1] && enteredPassword[2] == m_Password[2] && enteredPassword[3] == m_Password[3]) //check if code is correct
+				if(enteredPassword[0] == m_Password[0] && enteredPassword[1] == m_Password[1] && enteredPassword[2] == m_Password[2] && enteredPassword[3] == m_Password[3])
 				{
 					m_Display.SetDigitValue(1, DigitValue::DIGIT_0);
 					m_Display.SetDigitValue(2, DigitValue::LETTER_P);
 					m_Display.SetDigitValue(3, DigitValue::LETTER_E);
 					m_Display.SetDigitValue(4, DigitValue::LETTER_n);
-					break;
+					
+					long int delay = 0;
+					
+					while(1)
+					{
+						m_Display.MultiplexDigits();
+						
+						_delay_ms(5);
+						delay++;
+
+						if(delay >= 200) //if about 1 second passed
+						{
+							m_Display.SetAllDigitsToValue(DigitValue::HYPHEN_WITH_DOT);
+							digitPointer = 1;
+							break;
+						}
+					}
+					
+					return;
 				}
 				else
 				{
@@ -160,12 +182,16 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 							break;
 						}
 					}
+					
 					continue;
 				}
 			}
-
-			m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
-			digitPointer++;
+			
+			if(pressedButton != Button::BUTTON_OK)
+			{
+				m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
+				digitPointer++;
+			}
 		}
 
 		if(digitPointer < 6)
