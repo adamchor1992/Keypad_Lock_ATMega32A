@@ -12,7 +12,8 @@ Button Keypad::GetPressedButton(void)
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 	
 	// FIRST ROW
-	PORTD &= ~(1<<0); // 0 on first row;
+	/*Force low logic state on the first row*/
+	PORTD &= ~(1<<0);
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -63,7 +64,8 @@ Button Keypad::GetPressedButton(void)
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 	
 	// SECOND ROW
-	PORTD &= ~(1<<1); // 0 on second row;
+	/*Force low logic state on the second row*/
+	PORTD &= ~(1<<1);
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -114,7 +116,8 @@ Button Keypad::GetPressedButton(void)
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	// THIRD ROW
-	PORTD &= ~(1<<2); // 0 on third row;
+	/*Force low logic state on the third row*/
+	PORTD &= ~(1<<2);
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
 	column_value = PIND;
@@ -147,7 +150,7 @@ Button Keypad::GetPressedButton(void)
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
-		return Button::BUTTON_OK;
+		return Button::BUTTON_ERASE_DIGIT;
 	}
 	else if(!(column_value & 1<<7))
 	{
@@ -157,12 +160,12 @@ Button Keypad::GetPressedButton(void)
 			break;
 		}
 		_delay_ms(DELAY_AFTER_BUTTON_PRESS_DETECTED);
-		return Button::BUTTON_CANCEL;
+		return Button::BUTTON_OK;
 	}
 
-	PORTD |= (1<<2); // 0 on third row;
+	PORTD |= (1<<2);
 
 	_delay_us(DELAY_BETWEEN_ROWS_POLLING);
 
-	return Button::NO_BUTTON_PRESSED;      //reserved value meaning that input did not change
+	return Button::NO_BUTTON_PRESSED;
 }

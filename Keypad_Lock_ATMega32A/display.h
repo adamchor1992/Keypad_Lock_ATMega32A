@@ -26,5 +26,6 @@ class Display
 	
 	void SetDigit(Position position, uint8_t value);
 	
-	uint8_t m_DigitValues[4] = {'-', '-', '-', '-'};          //table of values currently shown on 7-segment display
+	/*Table of values currently shown on 7-segment display*/
+	uint8_t m_DigitValues[4];    
 };

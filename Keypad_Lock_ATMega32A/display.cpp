@@ -1,12 +1,15 @@
-#define F_CPU 1000000	//1MHz
+#define F_CPU 1000000 /*1MHz*/
 
 #include "display.h"
 #include <avr/io.h>
-#include <util/delay.h>	//header containing delay functions
+#include <util/delay.h>
 
 Display::Display()
 {
-	
+	m_DigitValues[0] = '-';
+	m_DigitValues[1] = '-';
+	m_DigitValues[2] = '-';
+	m_DigitValues[3] = '-';
 }
 
 void Display::SetDigit(Position position, uint8_t value)

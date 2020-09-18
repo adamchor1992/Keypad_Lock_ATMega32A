@@ -53,18 +53,22 @@ void KeypadLock::UserSetsCode()
 	//SETTING CODE FOR FIRST TIME
 	while (1)
 	{
-		pressedButton = m_Keypad.GetPressedButton();							//poll for value on keypad
+		pressedButton = m_Keypad.GetPressedButton();
 
-		if(pressedButton != Button::NO_BUTTON_PRESSED)				//if input changed
+		if(pressedButton != Button::NO_BUTTON_PRESSED)
 		{
-			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
+			if(pressedButton == Button::BUTTON_ERASE_DIGIT)
 			{
-				m_Display.SetAllDigitsToValue('-');
-				digitPointer = 1;
+				if(digitPointer > 1)
+				{
+					digitPointer--;
+					m_Display.SetDigitValue(digitPointer, '-');
+				}
+
 				continue;
 			}
 			
-			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)						//if 4 digits were entered and OK button was pressed
+			if(digitPointer == 5 && pressedButton == Button::BUTTON_OK)
 			{
 				m_Password[0] = m_Display.GetDigitValue(0);
 				m_Password[1] = m_Display.GetDigitValue(1);
@@ -73,8 +77,11 @@ void KeypadLock::UserSetsCode()
 				break;
 			}
 			
-			m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
-			digitPointer++;
+			if(pressedButton != Button::BUTTON_OK)
+			{
+				m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
+				digitPointer++;
+			}
 		}
 
 		if(digitPointer < 6)
@@ -101,11 +108,14 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 
 		if(pressedButton != Button::NO_BUTTON_PRESSED)									//if input changed
 		{
-			if(pressedButton == Button::BUTTON_CANCEL)								//if cancel button was pressed
+			if(pressedButton == Button::BUTTON_ERASE_DIGIT)
 			{
-				m_Display.SetAllDigitsToValue(13);
-				digitPointer=1;
-				continue;
+				if(digitPointer > 1)
+				{
+					digitPointer--;
+					m_Display.SetDigitValue(digitPointer, 13);
+					continue;
+				}
 			}
 			
 			uint8_t enteredPassword[4] = {0};										//table storing code entered by user

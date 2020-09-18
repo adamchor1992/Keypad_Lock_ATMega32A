@@ -13,6 +13,6 @@ enum class Button
 	BUTTON_7 = 7,
 	BUTTON_8 = 8,
 	BUTTON_9 = 9,
-	BUTTON_OK = 11,
-	BUTTON_CANCEL = 12
+	BUTTON_ERASE_DIGIT = 11,
+	BUTTON_OK = 12
 };
