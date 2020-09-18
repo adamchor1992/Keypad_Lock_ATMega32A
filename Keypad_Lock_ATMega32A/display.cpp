@@ -97,14 +97,22 @@ void Display::SetDigit(Position position, uint8_t value)
 		break;
 		
 		case 16:
-		PORTA = 0xC8;	// letter N
+		PORTA = 0xAB;	// letter n
 		break;
 		
 		case 17:
+		PORTA = 0x83;	// letter b
+		break;
+				
+		case 18:
 		PORTA = 0x88;	// letter A
 		break;
 		
-		case 18:
+		case 19:
+		PORTA = 0xA1;	// letter d
+		break;
+		
+		case 20:
 		PORTA = 0xFF;	//display nothing
 		break;
 	}
@@ -129,7 +137,7 @@ void Display::MultiplexDigits()
 	SetDigit(Position::POSITION_4, m_DigitValues[3]);
 }
 
-void Display::SetDigitValue(uint8_t position, uint8_t value)
+void Display::SetDigitValue(uint8_t position, DigitValue digitValue)
 {
 	//switch(position)
 	//{
@@ -150,7 +158,7 @@ void Display::SetDigitValue(uint8_t position, uint8_t value)
 	//break;
 	//}
 	
-	m_DigitValues[position - 1] = value;
+	m_DigitValues[position - 1] = static_cast<uint8_t>(digitValue);
 }
 
 void Display::Clear()

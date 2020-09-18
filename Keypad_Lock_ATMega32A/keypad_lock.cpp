@@ -1,6 +1,7 @@
 #define F_CPU 1000000
 
 #include "keypad_lock.h"
+#include "digit_value.h"
 #include <avr/io.h>
 #include <util/delay.h>	 //header containing delay functions
 
@@ -62,7 +63,7 @@ void KeypadLock::UserSetsCode()
 				if(digitPointer > 1)
 				{
 					digitPointer--;
-					m_Display.SetDigitValue(digitPointer, '-');
+					m_Display.SetDigitValue(digitPointer, DigitValue::HYPHEN);
 				}
 
 				continue;
@@ -79,7 +80,7 @@ void KeypadLock::UserSetsCode()
 			
 			if(pressedButton != Button::BUTTON_OK)
 			{
-				m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
+				m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
 				digitPointer++;
 			}
 		}
@@ -113,7 +114,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				if(digitPointer > 1)
 				{
 					digitPointer--;
-					m_Display.SetDigitValue(digitPointer, 13);
+					m_Display.SetDigitValue(digitPointer, DigitValue::HYPHEN_WITH_DOT);
 					continue;
 				}
 			}
@@ -129,18 +130,18 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				
 				if(enteredPassword[0] == m_Password[0] && enteredPassword[1] == m_Password[1] && enteredPassword[2] == m_Password[2] && enteredPassword[3] == m_Password[3]) //check if code is correct
 				{
-					m_Display.SetDigitValue(1, 0);	//O
-					m_Display.SetDigitValue(2, 14);	//P
-					m_Display.SetDigitValue(3, 15);	//E
-					m_Display.SetDigitValue(4, 16);	//N
+					m_Display.SetDigitValue(1, DigitValue::DIGIT_0);
+					m_Display.SetDigitValue(2, DigitValue::LETTER_P);
+					m_Display.SetDigitValue(3, DigitValue::LETTER_E);
+					m_Display.SetDigitValue(4, DigitValue::LETTER_n);
 					break;
 				}
 				else
 				{
-					m_Display.SetDigitValue(1, 8);	//B
-					m_Display.SetDigitValue(2, 17);	//A
-					m_Display.SetDigitValue(3, 0);	//D
-					m_Display.SetDigitValue(4, 18);	//nothing
+					m_Display.SetDigitValue(1, DigitValue::LETTER_b);
+					m_Display.SetDigitValue(2, DigitValue::LETTER_A);
+					m_Display.SetDigitValue(3, DigitValue::LETTER_d);
+					m_Display.SetDigitValue(4, DigitValue::EMPTY);
 					
 					long int delay = 0;
 					
@@ -162,7 +163,7 @@ void KeypadLock::CompareEnteredCodeWithAdminCode()
 				}
 			}
 
-			m_Display.SetDigitValue(digitPointer, static_cast<uint8_t>(pressedButton));
+			m_Display.SetDigitValue(digitPointer, static_cast<DigitValue>(pressedButton));
 			digitPointer++;
 		}
 

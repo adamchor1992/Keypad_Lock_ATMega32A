@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include "digit_value.h"
 
 class Display
 {
@@ -13,7 +14,7 @@ class Display
 	void Clear();
 	uint8_t GetDigitValue(uint8_t digit) {return m_DigitValues[digit];}
 	void MultiplexDigits();
-	void SetDigitValue(uint8_t position, uint8_t value);
+	void SetDigitValue(uint8_t position, DigitValue digitValue);
 	
 	private:
 	enum class Position
