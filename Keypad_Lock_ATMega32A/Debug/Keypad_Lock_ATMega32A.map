@@ -294,15 +294,15 @@ END GROUP
                 0x000003e2       0x1a keypad_lock.o
                 0x000003e2                _ZN10KeypadLockC1Ev
                 0x000003e2                _ZN10KeypadLockC2Ev
- .text._ZN10KeypadLock12UserSetsCodeEv
+ .text._ZN10KeypadLock16UserSetsPasswordEv
                 0x000003fc       0xa4 keypad_lock.o
-                0x000003fc                _ZN10KeypadLock12UserSetsCodeEv
+                0x000003fc                _ZN10KeypadLock16UserSetsPasswordEv
  .text._ZN10KeypadLock10ShortDelayEv
                 0x000004a0       0x2e keypad_lock.o
                 0x000004a0                _ZN10KeypadLock10ShortDelayEv
- .text._ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEv
+ .text._ZN10KeypadLock17UserTypesPasswordEv
                 0x000004ce      0x14e keypad_lock.o
-                0x000004ce                _ZN10KeypadLock31CompareEnteredCodeWithAdminCodeEv
+                0x000004ce                _ZN10KeypadLock17UserTypesPasswordEv
  .text._ZN10KeypadLock7ExecuteEv
                 0x0000061c       0x46 keypad_lock.o
                 0x0000061c                _ZN10KeypadLock7ExecuteEv
@@ -475,17 +475,17 @@ END GROUP
  .debug_frame   0x000000b4       0xec keypad_lock.o
  .debug_frame   0x000001a0       0x34 main.o
 
-.debug_str      0x00000000      0x8a0
+.debug_str      0x00000000      0x88c
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega32a/avr5/crtatmega32a.o
  .debug_str     0x00000196      0x420 display.o
                                 0x467 (size before relaxing)
  .debug_str     0x000005b6      0x122 keypad.o
                                 0x32c (size before relaxing)
- .debug_str     0x000006d8      0x1aa keypad_lock.o
-                                0x6f4 (size before relaxing)
- .debug_str     0x00000882       0x1e main.o
-                                0x668 (size before relaxing)
+ .debug_str     0x000006d8      0x196 keypad_lock.o
+                                0x6e0 (size before relaxing)
+ .debug_str     0x0000086e       0x1e main.o
+                                0x654 (size before relaxing)
 
 .debug_loc      0x00000000      0xf43
  *(.debug_loc)

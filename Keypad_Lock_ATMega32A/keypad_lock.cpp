@@ -16,13 +16,13 @@ void KeypadLock::Execute()
 {
 	if(m_PasswordState == PasswordState::PasswordNotSet)
 	{
-		UserSetsCode();
+		UserSetsPassword();
 		m_PasswordState = PasswordState::PasswordSet;
 		m_Display.SetAllDigitsToValue(DigitValue::LETTER_X);
 	}
 	else if(m_PasswordState == PasswordState::PasswordSet)
 	{
-		CompareEnteredCodeWithAdminCode();
+		UserTypesPassword();
 		m_PasswordState = PasswordState::PasswordNotSet;
 		m_Display.SetAllDigitsToValue(DigitValue::HYPHEN);
 	}
@@ -51,7 +51,7 @@ void KeypadLock::InitPorts()
 	PORTD |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
 }
 
-void KeypadLock::UserSetsCode()
+void KeypadLock::UserSetsPassword()
 {
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;
@@ -97,7 +97,7 @@ void KeypadLock::UserSetsCode()
 	}
 }
 
-void KeypadLock::CompareEnteredCodeWithAdminCode()
+void KeypadLock::UserTypesPassword()
 {
 	Button pressedButton = Button::NO_BUTTON_PRESSED;
 	uint8_t digitPointer = 1;

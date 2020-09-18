@@ -11,8 +11,8 @@ class KeypadLock
 	
 	private:
 	void InitPorts();
-	void UserSetsCode();
-	void CompareEnteredCodeWithAdminCode();
+	void UserSetsPassword();
+	void UserTypesPassword();
 	void ShortDelay();
 	
 	Display m_Display;

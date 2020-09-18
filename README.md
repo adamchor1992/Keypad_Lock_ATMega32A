@@ -10,11 +10,15 @@ PORTC - unused
 
 PORTD - connected to keypad rows and columns (PD 0-3 configured as output pins and connected to rows, PD 4-7 configured as input pins and connected to columns)
 
-
 How to use:
 1. Power-up ATMega32A, the display should show 4 hyphens "-".
-2. Enter your 4-digit code and press OK - button 11, in case of error press CANCEL - button 12
-3. Program is now in lock state marked by displaying 4 hyphens and 4 decimal points "-."
-4. Enter proper 4-digit code and press OK - button 11, in case of error press CANCEL - button 12
-5. If you succeed display shows "OPEN" word and program finishes. 
-6. Otherwise display shows "BAD" for about 2 seconds, afterwards you can try again.
+2. Enter your 4-digit code and press OK - button 12, in case of mistyped number press ERASE_DIGIT button - button 11. It will erase last entered digit.
+3. Program is now in lock state marked by displaying 4 H letters on each digit of 7-segment display.
+4. Enter proper 4-digit code and press OK - button 12, in case of mistyped number press ERASE_DIGIT button - button 11. It will erase last entered digit.
+5. If you succeed the display shows "OPEn" for about 2 seconds. The keypad lock is then open and program restars enabling user to set another password again. 
+6. Otherwise the display shows "bAd" for about 2 seconds, afterwards you can try again.
+
+
+See pictures in PHOTOS showing working system in various states.
+
+Flash using Debug/Keypad_Lock_ATMega32A.elf file
